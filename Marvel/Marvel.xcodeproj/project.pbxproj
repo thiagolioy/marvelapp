@@ -45,28 +45,31 @@
 		9939CFC51DDA2417008CE399 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				9939CFC61DDA244A008CE399 /* CharactersViewController.swift */,
 				9939CFC81DDA245A008CE399 /* CharacterViewController.swift */,
+				9939CFC61DDA244A008CE399 /* CharactersViewController.swift */,
 			);
 			name = Controllers;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		9939CFCA1DDA267D008CE399 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				99E1DFE71DDA1F4C006F9D96 /* Main.storyboard */,
 				99E1DFEC1DDA1F4C006F9D96 /* LaunchScreen.storyboard */,
+				99E1DFE71DDA1F4C006F9D96 /* Main.storyboard */,
 			);
 			name = Storyboards;
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		9939CFCB1DDA26A3008CE399 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				99E1DFEF1DDA1F4C006F9D96 /* Info.plist */,
 				99E1DFEA1DDA1F4C006F9D96 /* Assets.xcassets */,
+				99E1DFEF1DDA1F4C006F9D96 /* Info.plist */,
 			);
 			name = Resources;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		9939CFCC1DDA2716008CE399 /* AppDelegate */ = {
@@ -75,15 +78,16 @@
 				99E1DFE31DDA1F4C006F9D96 /* AppDelegate.swift */,
 			);
 			name = AppDelegate;
+			path = AppDelegate;
 			sourceTree = "<group>";
 		};
 		99E1DFD71DDA1F4C006F9D96 = {
 			isa = PBXGroup;
 			children = (
-				99E1DFE21DDA1F4C006F9D96 /* Marvel */,
-				99E1DFE11DDA1F4C006F9D96 /* Products */,
-				F31159AB537646F3DA1B5700 /* Pods */,
 				A614E78BE86E798A7E93A6F8 /* Frameworks */,
+				99E1DFE21DDA1F4C006F9D96 /* Marvel */,
+				F31159AB537646F3DA1B5700 /* Pods */,
+				99E1DFE11DDA1F4C006F9D96 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,9 +103,9 @@
 			isa = PBXGroup;
 			children = (
 				9939CFCC1DDA2716008CE399 /* AppDelegate */,
+				9939CFC51DDA2417008CE399 /* Controllers */,
 				9939CFCB1DDA26A3008CE399 /* Resources */,
 				9939CFCA1DDA267D008CE399 /* Storyboards */,
-				9939CFC51DDA2417008CE399 /* Controllers */,
 			);
 			path = Marvel;
 			sourceTree = "<group>";
@@ -207,7 +211,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run \'pod install\' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		572BC285D19F6AE624CEB662 /* [CP] Copy Pods Resources */ = {
@@ -262,6 +266,7 @@
 				99E1DFE81DDA1F4C006F9D96 /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		99E1DFEC1DDA1F4C006F9D96 /* LaunchScreen.storyboard */ = {
@@ -270,6 +275,7 @@
 				99E1DFED1DDA1F4C006F9D96 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -374,7 +380,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 6UM2WYVE6K;
-				INFOPLIST_FILE = Marvel/Info.plist;
+				INFOPLIST_FILE = Marvel/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tpioy.marvelapp.Marvel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -388,7 +394,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 6UM2WYVE6K;
-				INFOPLIST_FILE = Marvel/Info.plist;
+				INFOPLIST_FILE = Marvel/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tpioy.marvelapp.Marvel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
