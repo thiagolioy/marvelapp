@@ -51,6 +51,32 @@
 			name = Controllers;
 			sourceTree = "<group>";
 		};
+		9939CFCA1DDA267D008CE399 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				99E1DFE71DDA1F4C006F9D96 /* Main.storyboard */,
+				99E1DFEC1DDA1F4C006F9D96 /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		9939CFCB1DDA26A3008CE399 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				99E1DFEF1DDA1F4C006F9D96 /* Info.plist */,
+				99E1DFEA1DDA1F4C006F9D96 /* Assets.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		9939CFCC1DDA2716008CE399 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				99E1DFE31DDA1F4C006F9D96 /* AppDelegate.swift */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
 		99E1DFD71DDA1F4C006F9D96 = {
 			isa = PBXGroup;
 			children = (
@@ -72,12 +98,10 @@
 		99E1DFE21DDA1F4C006F9D96 /* Marvel */ = {
 			isa = PBXGroup;
 			children = (
+				9939CFCC1DDA2716008CE399 /* AppDelegate */,
+				9939CFCB1DDA26A3008CE399 /* Resources */,
+				9939CFCA1DDA267D008CE399 /* Storyboards */,
 				9939CFC51DDA2417008CE399 /* Controllers */,
-				99E1DFE31DDA1F4C006F9D96 /* AppDelegate.swift */,
-				99E1DFE71DDA1F4C006F9D96 /* Main.storyboard */,
-				99E1DFEA1DDA1F4C006F9D96 /* Assets.xcassets */,
-				99E1DFEC1DDA1F4C006F9D96 /* LaunchScreen.storyboard */,
-				99E1DFEF1DDA1F4C006F9D96 /* Info.plist */,
 			);
 			path = Marvel;
 			sourceTree = "<group>";
