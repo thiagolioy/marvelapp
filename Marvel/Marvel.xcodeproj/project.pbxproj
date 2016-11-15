@@ -90,6 +90,7 @@
 				9939CFD01DDA30DC008CE399 /* MarvelAPIManager.swift */,
 			);
 			name = Network;
+			path = Network;
 			sourceTree = "<group>";
 		};
 		9939CFD21DDA332A008CE399 /* Models */ = {
@@ -98,6 +99,7 @@
 				9939CFD31DDA333D008CE399 /* Character.swift */,
 			);
 			name = Models;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		99E1DFD71DDA1F4C006F9D96 = {
@@ -121,10 +123,10 @@
 		99E1DFE21DDA1F4C006F9D96 /* Marvel */ = {
 			isa = PBXGroup;
 			children = (
-				9939CFD21DDA332A008CE399 /* Models */,
-				9939CFCD1DDA2DF1008CE399 /* Network */,
 				9939CFCC1DDA2716008CE399 /* AppDelegate */,
 				9939CFC51DDA2417008CE399 /* Controllers */,
+				9939CFD21DDA332A008CE399 /* Models */,
+				9939CFCD1DDA2DF1008CE399 /* Network */,
 				9939CFCB1DDA26A3008CE399 /* Resources */,
 				9939CFCA1DDA267D008CE399 /* Storyboards */,
 			);
@@ -232,7 +234,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run \'pod install\' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		572BC285D19F6AE624CEB662 /* [CP] Copy Pods Resources */ = {
