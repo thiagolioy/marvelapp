@@ -1,12 +1,60 @@
 PODS:
+  - Alamofire (4.0.1)
+  - CryptoSwift (0.6.6)
+  - Dollar (6.1.0)
+  - Keys (1.0.0)
+  - Moya (8.0.0-beta.4):
+    - Moya/Core (= 8.0.0-beta.4)
+  - Moya-ObjectMapper/Core (2.1):
+    - Moya (= 8.0.0-beta.4)
+    - ObjectMapper (= 2.2.1)
+  - Moya-ObjectMapper/RxSwift (2.1):
+    - Moya-ObjectMapper/Core
+    - Moya/RxSwift
+    - RxSwift (= 3.0.1)
+  - Moya/Core (8.0.0-beta.4):
+    - Alamofire (~> 4.0)
+    - Result (~> 3.0)
+  - Moya/RxSwift (8.0.0-beta.4):
+    - Moya/Core
+    - RxSwift (~> 3.0)
+  - ObjectMapper (2.2.1)
+  - Result (3.0.0)
+  - RxSwift (3.0.1)
   - SwiftGen (3.0.1)
 
 DEPENDENCIES:
+  - CryptoSwift
+  - Dollar
+  - Keys (from `Pods/CocoaPodsKeys`)
+  - Moya-ObjectMapper/RxSwift (from `https://github.com/ivanbruel/Moya-ObjectMapper`)
+  - Moya/RxSwift (~> 8.0.0-beta.1)
+  - RxSwift (~> 3.0.0-beta.2)
   - SwiftGen
 
+EXTERNAL SOURCES:
+  Keys:
+    :path: Pods/CocoaPodsKeys
+  Moya-ObjectMapper:
+    :git: https://github.com/ivanbruel/Moya-ObjectMapper
+
+CHECKOUT OPTIONS:
+  Moya-ObjectMapper:
+    :commit: 82ec528ba7e04faf47d17217b7d3d67cdcbab4ca
+    :git: https://github.com/ivanbruel/Moya-ObjectMapper
+
 SPEC CHECKSUMS:
+  Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
+  CryptoSwift: 88592381b73f36e192124539390a7c9bacda76af
+  Dollar: 0a9883680f2c1104adf0d19b827c3be71d3e3121
+  Keys: 9c35bf00f612ee1d48556f4a4b9b4551e224e90f
+  Moya: bad6f72ec40661f09a8cd85ab470226d2795a485
+  Moya-ObjectMapper: c8c7435f5405ee5acd5ea61b6190fdbf5d639f97
+  ObjectMapper: 41e43e1a89f8060ef5ea5d04ba852e269a621d68
+  Result: 1b3e431f37cbcd3ad89c6aa9ab0ae55515fae3b6
+  RxSwift: af5680055c4ad04480189c52d28385b1029493a6
   SwiftGen: 5f69367fae99c11d52d1ab9d45dcf10a3e59b8ef
 
-PODFILE CHECKSUM: 30ea6e182e4f011d3db15da64df33f5b952d564f
+PODFILE CHECKSUM: 92cfcd02e1afd35ca606db3dfeea721013a6abbb
 
 COCOAPODS: 1.1.1
