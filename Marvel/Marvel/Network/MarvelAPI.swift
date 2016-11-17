@@ -12,9 +12,6 @@ import CryptoSwift
 import Dollar
 import Keys
 
-
-
-
 fileprivate struct MarvelAPIConfig {
     fileprivate static let keys = MarvelKeys()
     static let privatekey = keys.marvelPrivateKey()!
