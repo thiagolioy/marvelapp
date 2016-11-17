@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CharactersViewController: UIViewController {
+final class CharactersViewController: UIViewController {
     let apiManager = MarvelAPIManager()
     var datasource: CharactersDatasource?
     var delegate: CharactersDelegate?

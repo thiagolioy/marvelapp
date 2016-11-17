@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CharactersDatasource: NSObject, ItemsTableViewDatasource {
+final class CharactersDatasource: NSObject, ItemsTableViewDatasource {
     
     var items:[Character] = []
     weak var tableView: UITableView?

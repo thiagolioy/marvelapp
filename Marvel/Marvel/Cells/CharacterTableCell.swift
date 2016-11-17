@@ -9,7 +9,7 @@
 import UIKit
 import Kingfisher
 
-class CharacterTableCell: UITableViewCell, ReusableCell {
+final class CharacterTableCell: UITableViewCell, ReusableCell {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var thumb: UIImageView!
     
