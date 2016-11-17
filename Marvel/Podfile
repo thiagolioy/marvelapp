@@ -17,8 +17,9 @@ target 'Marvel' do
    pod 'RxSwift', '~> 3.0.0-beta.2'
    pod 'Moya/RxSwift','~> 8.0.0-beta.1'
    pod 'Moya-ObjectMapper/RxSwift', :git => 'https://github.com/ivanbruel/Moya-ObjectMapper'
-  pod 'CryptoSwift'
-  pod 'Dollar'
+   pod 'CryptoSwift'
+   pod 'Dollar'
+   pod 'Kingfisher'
 
   post_install do |installer|
     installer.pods_project.targets.each do |target|

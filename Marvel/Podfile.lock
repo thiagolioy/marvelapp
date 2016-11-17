@@ -3,6 +3,7 @@ PODS:
   - CryptoSwift (0.6.6)
   - Dollar (6.1.0)
   - Keys (1.0.0)
+  - Kingfisher (3.2.1)
   - Moya (8.0.0-beta.4):
     - Moya/Core (= 8.0.0-beta.4)
   - Moya-ObjectMapper/Core (2.1):
@@ -27,6 +28,7 @@ DEPENDENCIES:
   - CryptoSwift
   - Dollar
   - Keys (from `Pods/CocoaPodsKeys`)
+  - Kingfisher
   - Moya-ObjectMapper/RxSwift (from `https://github.com/ivanbruel/Moya-ObjectMapper`)
   - Moya/RxSwift (~> 8.0.0-beta.1)
   - RxSwift (~> 3.0.0-beta.2)
@@ -48,6 +50,7 @@ SPEC CHECKSUMS:
   CryptoSwift: 88592381b73f36e192124539390a7c9bacda76af
   Dollar: 0a9883680f2c1104adf0d19b827c3be71d3e3121
   Keys: 9c35bf00f612ee1d48556f4a4b9b4551e224e90f
+  Kingfisher: 64ef28c6d3d6f344e3ae2d7f5c9da80439505d99
   Moya: bad6f72ec40661f09a8cd85ab470226d2795a485
   Moya-ObjectMapper: c8c7435f5405ee5acd5ea61b6190fdbf5d639f97
   ObjectMapper: 41e43e1a89f8060ef5ea5d04ba852e269a621d68
@@ -55,6 +58,6 @@ SPEC CHECKSUMS:
   RxSwift: af5680055c4ad04480189c52d28385b1029493a6
   SwiftGen: 5f69367fae99c11d52d1ab9d45dcf10a3e59b8ef
 
-PODFILE CHECKSUM: 92cfcd02e1afd35ca606db3dfeea721013a6abbb
+PODFILE CHECKSUM: e5eda1082aa7ab7898010fac457bf2f27cd929df
 
 COCOAPODS: 1.1.1
