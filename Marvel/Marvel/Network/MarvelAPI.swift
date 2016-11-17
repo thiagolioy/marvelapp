@@ -45,20 +45,26 @@ extension MarvelAPI: TargetType {
         }
     }
     
+    func authParameters() -> [String: String] {
+        return ["apikey": MarvelAPIConfig.apikey,
+                "ts": MarvelAPIConfig.ts,
+                "hash": MarvelAPIConfig.hash]
+    }
+    
     var parameters: [String: Any]? {
-        let authParams = ["apikey": MarvelAPIConfig.apikey,
-                          "ts": MarvelAPIConfig.ts,
-                          "hash": MarvelAPIConfig.hash]
+        
         switch self {
         
         case .characters(let query):
             if let query = query {
-                return $.merge(authParams, ["nameStartsWith": query])
+                return $.merge(authParameters(),
+                               ["nameStartsWith": query])
             }
-            return authParams
+            return authParameters()
             
         case .character(let characterId):
-            return $.merge(authParams, ["characterId": characterId])
+            return $.merge(authParameters(),
+                           ["characterId": characterId])
         }
     }
     
