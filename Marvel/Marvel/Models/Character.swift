@@ -9,23 +9,6 @@
 import Foundation
 import ObjectMapper
 
-
-struct ThumbImage {
-    var path: String = ""
-    var imageExtension: String = ""
-}
-
-extension ThumbImage: Mappable {
-    init?(map: Map) {
-    
-    }
-    
-    mutating func mapping(map: Map) {
-        path    <- map["path"]
-        imageExtension    <- map["extension"]
-    }
-}
-
 struct Character {
     var id: Int = 0
     var name: String = ""
