@@ -10,9 +10,9 @@ import UIKit
 
 protocol ItemsTableViewDatasource: UITableViewDataSource {
     associatedtype T
-    var items:[T] {get set}
-    weak var tableView: UITableView? {get set}
-    weak var delegate: UITableViewDelegate? {get set}
+    var items:[T] {get}
+    weak var tableView: UITableView? {get}
+    weak var delegate: UITableViewDelegate? {get}
     
     init(items: [T], tableView: UITableView, delegate: UITableViewDelegate)
     
