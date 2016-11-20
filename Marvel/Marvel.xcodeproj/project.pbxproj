@@ -14,7 +14,6 @@
 		9939CFD11DDA30DC008CE399 /* MarvelAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9939CFD01DDA30DC008CE399 /* MarvelAPIManager.swift */; };
 		9939CFD41DDA333D008CE399 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9939CFD31DDA333D008CE399 /* Character.swift */; };
 		99B248E31DDB427000027C10 /* CharacterTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B248E21DDB427000027C10 /* CharacterTableCell.swift */; };
-		99B248E51DDB47C900027C10 /* ReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B248E41DDB47C900027C10 /* ReusableCell.swift */; };
 		99D0DEB21DE2598F00FE34D7 /* ItemsCollectionViewDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D0DEB11DE2598F00FE34D7 /* ItemsCollectionViewDatasource.swift */; };
 		99D0DEB41DE259F100FE34D7 /* CharacterCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D0DEB31DE259F100FE34D7 /* CharacterCollectionCell.swift */; };
 		99D0DEB61DE25AC900FE34D7 /* CharacterCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99D0DEB51DE25AC900FE34D7 /* CharacterCollectionCell.xib */; };
@@ -38,7 +37,6 @@
 		9939CFD01DDA30DC008CE399 /* MarvelAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarvelAPIManager.swift; sourceTree = "<group>"; };
 		9939CFD31DDA333D008CE399 /* Character.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		99B248E21DDB427000027C10 /* CharacterTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterTableCell.swift; sourceTree = "<group>"; };
-		99B248E41DDB47C900027C10 /* ReusableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReusableCell.swift; sourceTree = "<group>"; };
 		99D0DEB11DE2598F00FE34D7 /* ItemsCollectionViewDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsCollectionViewDatasource.swift; sourceTree = "<group>"; };
 		99D0DEB31DE259F100FE34D7 /* CharacterCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterCollectionCell.swift; sourceTree = "<group>"; };
 		99D0DEB51DE25AC900FE34D7 /* CharacterCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CharacterCollectionCell.xib; sourceTree = "<group>"; };
@@ -126,7 +124,6 @@
 			children = (
 				99FC2BCB1DDDB8B1006CB7EE /* Xibs */,
 				99B248E21DDB427000027C10 /* CharacterTableCell.swift */,
-				99B248E41DDB47C900027C10 /* ReusableCell.swift */,
 				99D0DEB31DE259F100FE34D7 /* CharacterCollectionCell.swift */,
 			);
 			path = Cells;
@@ -329,7 +326,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				99D0DEB81DE25BF300FE34D7 /* CharactersCollectionDatasource.swift in Sources */,
-				99B248E51DDB47C900027C10 /* ReusableCell.swift in Sources */,
 				99FC2BC81DDDB0F3006CB7EE /* ItemsTableViewDatasource.swift in Sources */,
 				9939CFD11DDA30DC008CE399 /* MarvelAPIManager.swift in Sources */,
 				9939CFC91DDA245A008CE399 /* CharacterViewController.swift in Sources */,

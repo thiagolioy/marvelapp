@@ -19,7 +19,7 @@ final class CharactersCollectionDatasource: NSObject, ItemsCollectionViewDatasou
         self.collectionView = collectionView
         self.delegate = delegate
         super.init()
-        CharacterCollectionCell.registerForCollectionView(collectionView)
+        collectionView.register(cellType: CharacterCollectionCell.self)
         self.setupCollectionView()
     }
     
@@ -30,7 +30,7 @@ final class CharactersCollectionDatasource: NSObject, ItemsCollectionViewDatasou
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = CharacterCollectionCell.dequeueCell(from: collectionView, at: indexPath)
+        let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: CharacterCollectionCell.self)
         let character = self.items[indexPath.row]
         cell.setup(item: character)
         return cell

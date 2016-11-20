@@ -19,7 +19,7 @@ final class CharactersDatasource: NSObject, ItemsTableViewDatasource {
         self.tableView = tableView
         self.delegate = delegate
         super.init()
-        CharacterTableCell.registerForTableView(tableView)
+        tableView.register(cellType: CharacterTableCell.self)
         self.setupTableView()
     }
     
@@ -29,7 +29,7 @@ final class CharactersDatasource: NSObject, ItemsTableViewDatasource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = CharacterTableCell.dequeueCell(from: tableView, at: indexPath)
+        let cell = tableView.dequeueReusableCell(for: indexPath, cellType: CharacterTableCell.self)
         let character = self.items[indexPath.row]
         cell.setup(item: character)
         return cell

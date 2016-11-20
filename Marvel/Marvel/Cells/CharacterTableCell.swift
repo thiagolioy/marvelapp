@@ -8,8 +8,9 @@
 
 import UIKit
 import Kingfisher
+import Reusable
 
-final class CharacterTableCell: UITableViewCell, ReusableCell {
+final class CharacterTableCell: UITableViewCell, NibReusable {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var thumb: UIImageView!
     
