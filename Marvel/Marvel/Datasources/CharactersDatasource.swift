@@ -36,8 +36,19 @@ final class CharactersDatasource: NSObject, ItemsTableViewDatasource {
     }
 }
 
-class CharactersDelegate: NSObject, UITableViewDelegate {
+class CharactersTableDelegate: NSObject, UITableViewDelegate {
+    
+    let delegate: CharactersDelegate
+    
+    init(_ delegate: CharactersDelegate) {
+        self.delegate = delegate
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return CharacterTableCell.height()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        delegate.didSelectCharacter(at: indexPath)
     }
 }

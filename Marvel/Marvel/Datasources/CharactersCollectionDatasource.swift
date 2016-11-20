@@ -38,8 +38,15 @@ final class CharactersCollectionDatasource: NSObject, ItemsCollectionViewDatasou
 }
 
 class CharactersCollectionDelegate: NSObject, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     
+    let delegate: CharactersDelegate
+    
+    init(_ delegate: CharactersDelegate) {
+        self.delegate = delegate
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        delegate.didSelectCharacter(at: indexPath)
     }
     
     
