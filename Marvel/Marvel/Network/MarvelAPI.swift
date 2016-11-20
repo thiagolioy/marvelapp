@@ -34,7 +34,7 @@ extension MarvelAPI: TargetType {
         case .characters:
             return "/v1/public/characters"
         case .character(let characterId):
-            return "GET /v1/public/characters/\(characterId)"
+            return "/v1/public/characters/\(characterId)"
         }
     }
     
