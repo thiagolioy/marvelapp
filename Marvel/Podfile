@@ -20,6 +20,7 @@ target 'Marvel' do
    pod 'CryptoSwift'
    pod 'Dollar'
    pod 'Kingfisher'
+   pod "Reusable"
 
   post_install do |installer|
     installer.pods_project.targets.each do |target|
