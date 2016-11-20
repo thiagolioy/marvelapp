@@ -19,6 +19,7 @@
 		99D0DEB61DE25AC900FE34D7 /* CharacterCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99D0DEB51DE25AC900FE34D7 /* CharacterCollectionCell.xib */; };
 		99D0DEB81DE25BF300FE34D7 /* CharactersCollectionDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D0DEB71DE25BF300FE34D7 /* CharactersCollectionDatasource.swift */; };
 		99D0DEBA1DE268D000FE34D7 /* UIImageView+Kingfisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D0DEB91DE268D000FE34D7 /* UIImageView+Kingfisher.swift */; };
+		99D0DEBE1DE26D8100FE34D7 /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D0DEBD1DE26D8100FE34D7 /* Storyboard.swift */; };
 		99E1DFE41DDA1F4C006F9D96 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E1DFE31DDA1F4C006F9D96 /* AppDelegate.swift */; };
 		99E1DFE91DDA1F4C006F9D96 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99E1DFE71DDA1F4C006F9D96 /* Main.storyboard */; };
 		99E1DFEB1DDA1F4C006F9D96 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99E1DFEA1DDA1F4C006F9D96 /* Assets.xcassets */; };
@@ -43,6 +44,7 @@
 		99D0DEB51DE25AC900FE34D7 /* CharacterCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CharacterCollectionCell.xib; sourceTree = "<group>"; };
 		99D0DEB71DE25BF300FE34D7 /* CharactersCollectionDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharactersCollectionDatasource.swift; sourceTree = "<group>"; };
 		99D0DEB91DE268D000FE34D7 /* UIImageView+Kingfisher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Kingfisher.swift"; sourceTree = "<group>"; };
+		99D0DEBD1DE26D8100FE34D7 /* Storyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
 		99E1DFE01DDA1F4C006F9D96 /* Marvel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Marvel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99E1DFE31DDA1F4C006F9D96 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		99E1DFE81DDA1F4C006F9D96 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 		9939CFCB1DDA26A3008CE399 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				99D0DEBD1DE26D8100FE34D7 /* Storyboard.swift */,
 				99E1DFEA1DDA1F4C006F9D96 /* Assets.xcassets */,
 				99E1DFEF1DDA1F4C006F9D96 /* Info.plist */,
 			);
@@ -218,6 +221,7 @@
 			buildConfigurationList = 99E1DFF21DDA1F4C006F9D96 /* Build configuration list for PBXNativeTarget "Marvel" */;
 			buildPhases = (
 				349470B03A6A7FDAFB705949 /* [CP] Check Pods Manifest.lock */,
+				99D0DEBC1DE26D0F00FE34D7 /* SwiftGen */,
 				99E1DFDC1DDA1F4C006F9D96 /* Sources */,
 				99E1DFDD1DDA1F4C006F9D96 /* Frameworks */,
 				99E1DFDE1DDA1F4C006F9D96 /* Resources */,
@@ -329,6 +333,20 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Marvel/Pods-Marvel-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		99D0DEBC1DE26D0F00FE34D7 /* SwiftGen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = SwiftGen;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "$PODS_ROOT/SwiftGen/bin/swiftgen storyboards -t swift3 $SOURCE_ROOT --output $SOURCE_ROOT/Marvel/Resources/Storyboard.swift --sceneEnumName Storyboard";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -337,6 +355,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				99D0DEB81DE25BF300FE34D7 /* CharactersCollectionDatasource.swift in Sources */,
+				99D0DEBE1DE26D8100FE34D7 /* Storyboard.swift in Sources */,
 				99FC2BC81DDDB0F3006CB7EE /* ItemsTableViewDatasource.swift in Sources */,
 				9939CFD11DDA30DC008CE399 /* MarvelAPIManager.swift in Sources */,
 				99D0DEBA1DE268D000FE34D7 /* UIImageView+Kingfisher.swift in Sources */,

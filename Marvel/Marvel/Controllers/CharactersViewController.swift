@@ -77,7 +77,13 @@ extension CharactersViewController {
 
 extension CharactersViewController: CharactersDelegate {
     func didSelectCharacter(at index: IndexPath) {
+        guard let nextController = Storyboard.Main.characterViewControllerScene
+            .viewController() as? CharacterViewController else {
+            return
+        }
+        
         let character = characters[index.row]
-        print(character.name)
+        nextController.character = character
+        self.navigationController?.pushViewController(nextController, animated: true)
     }
 }
