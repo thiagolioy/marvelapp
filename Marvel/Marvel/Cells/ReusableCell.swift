@@ -33,3 +33,24 @@ extension ReusableCell where Self: UITableViewCell {
     }
 }
 
+extension ReusableCell where Self: UICollectionViewCell {
+    
+    static func cellIdentifier() -> String {
+        return String(describing: Self.self)
+    }
+    
+    static func registerForCollectionView(_ collectionView: UICollectionView) {
+        let nib = UINib(nibName: cellIdentifier(), bundle: nil)
+        collectionView.register(nib, forCellWithReuseIdentifier: cellIdentifier())
+    }
+    
+    static func dequeueCell(from collectionView: UICollectionView, at indexPath: IndexPath) -> Self {
+        if let cell = collectionView
+            .dequeueReusableCell(withReuseIdentifier: cellIdentifier(), for: indexPath) as? Self {
+            return cell
+        } else {
+            return Self()
+        }
+    }
+}
+

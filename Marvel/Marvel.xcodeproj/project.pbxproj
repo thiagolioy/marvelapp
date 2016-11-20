@@ -15,6 +15,10 @@
 		9939CFD41DDA333D008CE399 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9939CFD31DDA333D008CE399 /* Character.swift */; };
 		99B248E31DDB427000027C10 /* CharacterTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B248E21DDB427000027C10 /* CharacterTableCell.swift */; };
 		99B248E51DDB47C900027C10 /* ReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B248E41DDB47C900027C10 /* ReusableCell.swift */; };
+		99D0DEB21DE2598F00FE34D7 /* ItemsCollectionViewDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D0DEB11DE2598F00FE34D7 /* ItemsCollectionViewDatasource.swift */; };
+		99D0DEB41DE259F100FE34D7 /* CharacterCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D0DEB31DE259F100FE34D7 /* CharacterCollectionCell.swift */; };
+		99D0DEB61DE25AC900FE34D7 /* CharacterCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99D0DEB51DE25AC900FE34D7 /* CharacterCollectionCell.xib */; };
+		99D0DEB81DE25BF300FE34D7 /* CharactersCollectionDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D0DEB71DE25BF300FE34D7 /* CharactersCollectionDatasource.swift */; };
 		99E1DFE41DDA1F4C006F9D96 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E1DFE31DDA1F4C006F9D96 /* AppDelegate.swift */; };
 		99E1DFE91DDA1F4C006F9D96 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99E1DFE71DDA1F4C006F9D96 /* Main.storyboard */; };
 		99E1DFEB1DDA1F4C006F9D96 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99E1DFEA1DDA1F4C006F9D96 /* Assets.xcassets */; };
@@ -35,6 +39,10 @@
 		9939CFD31DDA333D008CE399 /* Character.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		99B248E21DDB427000027C10 /* CharacterTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterTableCell.swift; sourceTree = "<group>"; };
 		99B248E41DDB47C900027C10 /* ReusableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReusableCell.swift; sourceTree = "<group>"; };
+		99D0DEB11DE2598F00FE34D7 /* ItemsCollectionViewDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsCollectionViewDatasource.swift; sourceTree = "<group>"; };
+		99D0DEB31DE259F100FE34D7 /* CharacterCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterCollectionCell.swift; sourceTree = "<group>"; };
+		99D0DEB51DE25AC900FE34D7 /* CharacterCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CharacterCollectionCell.xib; sourceTree = "<group>"; };
+		99D0DEB71DE25BF300FE34D7 /* CharactersCollectionDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharactersCollectionDatasource.swift; sourceTree = "<group>"; };
 		99E1DFE01DDA1F4C006F9D96 /* Marvel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Marvel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99E1DFE31DDA1F4C006F9D96 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		99E1DFE81DDA1F4C006F9D96 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -119,8 +127,8 @@
 				99FC2BCB1DDDB8B1006CB7EE /* Xibs */,
 				99B248E21DDB427000027C10 /* CharacterTableCell.swift */,
 				99B248E41DDB47C900027C10 /* ReusableCell.swift */,
+				99D0DEB31DE259F100FE34D7 /* CharacterCollectionCell.swift */,
 			);
-			name = Cells;
 			path = Cells;
 			sourceTree = "<group>";
 		};
@@ -162,8 +170,9 @@
 			children = (
 				99FC2BC91DDDB1BF006CB7EE /* CharactersDatasource.swift */,
 				99FC2BC71DDDB0F3006CB7EE /* ItemsTableViewDatasource.swift */,
+				99D0DEB11DE2598F00FE34D7 /* ItemsCollectionViewDatasource.swift */,
+				99D0DEB71DE25BF300FE34D7 /* CharactersCollectionDatasource.swift */,
 			);
-			name = Datasources;
 			path = Datasources;
 			sourceTree = "<group>";
 		};
@@ -171,8 +180,8 @@
 			isa = PBXGroup;
 			children = (
 				99FC2BCC1DDDB8C7006CB7EE /* CharacterTableCell.xib */,
+				99D0DEB51DE25AC900FE34D7 /* CharacterCollectionCell.xib */,
 			);
-			name = Xibs;
 			path = Xibs;
 			sourceTree = "<group>";
 		};
@@ -257,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				99FC2BCD1DDDB8C7006CB7EE /* CharacterTableCell.xib in Resources */,
+				99D0DEB61DE25AC900FE34D7 /* CharacterCollectionCell.xib in Resources */,
 				99E1DFEE1DDA1F4C006F9D96 /* LaunchScreen.storyboard in Resources */,
 				99E1DFEB1DDA1F4C006F9D96 /* Assets.xcassets in Resources */,
 				99E1DFE91DDA1F4C006F9D96 /* Main.storyboard in Resources */,
@@ -278,7 +288,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run \'pod install\' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		572BC285D19F6AE624CEB662 /* [CP] Copy Pods Resources */ = {
@@ -318,12 +328,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99D0DEB81DE25BF300FE34D7 /* CharactersCollectionDatasource.swift in Sources */,
 				99B248E51DDB47C900027C10 /* ReusableCell.swift in Sources */,
 				99FC2BC81DDDB0F3006CB7EE /* ItemsTableViewDatasource.swift in Sources */,
 				9939CFD11DDA30DC008CE399 /* MarvelAPIManager.swift in Sources */,
 				9939CFC91DDA245A008CE399 /* CharacterViewController.swift in Sources */,
+				99D0DEB41DE259F100FE34D7 /* CharacterCollectionCell.swift in Sources */,
 				99B248E31DDB427000027C10 /* CharacterTableCell.swift in Sources */,
 				9939CFC71DDA244A008CE399 /* CharactersViewController.swift in Sources */,
+				99D0DEB21DE2598F00FE34D7 /* ItemsCollectionViewDatasource.swift in Sources */,
 				9939CFD41DDA333D008CE399 /* Character.swift in Sources */,
 				99E1DFE41DDA1F4C006F9D96 /* AppDelegate.swift in Sources */,
 				99FC2BCA1DDDB1BF006CB7EE /* CharactersDatasource.swift in Sources */,
