@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Kingfisher
 import Reusable
 
 final class CharacterCollectionCell: UICollectionViewCell, NibReusable {
@@ -25,16 +24,6 @@ final class CharacterCollectionCell: UICollectionViewCell, NibReusable {
     
     func setup(item: Character) {
         name.text = item.name
-        download(thumb: item.thumImage?.fullPath() ?? "")
+        thumb.download(image: item.thumImage?.fullPath() ?? "")
     }
 }
-
-extension CharacterCollectionCell {
-    func download(thumb url: String) {
-        guard let imageURL = URL(string:url) else {
-            return
-        }
-        thumb.kf.setImage(with: ImageResource(downloadURL: imageURL))
-    }
-}
-
