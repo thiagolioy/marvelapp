@@ -2,6 +2,7 @@ PODS:
   - Alamofire (4.0.1)
   - CryptoSwift (0.6.6)
   - Dollar (6.1.0)
+  - Fakery (2.0.0)
   - Keys (1.0.0)
   - Kingfisher (3.2.1)
   - Moya (8.0.0-beta.4):
@@ -19,7 +20,9 @@ PODS:
   - Moya/RxSwift (8.0.0-beta.4):
     - Moya/Core
     - RxSwift (~> 3.0)
+  - Nimble (5.1.1)
   - ObjectMapper (2.2.1)
+  - Quick (1.0.0)
   - Result (3.0.0)
   - Reusable (3.0.0):
     - Reusable/Storyboard (= 3.0.0)
@@ -32,10 +35,13 @@ PODS:
 DEPENDENCIES:
   - CryptoSwift
   - Dollar
+  - Fakery
   - Keys (from `Pods/CocoaPodsKeys`)
   - Kingfisher
   - Moya-ObjectMapper/RxSwift (from `https://github.com/ivanbruel/Moya-ObjectMapper`)
   - Moya/RxSwift (~> 8.0.0-beta.1)
+  - Nimble
+  - Quick
   - Reusable
   - RxSwift (~> 3.0.0-beta.2)
   - SwiftGen
@@ -55,16 +61,19 @@ SPEC CHECKSUMS:
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
   CryptoSwift: 88592381b73f36e192124539390a7c9bacda76af
   Dollar: 0a9883680f2c1104adf0d19b827c3be71d3e3121
+  Fakery: 97b99c23937d2e025d9135c75e2b17351ccd5031
   Keys: 9c35bf00f612ee1d48556f4a4b9b4551e224e90f
   Kingfisher: 64ef28c6d3d6f344e3ae2d7f5c9da80439505d99
   Moya: bad6f72ec40661f09a8cd85ab470226d2795a485
   Moya-ObjectMapper: c8c7435f5405ee5acd5ea61b6190fdbf5d639f97
+  Nimble: 415e3aa3267e7bc2c96b05fa814ddea7bb686a29
   ObjectMapper: 41e43e1a89f8060ef5ea5d04ba852e269a621d68
+  Quick: 8024e4a47e6cc03a9d5245ef0948264fc6d27cff
   Result: 1b3e431f37cbcd3ad89c6aa9ab0ae55515fae3b6
   Reusable: ab77c4c51a4b9606946df70e30cb8ad9cf75c226
   RxSwift: af5680055c4ad04480189c52d28385b1029493a6
   SwiftGen: 5f69367fae99c11d52d1ab9d45dcf10a3e59b8ef
 
-PODFILE CHECKSUM: 7516e37048ca5d44dd930c98d6e129d337fce5dd
+PODFILE CHECKSUM: 9cd5ab91058af36f7ea3f646ed9e6701c072a267
 
 COCOAPODS: 1.1.1
