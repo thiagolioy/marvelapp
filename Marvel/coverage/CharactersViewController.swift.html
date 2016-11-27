@@ -185,27 +185,27 @@
 <tr class="covered">
 <td class="num">35</td>
 <td class="src"><pre><code class="objc">    override func viewDidLoad() {</code></pre></td>
-<td class="coverage">22x</td>
+<td class="coverage">29x</td>
 </tr>
 <tr class="covered">
 <td class="num">36</td>
 <td class="src"><pre><code class="objc">        super.viewDidLoad()</code></pre></td>
-<td class="coverage">22x</td>
+<td class="coverage">29x</td>
 </tr>
 <tr class="covered">
 <td class="num">37</td>
 <td class="src"><pre><code class="objc">        setupSearchBar()</code></pre></td>
-<td class="coverage">22x</td>
+<td class="coverage">29x</td>
 </tr>
 <tr class="covered">
 <td class="num">38</td>
 <td class="src"><pre><code class="objc">        fetchCharacters()</code></pre></td>
-<td class="coverage">22x</td>
+<td class="coverage">29x</td>
 </tr>
 <tr class="covered">
 <td class="num">39</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">22x</td>
+<td class="coverage">29x</td>
 </tr>
 <tr class="never">
 <td class="num">40</td>
@@ -225,57 +225,57 @@
 <tr class="covered">
 <td class="num">43</td>
 <td class="src"><pre><code class="objc">    func fetchCharacters(for query: String? = nil) {</code></pre></td>
-<td class="coverage">23x</td>
+<td class="coverage">30x</td>
 </tr>
 <tr class="covered">
 <td class="num">44</td>
 <td class="src"><pre><code class="objc">        tableView.isHidden = true</code></pre></td>
-<td class="coverage">23x</td>
+<td class="coverage">30x</td>
 </tr>
 <tr class="covered">
 <td class="num">45</td>
 <td class="src"><pre><code class="objc">        collectionView.isHidden = true</code></pre></td>
-<td class="coverage">23x</td>
+<td class="coverage">30x</td>
 </tr>
 <tr class="covered">
 <td class="num">46</td>
 <td class="src"><pre><code class="objc">        activityIndicator.startAnimating()</code></pre></td>
-<td class="coverage">23x</td>
+<td class="coverage">30x</td>
 </tr>
 <tr class="covered">
 <td class="num">47</td>
 <td class="src"><pre><code class="objc">        apiManager.characters(query: query) { characters in</code></pre></td>
-<td class="coverage">22x</td>
+<td class="coverage">29x</td>
 </tr>
 <tr class="covered">
 <td class="num">48</td>
 <td class="src"><pre><code class="objc">            self.activityIndicator.stopAnimating()</code></pre></td>
-<td class="coverage">22x</td>
+<td class="coverage">29x</td>
 </tr>
 <tr class="covered">
 <td class="num">49</td>
 <td class="src"><pre><code class="objc">            if let characters = characters {</code></pre></td>
-<td class="coverage">22x</td>
+<td class="coverage">29x</td>
 </tr>
 <tr class="covered">
 <td class="num">50</td>
 <td class="src"><pre><code class="objc">                self.setupTableView(with: characters)</code></pre></td>
-<td class="coverage">22x</td>
+<td class="coverage">29x</td>
 </tr>
 <tr class="covered">
 <td class="num">51</td>
 <td class="src"><pre><code class="objc">            }</code></pre></td>
-<td class="coverage">22x</td>
+<td class="coverage">29x</td>
 </tr>
 <tr class="covered">
 <td class="num">52</td>
 <td class="src"><pre><code class="objc">        }</code></pre></td>
-<td class="coverage">22x</td>
+<td class="coverage">29x</td>
 </tr>
 <tr class="covered">
 <td class="num">53</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">23x</td>
+<td class="coverage">30x</td>
 </tr>
 <tr class="never">
 <td class="num">54</td>
@@ -285,17 +285,17 @@
 <tr class="covered">
 <td class="num">55</td>
 <td class="src"><pre><code class="objc">    func setupSearchBar() {</code></pre></td>
-<td class="coverage">22x</td>
+<td class="coverage">29x</td>
 </tr>
 <tr class="covered">
 <td class="num">56</td>
 <td class="src"><pre><code class="objc">        self.searchBar.delegate = self</code></pre></td>
-<td class="coverage">22x</td>
+<td class="coverage">29x</td>
 </tr>
 <tr class="covered">
 <td class="num">57</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">22x</td>
+<td class="coverage">29x</td>
 </tr>
 <tr class="never">
 <td class="num">58</td>
@@ -305,37 +305,37 @@
 <tr class="covered">
 <td class="num">59</td>
 <td class="src"><pre><code class="objc">    func setupTableView(with characters: [Character]) {</code></pre></td>
-<td class="coverage">23x</td>
+<td class="coverage">30x</td>
 </tr>
 <tr class="covered">
 <td class="num">60</td>
 <td class="src"><pre><code class="objc">        self.characters = characters</code></pre></td>
-<td class="coverage">23x</td>
+<td class="coverage">30x</td>
 </tr>
 <tr class="covered">
 <td class="num">61</td>
 <td class="src"><pre><code class="objc">        tableView.isHidden = false</code></pre></td>
-<td class="coverage">23x</td>
+<td class="coverage">30x</td>
 </tr>
 <tr class="covered">
 <td class="num">62</td>
 <td class="src"><pre><code class="objc">        collectionView.isHidden = true</code></pre></td>
-<td class="coverage">23x</td>
+<td class="coverage">30x</td>
 </tr>
 <tr class="covered">
 <td class="num">63</td>
 <td class="src"><pre><code class="objc">        tableDelegate = CharactersTableDelegate(self)</code></pre></td>
-<td class="coverage">23x</td>
+<td class="coverage">30x</td>
 </tr>
 <tr class="covered">
 <td class="num">64</td>
 <td class="src"><pre><code class="objc">        tableDatasource = CharactersDatasource(items: characters, tableView: self.tableView, delegate: tableDelegate!)</code></pre></td>
-<td class="coverage">23x</td>
+<td class="coverage">30x</td>
 </tr>
 <tr class="covered">
 <td class="num">65</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">23x</td>
+<td class="coverage">30x</td>
 </tr>
 <tr class="never">
 <td class="num">66</td>
@@ -345,37 +345,37 @@
 <tr class="covered">
 <td class="num">67</td>
 <td class="src"><pre><code class="objc">    func setupCollectionView(with characters: [Character]) {</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">8x</td>
 </tr>
 <tr class="covered">
 <td class="num">68</td>
 <td class="src"><pre><code class="objc">        self.characters = characters</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">8x</td>
 </tr>
 <tr class="covered">
 <td class="num">69</td>
 <td class="src"><pre><code class="objc">        collectionView.isHidden = false</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">8x</td>
 </tr>
 <tr class="covered">
 <td class="num">70</td>
 <td class="src"><pre><code class="objc">        tableView.isHidden = true</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">8x</td>
 </tr>
 <tr class="covered">
 <td class="num">71</td>
 <td class="src"><pre><code class="objc">        collectionDelegate = CharactersCollectionDelegate(self)</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">8x</td>
 </tr>
 <tr class="covered">
 <td class="num">72</td>
 <td class="src"><pre><code class="objc">        collectionDatasource = CharactersCollectionDatasource(items: characters, collectionView: self.collectionView, delegate: collectionDelegate!)</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">8x</td>
 </tr>
 <tr class="covered">
 <td class="num">73</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">8x</td>
 </tr>
 <tr class="never">
 <td class="num">74</td>
@@ -395,17 +395,17 @@
 <tr class="covered">
 <td class="num">77</td>
 <td class="src"><pre><code class="objc">    @IBAction func showAsGrid(_ sender: UIButton) {</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">8x</td>
 </tr>
 <tr class="covered">
 <td class="num">78</td>
 <td class="src"><pre><code class="objc">        setupCollectionView(with: characters)</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">8x</td>
 </tr>
 <tr class="covered">
 <td class="num">79</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">8x</td>
 </tr>
 <tr class="never">
 <td class="num">80</td>

@@ -95,42 +95,42 @@
 <tr class="covered">
 <td class="num">17</td>
 <td class="src"><pre><code class="objc">    required init(items: [Character], tableView: UITableView, delegate: UITableViewDelegate) {</code></pre></td>
-<td class="coverage">23x</td>
+<td class="coverage">30x</td>
 </tr>
 <tr class="covered">
 <td class="num">18</td>
 <td class="src"><pre><code class="objc">        self.items = items</code></pre></td>
-<td class="coverage">23x</td>
+<td class="coverage">30x</td>
 </tr>
 <tr class="covered">
 <td class="num">19</td>
 <td class="src"><pre><code class="objc">        self.tableView = tableView</code></pre></td>
-<td class="coverage">23x</td>
+<td class="coverage">30x</td>
 </tr>
 <tr class="covered">
 <td class="num">20</td>
 <td class="src"><pre><code class="objc">        self.delegate = delegate</code></pre></td>
-<td class="coverage">23x</td>
+<td class="coverage">30x</td>
 </tr>
 <tr class="covered">
 <td class="num">21</td>
 <td class="src"><pre><code class="objc">        super.init()</code></pre></td>
-<td class="coverage">23x</td>
+<td class="coverage">30x</td>
 </tr>
 <tr class="covered">
 <td class="num">22</td>
 <td class="src"><pre><code class="objc">        tableView.register(cellType: CharacterTableCell.self)</code></pre></td>
-<td class="coverage">23x</td>
+<td class="coverage">30x</td>
 </tr>
 <tr class="covered">
 <td class="num">23</td>
 <td class="src"><pre><code class="objc">        self.setupTableView()</code></pre></td>
-<td class="coverage">23x</td>
+<td class="coverage">30x</td>
 </tr>
 <tr class="covered">
 <td class="num">24</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">23x</td>
+<td class="coverage">30x</td>
 </tr>
 <tr class="never">
 <td class="num">25</td>
@@ -145,17 +145,17 @@
 <tr class="covered">
 <td class="num">27</td>
 <td class="src"><pre><code class="objc">    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -&gt; Int {</code></pre></td>
-<td class="coverage">24x</td>
+<td class="coverage">31x</td>
 </tr>
 <tr class="covered">
 <td class="num">28</td>
 <td class="src"><pre><code class="objc">        return self.items.count</code></pre></td>
-<td class="coverage">24x</td>
+<td class="coverage">31x</td>
 </tr>
 <tr class="covered">
 <td class="num">29</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">24x</td>
+<td class="coverage">31x</td>
 </tr>
 <tr class="never">
 <td class="num">30</td>
@@ -225,17 +225,17 @@
 <tr class="covered">
 <td class="num">43</td>
 <td class="src"><pre><code class="objc">    init(_ delegate: CharactersDelegate) {</code></pre></td>
-<td class="coverage">24x</td>
+<td class="coverage">31x</td>
 </tr>
 <tr class="covered">
 <td class="num">44</td>
 <td class="src"><pre><code class="objc">        self.delegate = delegate</code></pre></td>
-<td class="coverage">24x</td>
+<td class="coverage">31x</td>
 </tr>
 <tr class="covered">
 <td class="num">45</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">24x</td>
+<td class="coverage">31x</td>
 </tr>
 <tr class="never">
 <td class="num">46</td>
@@ -245,17 +245,17 @@
 <tr class="covered">
 <td class="num">47</td>
 <td class="src"><pre><code class="objc">    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -&gt; CGFloat {</code></pre></td>
-<td class="coverage">26x</td>
+<td class="coverage">33x</td>
 </tr>
 <tr class="covered">
 <td class="num">48</td>
 <td class="src"><pre><code class="objc">        return CharacterTableCell.height()</code></pre></td>
-<td class="coverage">26x</td>
+<td class="coverage">33x</td>
 </tr>
 <tr class="covered">
 <td class="num">49</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">26x</td>
+<td class="coverage">33x</td>
 </tr>
 <tr class="never">
 <td class="num">50</td>

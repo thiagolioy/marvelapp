@@ -20,6 +20,8 @@
 		99C67AC21DEB007600FB1E68 /* CharacterViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C67AC11DEB007600FB1E68 /* CharacterViewControllerSpec.swift */; };
 		99C67AC51DEB032F00FB1E68 /* CharactersDatasourceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C67AC41DEB032F00FB1E68 /* CharactersDatasourceSpec.swift */; };
 		99C67AC71DEB06C100FB1E68 /* CharactersDelegateSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C67AC61DEB06C100FB1E68 /* CharactersDelegateSpec.swift */; };
+		99C67ACA1DEB0B3D00FB1E68 /* CharactersCollectionDatasourceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C67AC91DEB0B3D00FB1E68 /* CharactersCollectionDatasourceSpec.swift */; };
+		99C67ACC1DEB0CB800FB1E68 /* CharactersCollectionDelegateSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C67ACB1DEB0CB800FB1E68 /* CharactersCollectionDelegateSpec.swift */; };
 		99D0DEB21DE2598F00FE34D7 /* ItemsCollectionViewDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D0DEB11DE2598F00FE34D7 /* ItemsCollectionViewDatasource.swift */; };
 		99D0DEB41DE259F100FE34D7 /* CharacterCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D0DEB31DE259F100FE34D7 /* CharacterCollectionCell.swift */; };
 		99D0DEB61DE25AC900FE34D7 /* CharacterCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99D0DEB51DE25AC900FE34D7 /* CharacterCollectionCell.xib */; };
@@ -68,6 +70,8 @@
 		99C67AC11DEB007600FB1E68 /* CharacterViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterViewControllerSpec.swift; sourceTree = "<group>"; };
 		99C67AC41DEB032F00FB1E68 /* CharactersDatasourceSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharactersDatasourceSpec.swift; sourceTree = "<group>"; };
 		99C67AC61DEB06C100FB1E68 /* CharactersDelegateSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharactersDelegateSpec.swift; sourceTree = "<group>"; };
+		99C67AC91DEB0B3D00FB1E68 /* CharactersCollectionDatasourceSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharactersCollectionDatasourceSpec.swift; sourceTree = "<group>"; };
+		99C67ACB1DEB0CB800FB1E68 /* CharactersCollectionDelegateSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharactersCollectionDelegateSpec.swift; sourceTree = "<group>"; };
 		99D0DEB11DE2598F00FE34D7 /* ItemsCollectionViewDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsCollectionViewDatasource.swift; sourceTree = "<group>"; };
 		99D0DEB31DE259F100FE34D7 /* CharacterCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterCollectionCell.swift; sourceTree = "<group>"; };
 		99D0DEB51DE25AC900FE34D7 /* CharacterCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CharacterCollectionCell.xib; sourceTree = "<group>"; };
@@ -211,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				99C67AC41DEB032F00FB1E68 /* CharactersDatasourceSpec.swift */,
+				99C67AC91DEB0B3D00FB1E68 /* CharactersCollectionDatasourceSpec.swift */,
 			);
 			name = Datasources;
 			sourceTree = "<group>";
@@ -219,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				99C67AC61DEB06C100FB1E68 /* CharactersDelegateSpec.swift */,
+				99C67ACB1DEB0CB800FB1E68 /* CharactersCollectionDelegateSpec.swift */,
 			);
 			name = Delegates;
 			sourceTree = "<group>";
@@ -553,8 +559,10 @@
 				99C67AC71DEB06C100FB1E68 /* CharactersDelegateSpec.swift in Sources */,
 				999665411DEA242300E9A5BF /* CharacterSpec.swift in Sources */,
 				99C67AC21DEB007600FB1E68 /* CharacterViewControllerSpec.swift in Sources */,
+				99C67ACA1DEB0B3D00FB1E68 /* CharactersCollectionDatasourceSpec.swift in Sources */,
 				99EF5DB61DEA5CCD00B5569F /* ThumbImageSpec.swift in Sources */,
 				993AFDFF1DEA764200857C4F /* CharactersViewControllerSpec.swift in Sources */,
+				99C67ACC1DEB0CB800FB1E68 /* CharactersCollectionDelegateSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
