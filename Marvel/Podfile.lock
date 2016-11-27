@@ -41,6 +41,7 @@ DEPENDENCIES:
   - Moya-ObjectMapper/RxSwift (from `https://github.com/ivanbruel/Moya-ObjectMapper`)
   - Moya/RxSwift (~> 8.0.0-beta.1)
   - Nimble
+  - ObjectMapper
   - Quick
   - Reusable
   - RxSwift (~> 3.0.0-beta.2)
@@ -74,6 +75,6 @@ SPEC CHECKSUMS:
   RxSwift: af5680055c4ad04480189c52d28385b1029493a6
   SwiftGen: 5f69367fae99c11d52d1ab9d45dcf10a3e59b8ef
 
-PODFILE CHECKSUM: 9cd5ab91058af36f7ea3f646ed9e6701c072a267
+PODFILE CHECKSUM: 7fa7a26450aa340f66826ff7a56f82fa517e804f
 
 COCOAPODS: 1.1.1

@@ -29,7 +29,8 @@ target 'MarvelTests' do
   pod 'Quick'
   pod 'Nimble'
   pod 'Fakery'
-  
+  pod 'ObjectMapper'
+   
 end
 
 post_install do |installer|
