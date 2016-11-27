@@ -30,7 +30,12 @@ platform :ios do
       workspace: "Marvel.xcworkspace",
       scheme: "Marvel",
       proj: "Marvel.xcodeproj",
-      html: true
+      html: true,
+      ignore: [
+        "**/Storyboard.swift",
+        "**/MarvelAPI.swift",
+        "**/MarvelAPIManager.swift"
+      ]
     )
   end
 
