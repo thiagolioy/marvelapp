@@ -12,8 +12,8 @@ import ObjectMapper
 
 struct MockLoader {
     
-    private let data: Data
-    private let json: String
+    let data: Data
+    let json: String
     
     init?(file: String, withExtension fileExt: String = "json", in bundle:Bundle = Bundle.main) {
         guard let path = bundle.path(forResource: file, ofType: fileExt) else {
@@ -31,8 +31,9 @@ struct MockLoader {
             return nil
         }
     }
-    
-    
+}
+
+extension MockLoader {
     func map<T: Mappable>(to type: T.Type) -> T? {
         return Mapper<T>().map(JSONString: json)
     }

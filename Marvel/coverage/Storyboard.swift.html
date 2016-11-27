@@ -7,9 +7,9 @@
 <body>
 <header><div class="row"><a href="index.html"><img src="logo.jpg" alt="Slather logo"></a></div></header><div class="row"><div id="reports">
 <h2 class="cov_title">
-<span>Coverage for "Storyboard.swift" : </span><span class="cov_low">0.00%</span>
+<span>Coverage for "Storyboard.swift" : </span><span class="cov_low">26.32%</span>
 </h2>
-<h4 class="cov_subtitle">(0 of 38 relevant lines covered)</h4>
+<h4 class="cov_subtitle">(10 of 38 relevant lines covered)</h4>
 <h4 class="cov_filepath">Marvel/Resources/Storyboard.swift</h4>
 <table class="source_code">
 <tr class="never">
@@ -62,20 +62,20 @@
 <td class="src"><pre><code class="objc">extension StoryboardSceneType {</code></pre></td>
 <td class="coverage"></td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">11</td>
 <td class="src"><pre><code class="objc">  static func storyboard() -&gt; UIStoryboard {</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">10x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">12</td>
 <td class="src"><pre><code class="objc">    return UIStoryboard(name: self.storyboardName, bundle: nil)</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">10x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">13</td>
 <td class="src"><pre><code class="objc">  }</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">10x</td>
 </tr>
 <tr class="never">
 <td class="num">14</td>
@@ -127,20 +127,20 @@
 <td class="src"><pre><code class="objc">extension StoryboardSceneType where Self: RawRepresentable, Self.RawValue == String {</code></pre></td>
 <td class="coverage"></td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">24</td>
 <td class="src"><pre><code class="objc">  func viewController() -&gt; UIViewController {</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">9x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">25</td>
 <td class="src"><pre><code class="objc">    return Self.storyboard().instantiateViewController(withIdentifier: self.rawValue)</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">9x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">26</td>
 <td class="src"><pre><code class="objc">  }</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">9x</td>
 </tr>
 <tr class="missed">
 <td class="num">27</td>
@@ -257,10 +257,10 @@
 <td class="src"><pre><code class="objc"></code></pre></td>
 <td class="coverage"></td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">50</td>
 <td class="src"><pre><code class="objc">    static func initialViewController() -&gt; UINavigationController {</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">1x</td>
 </tr>
 <tr class="missed">
 <td class="num">51</td>
@@ -272,20 +272,20 @@
 <td class="src"><pre><code class="objc">        fatalError("Failed to instantiate initialViewController for \(self.storyboardName)")</code></pre></td>
 <td class="coverage">!</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">53</td>
 <td class="src"><pre><code class="objc">      }</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">1x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">54</td>
 <td class="src"><pre><code class="objc">      return vc</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">1x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">55</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">1x</td>
 </tr>
 <tr class="never">
 <td class="num">56</td>

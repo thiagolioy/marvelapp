@@ -86,10 +86,11 @@ extension MarvelAPIManager {
     }
 }
 
+protocol MarvelAPICalls {
+    func characters(query: String?, completion: @escaping ([Character]?) -> Void)
+}
 
-
-
-extension MarvelAPIManager {
+extension MarvelAPIManager: MarvelAPICalls {
     
     func characters(query: String? = nil, completion: @escaping ([Character]?) -> Void) {
         requestArray(.characters(query),

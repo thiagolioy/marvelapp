@@ -14,7 +14,7 @@ protocol CharactersDelegate {
 
 
 final class CharactersViewController: UIViewController {
-    let apiManager = MarvelAPIManager()
+    var apiManager: MarvelAPICalls = MarvelAPIManager()
     
     var tableDatasource: CharactersDatasource?
     var tableDelegate: CharactersTableDelegate?
@@ -100,7 +100,8 @@ extension CharactersViewController: CharactersDelegate {
 extension CharactersViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
-        if let query = searchBar.text {
+        let query = searchBar.text ?? ""
+        if !query.isEmpty {
             fetchCharacters(for: query)
         }
     }
