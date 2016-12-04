@@ -1,2 +1,7 @@
 language: objective-c
-script: fastlane test
+osx_image: xcode8
+
+cache: bundler
+
+script:
+  - fastlane test
