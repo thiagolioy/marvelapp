@@ -7,6 +7,7 @@ cache:
   - cocoapods
 
 before_install:
+- bundle install
 - bundle exec pod keys set MarvelApiKey $MARVEL_API_SECRET Marvel
 - bundle exec pod keys set MarvelPrivateKey $MARVEL_API_PUBLIC Marvel
 script:
