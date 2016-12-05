@@ -2,11 +2,13 @@ language: objective-c
 osx_image: xcode8
 rvm:
   - 2.3.0
-cache: bundler
+cache:
+  - bundler
+  - cocoapods
 
-before:
+before_install:
 - bundle exec pod keys set MarvelApiKey $MARVEL_API_SECRET Marvel
-- bundle exec pod keys set MarvelPrivateKey $MARVEL_API_PUBLIC
+- bundle exec pod keys set MarvelPrivateKey $MARVEL_API_PUBLIC Marvel
 script:
 - fastlane test
 env:
