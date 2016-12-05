@@ -1,19 +1,22 @@
 language: objective-c
 osx_image: xcode8.1
 rvm:
-- 2.3.0
+  - 2.3.1
+
 cache:
 - bundler
 - cocoapods
+
 before_install:
 - bundle install
 - bundle exec pod keys set MarvelApiKey $MARVEL_API_SECRET Marvel
 - bundle exec pod keys set MarvelPrivateKey $MARVEL_API_PUBLIC Marvel
 - pod repo update
-before_script:
-- bundle exec danger
+
 script:
 - fastlane test
+- bundle exec danger
+
 env:
   global:
   - secure: QX+NXdMPrBjCJwL6x3VmBLfsIOWlPdRhfoHd1TQFkyzKMfoeK6bhVRGgxZswdLh4fMBFST5+oVdswlh5oUlsGKtrU4IA24vaA7C2JEAi4HZrTS0dYjn+yTnoIgDUANzwER9kp40XwdgquIE2gzeLAOHFiNqtVnviR1jc65PnywUJWwu1qLMk+auQVzgI9PfARnjAhNEAE21LH10/ekfqO3pvxsKqo1o0O2JVlq1oDsWgYeRs9UT/8YXvaKDJKSGSL3wSj9W9IhHrFv4aoBN+2RHcznbKwatX/jL0WxuIxRT4to4P+rkMR3Jsvu2qQVPwaebiNmIMJ1WGy/B2ea/tf0hv3gl3+sFZKGMMYOtaUhGqfqy/UTA7zvFNtqko72kwkuZqHaK1XLPazzWyTaP8P8NEf69eyDg3NHdimkZXtrLpBJD5t2oR7aOmi6RoJ/8J9BOw9e0pIYuaVLz3XI7SvqUezxIfPqa+HqKwuIapqF/6dJo0Pq091lnumUFOBflocIuRXL56UXsohAyi7rslxUnNp623mqGeWwJ/q1upCeW60y2hN0ctr5Gza1qHjnUmc/KUWtdcM00VVumXFBPmyPqpzR2p6nsU3KKMx2CgO5JpIQejFdR6zz9HLUEdKKwoS9xS0zSZEaGAYZQ25SZkTJ0+QqG/rPbAFhj3kS7ALqc=
