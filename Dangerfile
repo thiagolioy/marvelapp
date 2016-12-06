@@ -13,13 +13,13 @@ fail("fdescribe left in tests") if `grep -r fdescribe specs/ `.length > 1
 fail("fit left in tests") if `grep -r fit specs/ `.length > 1
 
 # Slater confi
-slather.configure("Marvel.xcodeproj", "Marvel", options: {
-  workspace: 'Marvel.xcworkspace',
-  ignore_list: [
-    "**/Storyboard.swift",
-    "**/MarvelAPI.swift",
-    "**/MarvelAPIManager.swift"
-  ],
-  ci_service: :travis,
-  coverage_service: :terminal,
-})
+# slather.configure("Marvel.xcodeproj", "Marvel", options: {
+#   workspace: 'Marvel.xcworkspace',
+#   ignore_list: [
+#     "**/Storyboard.swift",
+#     "**/MarvelAPI.swift",
+#     "**/MarvelAPIManager.swift"
+#   ],
+#   ci_service: :travis,
+#   coverage_service: :terminal,
+# })
