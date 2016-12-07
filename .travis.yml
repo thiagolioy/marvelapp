@@ -14,7 +14,7 @@ before_install:
 - pod repo update
 
 script:
-# - fastlane test
+- fastlane test
 - bundle exec danger
 
 env:
