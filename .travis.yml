@@ -1,12 +1,9 @@
 language: objective-c
 osx_image: xcode8.1
-rvm:
-- 2.3.1
 cache:
 - bundler
 - cocoapods
 before_install:
-- rvm use system
 - bundle install
 - bundle exec pod keys set MarvelApiKey $MARVEL_API_SECRET Marvel
 - bundle exec pod keys set MarvelPrivateKey $MARVEL_API_PUBLIC Marvel
