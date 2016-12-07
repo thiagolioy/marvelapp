@@ -8,19 +8,24 @@ warn("PR is classed as Work in Progress") if github.pr_title.include? "[WIP]"
 # Warn when there is a big PR
 warn("Big PR") if git.lines_of_code > 500
 
-warn("Readme change") if github.pr_title.include? "README"
+message("Test Comment on PR")
 # Don't let testing shortcuts get into master by accident
 # fail("fdescribe left in tests") if `grep -r fdescribe specs/ `.length > 1
 # fail("fit left in tests") if `grep -r fit specs/ `.length > 1
 
-# Slater confi
-# slather.configure("Marvel.xcodeproj", "Marvel", options: {
-#   workspace: 'Marvel.xcworkspace',
-#   ignore_list: [
-#     "**/Storyboard.swift",
-#     "**/MarvelAPI.swift",
-#     "**/MarvelAPIManager.swift"
-#   ],
-#   ci_service: :travis,
-#   coverage_service: :terminal,
-# })
+# Slater config
+slather.configure("Marvel.xcodeproj", "Marvel", options: {
+  workspace: 'Marvel.xcworkspace',
+  output_directory: "coverage",
+  ignore_list: [
+    "**/Storyboard.swift",
+    "**/MarvelAPI.swift",
+    "**/MarvelAPIManager.swift"
+  ],
+  ci_service: :travis,
+  coverage_service: :terminal,
+})
+
+slather.notify_if_coverage_is_less_than(minimum_coverage: 80)
+slather.notify_if_modified_file_is_less_than(minimum_coverage: 60)
+slather.show_coverage

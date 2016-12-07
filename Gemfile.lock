@@ -79,6 +79,11 @@ GEM
       kramdown (~> 1.5)
       octokit (~> 4.2)
       terminal-table (~> 1)
+    danger-plugin-api (1.0.0)
+      danger (> 2.0)
+    danger-slather (0.0.6)
+      danger-plugin-api (~> 1.0)
+      slather (~> 2.3)
     deliver (1.16.1)
       credentials_manager (>= 0.16.2, < 1.0.0)
       fastimage (~> 1.6)
@@ -327,6 +332,7 @@ DEPENDENCIES
   cocoapods (= 1.1.1)
   cocoapods-keys (= 1.7.0)
   danger
+  danger-slather
   fastlane (= 1.110.0)
   slather (= 2.3.0)
 
