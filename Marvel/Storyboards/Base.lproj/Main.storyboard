@@ -6,10 +6,11 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Characters View Controller-->
+        <!--Characters-->
         <scene sceneID="w3P-uW-srD">
             <objects>
                 <viewController storyboardIdentifier="CharactersViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7wy-Hx-css" customClass="CharactersViewController" customModule="Marvel" customModuleProvider="target" sceneMemberID="viewController">
@@ -26,32 +27,11 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="sAP-aP-xrl"/>
                                 </constraints>
+                                <color key="barTintColor" red="0.25098039215686274" green="0.24705882352941178" blue="0.29803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="wiw-xD-01X">
-                                <rect key="frame" x="0.0" y="108" width="375" height="50"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IA8-bt-I2O">
-                                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="50"/>
-                                        <state key="normal" title="Grid"/>
-                                        <connections>
-                                            <action selector="showAsGrid:" destination="7wy-Hx-css" eventType="touchUpInside" id="u04-vY-GIm"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cVJ-r5-G5d">
-                                        <rect key="frame" x="187.5" y="0.0" width="187.5" height="50"/>
-                                        <state key="normal" title="List"/>
-                                        <connections>
-                                            <action selector="showAsTable:" destination="7wy-Hx-css" eventType="touchUpInside" id="zXL-er-OSM"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="Uir-kX-ZGK"/>
-                                </constraints>
-                            </stackView>
                             <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ZU2-Kk-0z9">
-                                <rect key="frame" x="0.0" y="159" width="375" height="508"/>
+                                <rect key="frame" x="0.0" y="108" width="375" height="559"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ohz-7M-pKz">
                                     <size key="itemSize" width="50" height="50"/>
@@ -71,16 +51,9 @@
                                 </cells>
                             </collectionView>
                             <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ixD-Lv-jLy">
-                                <rect key="frame" x="0.0" y="159" width="375" height="508"/>
+                                <rect key="frame" x="0.0" y="108" width="375" height="559"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t8x-qh-T2c" userLabel="SeparatorView">
-                                <rect key="frame" x="0.0" y="158" width="375" height="1"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="1" id="RIU-jE-FNB"/>
-                                </constraints>
-                            </view>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="zfM-hz-I4n">
                                 <rect key="frame" x="0.0" y="323" width="375" height="20"/>
                                 <constraints>
@@ -93,26 +66,35 @@
                         <constraints>
                             <constraint firstItem="zfM-hz-I4n" firstAttribute="centerX" secondItem="d7s-Jc-H7P" secondAttribute="centerX" id="0K0-EX-45Y"/>
                             <constraint firstItem="FSe-Lr-fZW" firstAttribute="leading" secondItem="d7s-Jc-H7P" secondAttribute="leading" id="0sL-Bt-xb1"/>
+                            <constraint firstItem="ixD-Lv-jLy" firstAttribute="top" secondItem="FSe-Lr-fZW" secondAttribute="bottom" id="3Eg-ka-cn5"/>
                             <constraint firstAttribute="trailing" secondItem="ixD-Lv-jLy" secondAttribute="trailing" id="AkI-CR-926"/>
-                            <constraint firstAttribute="trailing" secondItem="wiw-xD-01X" secondAttribute="trailing" id="HAJ-oe-3xt"/>
-                            <constraint firstAttribute="trailing" secondItem="t8x-qh-T2c" secondAttribute="trailing" id="QOV-0v-SqD"/>
-                            <constraint firstItem="wiw-xD-01X" firstAttribute="top" secondItem="FSe-Lr-fZW" secondAttribute="bottom" id="RUa-QX-Nk7"/>
-                            <constraint firstItem="ZU2-Kk-0z9" firstAttribute="top" secondItem="wiw-xD-01X" secondAttribute="bottom" constant="1" id="S0V-wE-Vxe"/>
+                            <constraint firstItem="ZU2-Kk-0z9" firstAttribute="top" secondItem="FSe-Lr-fZW" secondAttribute="bottom" id="KE5-2g-tGe"/>
                             <constraint firstItem="71u-47-5CQ" firstAttribute="top" secondItem="ZU2-Kk-0z9" secondAttribute="bottom" id="St3-3s-cMG"/>
                             <constraint firstItem="FSe-Lr-fZW" firstAttribute="top" secondItem="zib-5N-qOv" secondAttribute="bottom" id="W4r-Bz-5Tp"/>
                             <constraint firstAttribute="trailing" secondItem="ZU2-Kk-0z9" secondAttribute="trailing" id="Y0I-J8-uJ8"/>
                             <constraint firstItem="71u-47-5CQ" firstAttribute="top" secondItem="ixD-Lv-jLy" secondAttribute="bottom" id="Y3M-Dh-lAx"/>
-                            <constraint firstItem="wiw-xD-01X" firstAttribute="leading" secondItem="d7s-Jc-H7P" secondAttribute="leading" id="ZQz-2u-DdC"/>
                             <constraint firstAttribute="trailing" secondItem="FSe-Lr-fZW" secondAttribute="trailing" id="aHi-LQ-Fbl"/>
-                            <constraint firstItem="ixD-Lv-jLy" firstAttribute="top" secondItem="t8x-qh-T2c" secondAttribute="bottom" id="e4o-Xx-IkN"/>
-                            <constraint firstItem="t8x-qh-T2c" firstAttribute="top" secondItem="wiw-xD-01X" secondAttribute="bottom" id="h0r-Pg-j2R"/>
                             <constraint firstItem="ixD-Lv-jLy" firstAttribute="leading" secondItem="d7s-Jc-H7P" secondAttribute="leading" id="k79-IR-91p"/>
-                            <constraint firstItem="t8x-qh-T2c" firstAttribute="leading" secondItem="d7s-Jc-H7P" secondAttribute="leading" id="sOV-t9-iZJ"/>
                             <constraint firstItem="ZU2-Kk-0z9" firstAttribute="leading" secondItem="d7s-Jc-H7P" secondAttribute="leading" id="tMj-Nk-9QW"/>
                             <constraint firstItem="zfM-hz-I4n" firstAttribute="centerY" secondItem="d7s-Jc-H7P" secondAttribute="centerY" id="uek-EN-JmA"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="edj-2g-NMS"/>
+                    <navigationItem key="navigationItem" title="Characters" id="edj-2g-NMS">
+                        <rightBarButtonItems>
+                            <barButtonItem image="Grid Icon" id="B43-Zz-GvA">
+                                <color key="tintColor" red="1" green="0.98823529409999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="showAsGrid:" destination="7wy-Hx-css" id="Rqd-05-Hbo"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="List Icon" id="qeA-Rs-8CW">
+                                <color key="tintColor" red="1" green="0.98823529409999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="showAsTable:" destination="7wy-Hx-css" id="tbZ-cn-bKk"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
                     <connections>
                         <outlet property="activityIndicator" destination="zfM-hz-I4n" id="vDV-1q-1jQ"/>
                         <outlet property="collectionView" destination="ZU2-Kk-0z9" id="Ybi-UC-10S"/>
@@ -189,9 +171,10 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Z0N-wd-fHj" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="d5w-FI-Zdg">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="d5w-FI-Zdg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.90980392160000001" green="0.1450980392" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -203,4 +186,8 @@
             <point key="canvasLocation" x="76" y="98.50074962518741"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Grid Icon" width="18" height="18"/>
+        <image name="List Icon" width="22" height="22"/>
+    </resources>
 </document>
