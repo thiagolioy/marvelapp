@@ -80,6 +80,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Characters" id="edj-2g-NMS">
+                        <barButtonItem key="backBarButtonItem" title=" " id="9nk-oM-bJT"/>
                         <rightBarButtonItems>
                             <barButtonItem image="Grid Icon" id="B43-Zz-GvA">
                                 <color key="tintColor" red="1" green="0.98823529409999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
