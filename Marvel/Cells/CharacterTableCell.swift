@@ -11,6 +11,7 @@ import Reusable
 
 final class CharacterTableCell: UITableViewCell, NibReusable {
     @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var characterDescription: UILabel!
     @IBOutlet weak var thumb: UIImageView!
     
     static func height() -> CGFloat {
@@ -19,6 +20,7 @@ final class CharacterTableCell: UITableViewCell, NibReusable {
     
     func setup(item: Character) {
         name.text = item.name
+        characterDescription.text = item.bio.isEmpty ? "No description" : item.bio
         thumb.download(image: item.thumImage?.fullPath() ?? "")
     }
 }

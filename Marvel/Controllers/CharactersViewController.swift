@@ -24,6 +24,8 @@ final class CharactersViewController: UIViewController {
     
     var characters: [Character] = []
     
+    var showingAsList = true
+    
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var tableView: UITableView!
@@ -47,7 +49,11 @@ extension CharactersViewController {
         apiManager.characters(query: query) { characters in
             self.activityIndicator.stopAnimating()
             if let characters = characters {
-                self.setupTableView(with: characters)
+                if self.showingAsList {
+                    self.setupTableView(with: characters)
+                } else {
+                    self.setupCollectionView(with: characters)
+                }
             }
         }
     }
@@ -58,6 +64,7 @@ extension CharactersViewController {
     
     func setupTableView(with characters: [Character]) {
         self.characters = characters
+        showingAsList = true
         tableView.isHidden = false
         collectionView.isHidden = true
         tableDelegate = CharactersTableDelegate(self)
@@ -66,6 +73,7 @@ extension CharactersViewController {
     
     func setupCollectionView(with characters: [Character]) {
         self.characters = characters
+        showingAsList = false
         collectionView.isHidden = false
         tableView.isHidden = true
         collectionDelegate = CharactersCollectionDelegate(self)

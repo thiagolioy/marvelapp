@@ -12,6 +12,7 @@ import ObjectMapper
 struct Character {
     var id: Int = 0
     var name: String = ""
+    var bio: String = ""
     var thumImage: ThumbImage?
 }
 
@@ -23,6 +24,7 @@ extension Character: Mappable {
     mutating func mapping(map: Map) {
         id    <- map["id"]
         name    <- map["name"]
+        bio     <- map["description"]
         thumImage    <- map["thumbnail"]
     }
 }
