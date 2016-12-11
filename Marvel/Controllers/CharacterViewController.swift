@@ -30,7 +30,9 @@ extension CharacterViewController {
 
 extension CharacterViewController {
     func setupView() {
-        characterDescription.text = character?.bio ?? ""
+        let bio = character?.bio ?? ""
+        characterDescription.text = bio.isEmpty ? "No description" : bio
+        
         image.download(image: character?.thumImage?.fullPath() ?? "")
     }
 }

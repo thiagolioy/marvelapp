@@ -16,6 +16,7 @@ struct Character {
     var thumImage: ThumbImage?
 }
 
+
 extension Character: Mappable {
     init?(map: Map) {
         
