@@ -21,7 +21,7 @@ fileprivate struct MarvelAPIConfig {
 }
 
 enum MarvelAPI {
-    case characters(String?)
+    case characters(String?, Int?)
     case character(String)
 }
 
@@ -55,11 +55,17 @@ extension MarvelAPI: TargetType {
         
         switch self {
         
-        case .characters(let query):
+        case .characters(let query, let skip):
             if let query = query {
                 return $.merge(authParameters(),
                                ["nameStartsWith": query])
             }
+            
+            if let skip = skip {
+                return $.merge(authParameters(),
+                               ["offset": skip])
+            }
+            
             return authParameters()
             
         case .character(let characterId):
