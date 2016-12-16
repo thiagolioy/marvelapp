@@ -153,7 +153,6 @@
 			children = (
 				9922F1591DFDC00900237BFE /* ApperanceProxyHelper.swift */,
 			);
-			name = Apperance;
 			path = Apperance;
 			sourceTree = "<group>";
 		};
@@ -219,7 +218,6 @@
 				99C67AC11DEB007600FB1E68 /* CharacterViewControllerSpec.swift */,
 				993AFDFE1DEA764200857C4F /* CharactersViewControllerSpec.swift */,
 			);
-			name = Controllers;
 			path = Controllers;
 			sourceTree = "<group>";
 		};
@@ -228,7 +226,6 @@
 			children = (
 				9976B4F71DEA43F200D2D3C4 /* MockLoader.swift */,
 			);
-			name = TestHelpers;
 			path = TestHelpers;
 			sourceTree = "<group>";
 		};
@@ -267,7 +264,6 @@
 				99C67AC91DEB0B3D00FB1E68 /* CharactersCollectionDatasourceSpec.swift */,
 				99C67AC41DEB032F00FB1E68 /* CharactersDatasourceSpec.swift */,
 			);
-			name = Datasources;
 			path = Datasources;
 			sourceTree = "<group>";
 		};
@@ -277,7 +273,6 @@
 				99C67ACB1DEB0CB800FB1E68 /* CharactersCollectionDelegateSpec.swift */,
 				99C67AC61DEB06C100FB1E68 /* CharactersDelegateSpec.swift */,
 			);
-			name = Delegates;
 			path = Delegates;
 			sourceTree = "<group>";
 		};
@@ -286,7 +281,6 @@
 			children = (
 				99D0DEB91DE268D000FE34D7 /* UIImageView+Kingfisher.swift */,
 			);
-			name = Extensions;
 			path = Extensions;
 			sourceTree = "<group>";
 		};
@@ -333,7 +327,6 @@
 				999665401DEA242300E9A5BF /* CharacterSpec.swift */,
 				99EF5DB51DEA5CCD00B5569F /* ThumbImageSpec.swift */,
 			);
-			name = Models;
 			path = Models;
 			sourceTree = "<group>";
 		};
@@ -343,7 +336,6 @@
 				99F8870F1DEA3EA00044E3B0 /* character.json */,
 				99F8870D1DEA3E6D0044E3B0 /* characters_response.json */,
 			);
-			name = Mocks;
 			path = Mocks;
 			sourceTree = "<group>";
 		};
@@ -389,7 +381,6 @@
 				BA07F9FB1E03189F00FFADDE /* PortraitSectionController.swift */,
 				BA07FA051E0323C100FFADDE /* SearchSectionController.swift */,
 			);
-			name = "Section Controllers";
 			path = "Section Controllers";
 			sourceTree = "<group>";
 		};
@@ -456,7 +447,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0810;
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Thiago Lioy";
 				TargetAttributes = {
 					999665351DEA236300E9A5BF = {
@@ -713,6 +704,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BF2D032F8BA77A47BCBA607A /* Pods-MarvelTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = 6UM2WYVE6K;
 				INFOPLIST_FILE = MarvelTests/Info.plist;
@@ -728,6 +720,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E54675F9B824A595E2F0D533 /* Pods-MarvelTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = 6UM2WYVE6K;
 				INFOPLIST_FILE = MarvelTests/Info.plist;
@@ -757,6 +750,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -807,6 +801,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -836,6 +831,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 46E32511C8C4E886533F9B7E /* Pods-Marvel.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 6UM2WYVE6K;
 				INFOPLIST_FILE = Marvel/Resources/Info.plist;
@@ -851,6 +847,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8289D5AF9F3BDEDBC4EE6E82 /* Pods-Marvel.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 6UM2WYVE6K;
 				INFOPLIST_FILE = Marvel/Resources/Info.plist;
