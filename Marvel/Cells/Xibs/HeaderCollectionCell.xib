@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HeaderCollectionCell" id="gTV-IL-0wX" customClass="HeaderCollectionCell" customModule="Marvel" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LKt-xJ-5JI">
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="kET-p7-ih4"/>
+                            <constraint firstAttribute="width" constant="40" id="x6D-mi-FEr"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="20"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spider-man" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ac-aC-9G0">
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="Cza-bL-xuJ"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="8Ac-aC-9G0" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="15" id="6Vu-CG-pDe"/>
+                <constraint firstAttribute="trailing" secondItem="8Ac-aC-9G0" secondAttribute="trailing" constant="8" id="9en-Z5-IEW"/>
+                <constraint firstItem="LKt-xJ-5JI" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="Emv-Gv-cs4"/>
+                <constraint firstItem="8Ac-aC-9G0" firstAttribute="leading" secondItem="LKt-xJ-5JI" secondAttribute="trailing" constant="9" id="QrB-ke-dIy"/>
+                <constraint firstItem="LKt-xJ-5JI" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="Tge-Qg-F0E"/>
+                <constraint firstAttribute="bottom" secondItem="8Ac-aC-9G0" secondAttribute="bottom" constant="14" id="Wqb-S3-AFg"/>
+                <constraint firstAttribute="bottom" secondItem="LKt-xJ-5JI" secondAttribute="bottom" constant="5" id="nk9-HS-mXV"/>
+            </constraints>
+            <connections>
+                <outlet property="name" destination="8Ac-aC-9G0" id="TQZ-hD-LQv"/>
+                <outlet property="picture" destination="LKt-xJ-5JI" id="kjN-Rd-RYZ"/>
+            </connections>
+            <point key="canvasLocation" x="33.5" y="83"/>
+        </collectionViewCell>
+    </objects>
+</document>
