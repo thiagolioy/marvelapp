@@ -15,15 +15,6 @@ import UIKit
 final class CharacterTableCell: UITableViewCell {
     var characterCell = CharacterCell()
     
-    
-    static func register(in tableView: UITableView) {
-        tableView.register(CharacterTableCell.self, forCellReuseIdentifier: CharacterTableCell.reusableIdentifier())
-    }
-    
-    static func reusableIdentifier() -> String {
-        return "CharacterTableCell"
-    }
-    
     static func height() -> CGFloat {
         return 80
     }
@@ -45,6 +36,9 @@ final class CharacterTableCell: UITableViewCell {
         characterCell.bio.text = item.bio.isEmpty ? "No description" : item.bio
         characterCell.imageThumb.download(image: item.thumImage?.fullPath() ?? "")
     }
+}
+
+extension CharacterTableCell: Reusable {
 }
 
 extension CharacterTableCell: ViewConfiguration {
