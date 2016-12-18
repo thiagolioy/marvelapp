@@ -9,9 +9,8 @@
 import UIKit
 import Reusable
 
-final class CharacterCollectionCell: UICollectionViewCell, NibReusable {
-    @IBOutlet weak var name: UILabel!
-    @IBOutlet weak var thumb: UIImageView!
+final class CharacterCollectionCell: UICollectionViewCell{
+    let gridView = CharacterGridView()
     
     
     static func size(for parentWidth: CGFloat) -> CGSize {
@@ -20,8 +19,40 @@ final class CharacterCollectionCell: UICollectionViewCell, NibReusable {
         return CGSize(width: width, height: width)
     }
     
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        buildViewHierarchy()
+        setupConstraints()
+        configureViews()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     func setup(item: Character) {
-        name.text = item.name
-        thumb.download(image: item.thumImage?.fullPath() ?? "")
+        gridView.name.text = item.name
+        gridView.image.download(image: item.thumImage?.fullPath() ?? "")
+    }
+}
+
+extension CharacterCollectionCell: Reusable {}
+
+extension CharacterCollectionCell: ViewConfiguration {
+    func setupConstraints() {
+        gridView.snp.makeConstraints { make in
+            make.top.equalTo(self.contentView)
+            make.left.equalTo(self.contentView)
+            make.right.equalTo(self.contentView)
+            make.bottom.equalTo(self.contentView)
+        }
+    }
+    
+    func buildViewHierarchy() {
+        self.contentView.addSubview(gridView)
+    }
+    
+    func configureViews() {
+        
     }
 }
