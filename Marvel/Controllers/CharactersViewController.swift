@@ -24,30 +24,49 @@ final class CharactersViewController: UIViewController {
     
     var characters: [Character] = []
     
-    var showingAsList = true
+    var showingAsList = false
     
-    @IBOutlet weak var searchBar: UISearchBar!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var collectionView: UICollectionView!
+    let containerView = CharactersContainerView()
     
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 }
 
 extension CharactersViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupNavigationItem()
         setupSearchBar()
         fetchCharacters()
+    }
+    
+    override func loadView() {
+        self.view = containerView
     }
 }
 
 extension CharactersViewController {
+    func setupNavigationItem() {
+        self.navigationItem.title = "Characters"
+        
+        let listButton = UIBarButtonItem(image: UIImage(named: "List Icon"), style: .plain, target: self, action: #selector(showAsTable(_:)))
+        
+        let gridButton = UIBarButtonItem(image: UIImage(named: "Grid Icon"), style: .plain, target: self, action: #selector(showAsGrid(_:)))
+        
+        self.navigationItem.rightBarButtonItems = [gridButton, listButton]
+    }
+    
     func fetchCharacters(for query: String? = nil) {
-        tableView.isHidden = true
-        collectionView.isHidden = true
-        activityIndicator.startAnimating()
+        containerView.charactersTable.isHidden = true
+        containerView.charactersCollection.isHidden = true
+        containerView.activityIndicator.startAnimating()
         apiManager.characters(query: query) { characters in
-            self.activityIndicator.stopAnimating()
+            self.containerView.activityIndicator.stopAnimating()
             if let characters = characters {
                 if self.showingAsList {
                     self.setupTableView(with: characters)
@@ -59,25 +78,25 @@ extension CharactersViewController {
     }
     
     func setupSearchBar() {
-        self.searchBar.delegate = self
+        self.containerView.searchBar.delegate = self
     }
     
     func setupTableView(with characters: [Character]) {
         self.characters = characters
         showingAsList = true
-        tableView.isHidden = false
-        collectionView.isHidden = true
+        containerView.charactersTable.isHidden = false
+        containerView.charactersCollection.isHidden = true
         tableDelegate = CharactersTableDelegate(self)
-        tableDatasource = CharactersDatasource(items: characters, tableView: self.tableView, delegate: tableDelegate!)
+        tableDatasource = CharactersDatasource(items: characters, tableView: containerView.charactersTable.tableView, delegate: tableDelegate!)
     }
     
     func setupCollectionView(with characters: [Character]) {
         self.characters = characters
         showingAsList = false
-        collectionView.isHidden = false
-        tableView.isHidden = true
+        containerView.charactersCollection.isHidden = false
+        containerView.charactersTable.isHidden = true
         collectionDelegate = CharactersCollectionDelegate(self)
-        collectionDatasource = CharactersCollectionDatasource(items: characters, collectionView: self.collectionView, delegate: collectionDelegate!)
+        collectionDatasource = CharactersCollectionDatasource(items: characters, collectionView: containerView.charactersCollection.collectionView, delegate: collectionDelegate!)
     }
 }
 
@@ -93,7 +112,7 @@ extension CharactersViewController {
 
 extension CharactersViewController: CharactersDelegate {
     func didSelectCharacter(at index: IndexPath) {
-        searchBar.resignFirstResponder()
+        containerView.searchBar.resignFirstResponder()
         let nextController = CharacterViewController()
         let character = characters[index.row]
         nextController.character = character

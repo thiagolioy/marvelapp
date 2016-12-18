@@ -24,7 +24,7 @@ final class CharacterGridView: UIView {
     var containerView: UIView = {
         let lb = UIView(frame: .zero)
         lb.backgroundColor = ColorPalette.black
-        lb.alpha = CGFloat(0.7)
+        lb.alpha = CGFloat(0.8)
         return lb
     }()
     
