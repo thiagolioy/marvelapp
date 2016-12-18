@@ -12,6 +12,9 @@ protocol CharactersDelegate {
     func didSelectCharacter(at index: IndexPath)
 }
 
+fileprivate enum PresentationState {
+    case table, collection
+}
 
 final class CharactersViewController: UIViewController {
     var apiManager: MarvelAPICalls = MarvelAPIManager()
@@ -24,9 +27,10 @@ final class CharactersViewController: UIViewController {
     
     var characters: [Character] = []
     
-    var showingAsList = false
+    fileprivate var currentPresentationState = PresentationState.table
     
     let containerView = CharactersContainerView()
+    
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -68,7 +72,7 @@ extension CharactersViewController {
         apiManager.characters(query: query) { characters in
             self.containerView.activityIndicator.stopAnimating()
             if let characters = characters {
-                if self.showingAsList {
+                if self.currentPresentationState == .table {
                     self.setupTableView(with: characters)
                 } else {
                     self.setupCollectionView(with: characters)
@@ -81,20 +85,30 @@ extension CharactersViewController {
         self.containerView.searchBar.delegate = self
     }
     
+    fileprivate func setPresentationState(to state: PresentationState) {
+        currentPresentationState = state
+        switch state {
+        case .collection:
+            containerView.charactersTable.isHidden = true
+            containerView.charactersCollection.isHidden = false
+        case .table:
+            containerView.charactersTable.isHidden = false
+            containerView.charactersCollection.isHidden = true
+        }
+    }
+    
     func setupTableView(with characters: [Character]) {
         self.characters = characters
-        showingAsList = true
-        containerView.charactersTable.isHidden = false
-        containerView.charactersCollection.isHidden = true
+        setPresentationState(to: .table)
+        
         tableDelegate = CharactersTableDelegate(self)
         tableDatasource = CharactersDatasource(items: characters, tableView: containerView.charactersTable.tableView, delegate: tableDelegate!)
     }
     
     func setupCollectionView(with characters: [Character]) {
         self.characters = characters
-        showingAsList = false
-        containerView.charactersCollection.isHidden = false
-        containerView.charactersTable.isHidden = true
+        setPresentationState(to: .collection)
+        
         collectionDelegate = CharactersCollectionDelegate(self)
         collectionDatasource = CharactersCollectionDatasource(items: characters, collectionView: containerView.charactersCollection.collectionView, delegate: collectionDelegate!)
     }
