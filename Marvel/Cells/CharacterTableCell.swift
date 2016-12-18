@@ -13,7 +13,7 @@ import Reusable
 import UIKit
 
 final class CharacterTableCell: UITableViewCell {
-    var characterCell = CharacterCell()
+    var characterRow = CharacterRowView()
     
     static func height() -> CGFloat {
         return 80
@@ -32,9 +32,9 @@ final class CharacterTableCell: UITableViewCell {
     
     
     func setup(item: Character) {
-        characterCell.name.text = item.name
-        characterCell.bio.text = item.bio.isEmpty ? "No description" : item.bio
-        characterCell.imageThumb.download(image: item.thumImage?.fullPath() ?? "")
+        characterRow.name.text = item.name
+        characterRow.bio.text = item.bio.isEmpty ? "No description" : item.bio
+        characterRow.imageThumb.download(image: item.thumImage?.fullPath() ?? "")
     }
 }
 
@@ -43,7 +43,7 @@ extension CharacterTableCell: Reusable {
 
 extension CharacterTableCell: ViewConfiguration {
     func setupConstraints() {
-        characterCell.snp.makeConstraints { make in
+        characterRow.snp.makeConstraints { make in
             make.top.equalTo(self)
             make.left.equalTo(self)
             make.right.equalTo(self)
@@ -52,7 +52,7 @@ extension CharacterTableCell: ViewConfiguration {
     }
     
     func buildViewHierarchy() {
-        self.contentView.addSubview(characterCell)
+        self.contentView.addSubview(characterRow)
     }
     
     func configureViews() {

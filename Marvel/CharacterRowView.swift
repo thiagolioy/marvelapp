@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 
-final class CharacterCell: UIView {
+final class CharacterRowView: UIView {
     
     var imageThumb: UIImageView = {
         let img = UIImageView(frame: .zero)
@@ -41,7 +41,7 @@ final class CharacterCell: UIView {
     }
 }
 
-extension CharacterCell: ViewConfiguration {
+extension CharacterRowView: ViewConfiguration {
     func setupConstraints() {
         imageThumb.snp.makeConstraints { make in
             make.top.equalTo(self)
