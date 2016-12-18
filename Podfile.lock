@@ -30,6 +30,7 @@ PODS:
   - Reusable/Storyboard (3.0.0)
   - Reusable/View (3.0.0)
   - RxSwift (3.0.1)
+  - SnapKit (3.0.2)
   - SwiftGen (3.0.1)
 
 DEPENDENCIES:
@@ -45,6 +46,7 @@ DEPENDENCIES:
   - Quick
   - Reusable
   - RxSwift (~> 3.0.0-beta.2)
+  - SnapKit
   - SwiftGen
 
 EXTERNAL SOURCES:
@@ -73,8 +75,9 @@ SPEC CHECKSUMS:
   Result: 1b3e431f37cbcd3ad89c6aa9ab0ae55515fae3b6
   Reusable: ab77c4c51a4b9606946df70e30cb8ad9cf75c226
   RxSwift: af5680055c4ad04480189c52d28385b1029493a6
+  SnapKit: 2e456761aa92d4d4067a7a5594c18769d451a8ad
   SwiftGen: 5f69367fae99c11d52d1ab9d45dcf10a3e59b8ef
 
-PODFILE CHECKSUM: 7fa7a26450aa340f66826ff7a56f82fa517e804f
+PODFILE CHECKSUM: ab0be90dfdfdbe9042a5c067d79421fe060d2a5f
 
 COCOAPODS: 1.1.1

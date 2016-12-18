@@ -9,18 +9,60 @@
 import UIKit
 import Reusable
 
-final class CharacterTableCell: UITableViewCell, NibReusable {
-    @IBOutlet weak var name: UILabel!
-    @IBOutlet weak var characterDescription: UILabel!
-    @IBOutlet weak var thumb: UIImageView!
+
+import UIKit
+
+final class CharacterTableCell: UITableViewCell {
+    var characterCell = CharacterCell()
+    
+    
+    static func register(in tableView: UITableView) {
+        tableView.register(CharacterTableCell.self, forCellReuseIdentifier: CharacterTableCell.reusableIdentifier())
+    }
+    
+    static func reusableIdentifier() -> String {
+        return "CharacterTableCell"
+    }
     
     static func height() -> CGFloat {
         return 80
     }
     
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        buildViewHierarchy()
+        setupConstraints()
+        configureViews()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
     func setup(item: Character) {
-        name.text = item.name
-        characterDescription.text = item.bio.isEmpty ? "No description" : item.bio
-        thumb.download(image: item.thumImage?.fullPath() ?? "")
+        characterCell.name.text = item.name
+        characterCell.bio.text = item.bio.isEmpty ? "No description" : item.bio
+        characterCell.imageThumb.download(image: item.thumImage?.fullPath() ?? "")
+    }
+}
+
+extension CharacterTableCell: ViewConfiguration {
+    func setupConstraints() {
+        characterCell.snp.makeConstraints { make in
+            make.top.equalTo(self)
+            make.left.equalTo(self)
+            make.right.equalTo(self)
+            make.bottom.equalTo(self)
+        }
+    }
+    
+    func buildViewHierarchy() {
+        self.contentView.addSubview(characterCell)
+    }
+    
+    func configureViews() {
+        self.contentView.backgroundColor = ColorPalette.black
+        self.selectionStyle = .none
     }
 }
