@@ -94,11 +94,7 @@ extension CharactersViewController {
 extension CharactersViewController: CharactersDelegate {
     func didSelectCharacter(at index: IndexPath) {
         searchBar.resignFirstResponder()
-        guard let nextController = Storyboard.Main.characterViewControllerScene
-            .viewController() as? CharacterViewController else {
-            return
-        }
-        
+        let nextController = CharacterViewController()
         let character = characters[index.row]
         nextController.character = character
         self.navigationController?.pushViewController(nextController, animated: true)

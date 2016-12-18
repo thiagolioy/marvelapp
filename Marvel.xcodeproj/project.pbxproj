@@ -19,6 +19,7 @@
 		995FC46C1E06AD52003345A2 /* CharacterRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995FC46B1E06AD52003345A2 /* CharacterRowView.swift */; };
 		995FC46E1E06ADCB003345A2 /* ViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995FC46D1E06ADCB003345A2 /* ViewConfiguration.swift */; };
 		995FC4701E06C40A003345A2 /* CharacterGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995FC46F1E06C40A003345A2 /* CharacterGridView.swift */; };
+		995FC4721E06D017003345A2 /* CharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995FC4711E06D017003345A2 /* CharacterView.swift */; };
 		9976B4F81DEA43F200D2D3C4 /* MockLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9976B4F71DEA43F200D2D3C4 /* MockLoader.swift */; };
 		999665411DEA242300E9A5BF /* CharacterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999665401DEA242300E9A5BF /* CharacterSpec.swift */; };
 		99B248E31DDB427000027C10 /* CharacterTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B248E21DDB427000027C10 /* CharacterTableCell.swift */; };
@@ -70,6 +71,7 @@
 		995FC46B1E06AD52003345A2 /* CharacterRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterRowView.swift; sourceTree = "<group>"; };
 		995FC46D1E06ADCB003345A2 /* ViewConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewConfiguration.swift; sourceTree = "<group>"; };
 		995FC46F1E06C40A003345A2 /* CharacterGridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterGridView.swift; sourceTree = "<group>"; };
+		995FC4711E06D017003345A2 /* CharacterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterView.swift; sourceTree = "<group>"; };
 		9976B4F71DEA43F200D2D3C4 /* MockLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockLoader.swift; sourceTree = "<group>"; };
 		999665361DEA236300E9A5BF /* MarvelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarvelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9996653A1DEA236300E9A5BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 				995FC46B1E06AD52003345A2 /* CharacterRowView.swift */,
 				995FC46D1E06ADCB003345A2 /* ViewConfiguration.swift */,
 				995FC46F1E06C40A003345A2 /* CharacterGridView.swift */,
+				995FC4711E06D017003345A2 /* CharacterView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -591,6 +594,7 @@
 				99FC2BC81DDDB0F3006CB7EE /* ItemsTableViewDatasource.swift in Sources */,
 				995FC46C1E06AD52003345A2 /* CharacterRowView.swift in Sources */,
 				9939CFD11DDA30DC008CE399 /* MarvelAPIManager.swift in Sources */,
+				995FC4721E06D017003345A2 /* CharacterView.swift in Sources */,
 				9922F15A1DFDC00900237BFE /* ApperanceProxyHelper.swift in Sources */,
 				99D0DEBA1DE268D000FE34D7 /* UIImageView+Kingfisher.swift in Sources */,
 				9939CFC91DDA245A008CE399 /* CharacterViewController.swift in Sources */,

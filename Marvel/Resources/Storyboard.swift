@@ -54,15 +54,6 @@ struct Storyboard {
       return vc
     }
 
-    case characterViewControllerScene = "CharacterViewController"
-    static func instantiateCharacterViewController() -> CharacterViewController {
-      guard let vc = Storyboard.Main.characterViewControllerScene.viewController() as? CharacterViewController
-      else {
-        fatalError("ViewController 'CharacterViewController' is not of the expected class CharacterViewController.")
-      }
-      return vc
-    }
-
     case charactersViewControllerScene = "CharactersViewController"
     static func instantiateCharactersViewController() -> CharactersViewController {
       guard let vc = Storyboard.Main.charactersViewControllerScene.viewController() as? CharactersViewController
