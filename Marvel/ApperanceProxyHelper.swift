@@ -11,6 +11,11 @@ import UIKit
 
 struct ApperanceProxyHelper {
     
+    static func customizeSearchBar() {
+        UIBarButtonItem.appearance(whenContainedInInstancesOf:
+            [UISearchBar.self]).tintColor = ColorPalette.white
+    }
+    
     static func customizeNavigationBar() {
         let navigationBarAppearace = UINavigationBar.appearance()
         navigationBarAppearace.tintColor = ColorPalette.white

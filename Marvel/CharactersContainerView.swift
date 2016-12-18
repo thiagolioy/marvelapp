@@ -13,8 +13,6 @@ class CharactersContainerView: UIView {
     let searchBar: UISearchBar = {
         let sb = UISearchBar()
         sb.showsCancelButton = true
-        sb.barTintColor = ColorPalette.black
-        sb.tintColor = ColorPalette.white
         sb.searchBarStyle = .minimal
         return sb
     }()
