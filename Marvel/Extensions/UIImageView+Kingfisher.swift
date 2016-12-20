@@ -7,13 +7,17 @@
 //
 
 import UIKit
-import Kingfisher
+import SDWebImage
 
 extension UIImageView {
     func download(image url: String) {
         guard let imageURL = URL(string:url) else {
             return
         }
-        self.kf.setImage(with: ImageResource(downloadURL: imageURL))
+        self.sd_setImage(with: imageURL)
+    }
+    
+    func cancelDownload() {
+        self.sd_cancelCurrentImageLoad()
     }
 }

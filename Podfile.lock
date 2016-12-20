@@ -3,8 +3,8 @@ PODS:
   - CryptoSwift (0.6.6)
   - Dollar (6.1.0)
   - Fakery (2.0.0)
+  - IGListKit (2.0.0)
   - Keys (1.0.0)
-  - Kingfisher (3.2.1)
   - Moya (8.0.0-beta.4):
     - Moya/Core (= 8.0.0-beta.4)
   - Moya-ObjectMapper/Core (2.1):
@@ -30,14 +30,17 @@ PODS:
   - Reusable/Storyboard (3.0.0)
   - Reusable/View (3.0.0)
   - RxSwift (3.0.1)
+  - SDWebImage (3.8.2):
+    - SDWebImage/Core (= 3.8.2)
+  - SDWebImage/Core (3.8.2)
   - SwiftGen (3.0.1)
 
 DEPENDENCIES:
   - CryptoSwift
   - Dollar
   - Fakery
+  - IGListKit (from `https://github.com/Instagram/IGListKit.git`, branch `master`)
   - Keys (from `Pods/CocoaPodsKeys`)
-  - Kingfisher
   - Moya-ObjectMapper/RxSwift (from `https://github.com/ivanbruel/Moya-ObjectMapper`)
   - Moya/RxSwift (~> 8.0.0-beta.1)
   - Nimble
@@ -45,15 +48,22 @@ DEPENDENCIES:
   - Quick
   - Reusable
   - RxSwift (~> 3.0.0-beta.2)
+  - SDWebImage (~> 3.8)
   - SwiftGen
 
 EXTERNAL SOURCES:
+  IGListKit:
+    :branch: master
+    :git: https://github.com/Instagram/IGListKit.git
   Keys:
     :path: Pods/CocoaPodsKeys
   Moya-ObjectMapper:
     :git: https://github.com/ivanbruel/Moya-ObjectMapper
 
 CHECKOUT OPTIONS:
+  IGListKit:
+    :commit: 9600c23d151d8cf89dfef48397f3905542d210d7
+    :git: https://github.com/Instagram/IGListKit.git
   Moya-ObjectMapper:
     :commit: 82ec528ba7e04faf47d17217b7d3d67cdcbab4ca
     :git: https://github.com/ivanbruel/Moya-ObjectMapper
@@ -63,8 +73,8 @@ SPEC CHECKSUMS:
   CryptoSwift: 88592381b73f36e192124539390a7c9bacda76af
   Dollar: 0a9883680f2c1104adf0d19b827c3be71d3e3121
   Fakery: 97b99c23937d2e025d9135c75e2b17351ccd5031
+  IGListKit: 2bd0b80dd04a83c75276d71f87690ef106e2d958
   Keys: 9c35bf00f612ee1d48556f4a4b9b4551e224e90f
-  Kingfisher: 64ef28c6d3d6f344e3ae2d7f5c9da80439505d99
   Moya: bad6f72ec40661f09a8cd85ab470226d2795a485
   Moya-ObjectMapper: c8c7435f5405ee5acd5ea61b6190fdbf5d639f97
   Nimble: 415e3aa3267e7bc2c96b05fa814ddea7bb686a29
@@ -73,8 +83,9 @@ SPEC CHECKSUMS:
   Result: 1b3e431f37cbcd3ad89c6aa9ab0ae55515fae3b6
   Reusable: ab77c4c51a4b9606946df70e30cb8ad9cf75c226
   RxSwift: af5680055c4ad04480189c52d28385b1029493a6
+  SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   SwiftGen: 5f69367fae99c11d52d1ab9d45dcf10a3e59b8ef
 
-PODFILE CHECKSUM: 7fa7a26450aa340f66826ff7a56f82fa517e804f
+PODFILE CHECKSUM: 7e13d89eb718ff2b01672ba1e1b7393165da774d
 
 COCOAPODS: 1.1.1

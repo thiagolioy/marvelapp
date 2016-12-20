@@ -46,7 +46,7 @@ class CharactersCollectionDelegate: NSObject, UICollectionViewDelegate, UICollec
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        delegate.didSelectCharacter(at: indexPath)
+        delegate.didSelectCharacter(at: indexPath.row)
     }
     
     

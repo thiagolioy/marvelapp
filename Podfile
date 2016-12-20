@@ -19,8 +19,10 @@ target 'Marvel' do
    pod 'Moya-ObjectMapper/RxSwift', :git => 'https://github.com/ivanbruel/Moya-ObjectMapper'
    pod 'CryptoSwift'
    pod 'Dollar'
-   pod 'Kingfisher'
-   pod "Reusable"
+   #pod 'Kingfisher'
+   pod 'SDWebImage', '~>3.8'
+   pod 'Reusable'
+   pod 'IGListKit', :git => 'https://github.com/Instagram/IGListKit.git', :branch => 'master'
 end
 
 target 'MarvelTests' do
@@ -30,7 +32,7 @@ target 'MarvelTests' do
   pod 'Nimble'
   pod 'Fakery'
   pod 'ObjectMapper'
-   
+
 end
 
 post_install do |installer|

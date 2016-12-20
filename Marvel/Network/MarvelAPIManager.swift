@@ -87,13 +87,13 @@ extension MarvelAPIManager {
 }
 
 protocol MarvelAPICalls {
-    func characters(query: String?, completion: @escaping ([Character]?) -> Void)
+    func characters(query: String?, skip: Int?, completion: @escaping ([Character]?) -> Void)
 }
 
 extension MarvelAPIManager: MarvelAPICalls {
     
-    func characters(query: String? = nil, completion: @escaping ([Character]?) -> Void) {
-        requestArray(.characters(query),
+    func characters(query: String? = nil, skip: Int? = nil, completion: @escaping ([Character]?) -> Void) {
+        requestArray(.characters(query, skip),
                      type: Character.self,
                      completion: completion)
     }
