@@ -3,22 +3,22 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HeaderCollectionCell" id="gTV-IL-0wX" customClass="HeaderCollectionCell" customModule="Marvel" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LKt-xJ-5JI">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LKt-xJ-5JI">
                         <constraints>
-                            <constraint firstAttribute="height" constant="40" id="kET-p7-ih4"/>
-                            <constraint firstAttribute="width" constant="40" id="x6D-mi-FEr"/>
+                            <constraint firstAttribute="width" secondItem="LKt-xJ-5JI" secondAttribute="height" multiplier="1:1" id="ofi-wI-KgY"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -41,11 +41,11 @@
             <constraints>
                 <constraint firstItem="8Ac-aC-9G0" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="15" id="6Vu-CG-pDe"/>
                 <constraint firstAttribute="trailing" secondItem="8Ac-aC-9G0" secondAttribute="trailing" constant="8" id="9en-Z5-IEW"/>
-                <constraint firstItem="LKt-xJ-5JI" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="Emv-Gv-cs4"/>
-                <constraint firstItem="8Ac-aC-9G0" firstAttribute="leading" secondItem="LKt-xJ-5JI" secondAttribute="trailing" constant="9" id="QrB-ke-dIy"/>
-                <constraint firstItem="LKt-xJ-5JI" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="Tge-Qg-F0E"/>
+                <constraint firstItem="LKt-xJ-5JI" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="Gyv-Y3-FmX"/>
                 <constraint firstAttribute="bottom" secondItem="8Ac-aC-9G0" secondAttribute="bottom" constant="14" id="Wqb-S3-AFg"/>
-                <constraint firstAttribute="bottom" secondItem="LKt-xJ-5JI" secondAttribute="bottom" constant="5" id="nk9-HS-mXV"/>
+                <constraint firstItem="8Ac-aC-9G0" firstAttribute="leading" secondItem="LKt-xJ-5JI" secondAttribute="trailing" constant="8" id="YSM-v0-al4"/>
+                <constraint firstItem="LKt-xJ-5JI" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="azI-Hi-9Sq"/>
+                <constraint firstAttribute="bottom" secondItem="LKt-xJ-5JI" secondAttribute="bottom" constant="5" id="c31-9z-2CN"/>
             </constraints>
             <connections>
                 <outlet property="name" destination="8Ac-aC-9G0" id="TQZ-hD-LQv"/>

@@ -13,6 +13,10 @@ class SearchCollectionCell: UICollectionViewCell, NibReusable {
 
     @IBOutlet weak var searchBar: UISearchBar!
     
+    static func height() -> CGFloat {
+        return 44.0
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

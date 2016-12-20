@@ -19,8 +19,8 @@ class PortraitSectionController: IGListSectionController, IGListSectionType {
     }
     
     func sizeForItem(at index: Int) -> CGSize {
-        let width = 150.0
-        let height = 175.0
+        let width = PortraitCollectionCell.width()
+        let height = PortraitCollectionCell.height()
         return CGSize(width: width, height: height)
     }
     

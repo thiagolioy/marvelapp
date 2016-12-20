@@ -14,6 +14,10 @@ class HeaderCollectionCell: UICollectionViewCell, NibReusable, Charactable {
     @IBOutlet weak var picture: UIImageView!
     @IBOutlet weak var name: UILabel!
     
+    static func height() -> CGFloat {
+        return 50.0
+    }
+    
     func setup(character: Character) {
         self.picture.image = nil
         

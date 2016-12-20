@@ -37,8 +37,8 @@ class EmbeddedSectionController: IGListSectionController, IGListSectionType {
     }
     
     func sizeForItem(at index: Int) -> CGSize {
-        let width = 375.0
-        let height = 175.0
+        let width = Double(collectionContext!.containerSize.width)
+        let height = EmbeddedCollectionCell.height()
         return CGSize(width: width, height: height)
     }
     

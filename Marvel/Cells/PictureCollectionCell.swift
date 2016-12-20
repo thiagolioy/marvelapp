@@ -19,6 +19,10 @@ class PictureCollectionCell: UICollectionViewCell, NibReusable, Charactable {
     @IBOutlet weak var characterDescription: UILabel!
     @IBOutlet weak var picture: UIImageView!
     
+    static func height() -> CGFloat {
+        return 80.0
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

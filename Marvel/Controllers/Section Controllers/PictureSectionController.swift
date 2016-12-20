@@ -24,10 +24,10 @@ extension PictureSectionController: IGListSectionType {
     
     func sizeForItem(at index: Int) -> CGSize {
         if index == 1 {
-            return CGSize(width: 375, height: 80)
+            return CGSize(width: collectionContext!.containerSize.width, height: PictureCollectionCell.height())
         }
         
-        return CGSize(width: 375, height: 50)
+        return CGSize(width: collectionContext!.containerSize.width, height: HeaderCollectionCell.height())
     }
     
     func cellForItem(at index: Int) -> UICollectionViewCell {

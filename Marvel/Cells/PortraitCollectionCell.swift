@@ -14,6 +14,14 @@ class PortraitCollectionCell: UICollectionViewCell, NibReusable, Charactable {
     @IBOutlet weak var picture: UIImageView!
     @IBOutlet weak var name: UILabel!
     
+    static func height() -> Double {
+        return 175.0
+    }
+    
+    static func width() -> Double {
+        return 150.0
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -15,6 +15,10 @@ class EmbeddedCollectionCell: UICollectionViewCell, NibReusable {
 
     @IBOutlet weak var collectionView: IGListCollectionView!
     
+    static func height() -> Double {
+        return 175.0
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

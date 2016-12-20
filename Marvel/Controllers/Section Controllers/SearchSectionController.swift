@@ -32,7 +32,7 @@ final class SearchSectionController: IGListSectionController, IGListSectionType,
     }
     
     func sizeForItem(at index: Int) -> CGSize {
-        return CGSize(width: collectionContext!.containerSize.width, height: 44)
+        return CGSize(width: collectionContext!.containerSize.width, height: SearchCollectionCell.height())
     }
     
     func cellForItem(at index: Int) -> UICollectionViewCell {
