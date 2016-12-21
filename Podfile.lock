@@ -1,37 +1,37 @@
 PODS:
-  - Alamofire (4.0.1)
-  - CryptoSwift (0.6.6)
+  - Alamofire (4.2.0)
+  - CryptoSwift (0.6.7)
   - Dollar (6.1.0)
   - Fakery (2.0.0)
   - Keys (1.0.0)
-  - Kingfisher (3.2.1)
-  - Moya (8.0.0-beta.4):
-    - Moya/Core (= 8.0.0-beta.4)
-  - Moya-ObjectMapper/Core (2.1):
-    - Moya (= 8.0.0-beta.4)
+  - Kingfisher (3.2.3)
+  - Moya (8.0.0-beta.6):
+    - Moya/Core (= 8.0.0-beta.6)
+  - Moya-ObjectMapper/Core (2.2.1):
+    - Moya (>= 8.0.0-beta.4)
     - ObjectMapper (= 2.2.1)
-  - Moya-ObjectMapper/RxSwift (2.1):
+  - Moya-ObjectMapper/RxSwift (2.2.1):
     - Moya-ObjectMapper/Core
     - Moya/RxSwift
     - RxSwift (= 3.0.1)
-  - Moya/Core (8.0.0-beta.4):
+  - Moya/Core (8.0.0-beta.6):
     - Alamofire (~> 4.0)
     - Result (~> 3.0)
-  - Moya/RxSwift (8.0.0-beta.4):
+  - Moya/RxSwift (8.0.0-beta.6):
     - Moya/Core
     - RxSwift (~> 3.0)
   - Nimble (5.1.1)
   - ObjectMapper (2.2.1)
   - Quick (1.0.0)
-  - Result (3.0.0)
-  - Reusable (3.0.0):
-    - Reusable/Storyboard (= 3.0.0)
-    - Reusable/View (= 3.0.0)
-  - Reusable/Storyboard (3.0.0)
-  - Reusable/View (3.0.0)
+  - Result (3.1.0)
+  - Reusable (3.0.1):
+    - Reusable/Storyboard (= 3.0.1)
+    - Reusable/View (= 3.0.1)
+  - Reusable/Storyboard (3.0.1)
+  - Reusable/View (3.0.1)
   - RxSwift (3.0.1)
   - SnapKit (3.0.2)
-  - SwiftGen (3.0.1)
+  - SwiftGen (4.0.1)
 
 DEPENDENCIES:
   - CryptoSwift
@@ -57,26 +57,26 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   Moya-ObjectMapper:
-    :commit: 82ec528ba7e04faf47d17217b7d3d67cdcbab4ca
+    :commit: 2c82539c7189a0a1bef360289a06090a5f56d5b8
     :git: https://github.com/ivanbruel/Moya-ObjectMapper
 
 SPEC CHECKSUMS:
-  Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
-  CryptoSwift: 88592381b73f36e192124539390a7c9bacda76af
+  Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
+  CryptoSwift: 685ae257941e5447474348a2b545583e1a16b573
   Dollar: 0a9883680f2c1104adf0d19b827c3be71d3e3121
   Fakery: 97b99c23937d2e025d9135c75e2b17351ccd5031
   Keys: 9c35bf00f612ee1d48556f4a4b9b4551e224e90f
-  Kingfisher: 64ef28c6d3d6f344e3ae2d7f5c9da80439505d99
-  Moya: bad6f72ec40661f09a8cd85ab470226d2795a485
-  Moya-ObjectMapper: c8c7435f5405ee5acd5ea61b6190fdbf5d639f97
+  Kingfisher: 0e789b4069e20da071d6eec59a9cfb4cee67a1cb
+  Moya: a29e2503a0c5067d462ba2f07cc6b6b1f3fc172d
+  Moya-ObjectMapper: 6852b17a8971dd9f614322ace8d36a4e6f14ba5c
   Nimble: 415e3aa3267e7bc2c96b05fa814ddea7bb686a29
   ObjectMapper: 41e43e1a89f8060ef5ea5d04ba852e269a621d68
   Quick: 8024e4a47e6cc03a9d5245ef0948264fc6d27cff
-  Result: 1b3e431f37cbcd3ad89c6aa9ab0ae55515fae3b6
-  Reusable: ab77c4c51a4b9606946df70e30cb8ad9cf75c226
+  Result: 4e3ed5995ed94d0cd6a09be9a431fce3f3624bbf
+  Reusable: 5362d10271ca8316b104698a21e90498f47e8339
   RxSwift: af5680055c4ad04480189c52d28385b1029493a6
   SnapKit: 2e456761aa92d4d4067a7a5594c18769d451a8ad
-  SwiftGen: 5f69367fae99c11d52d1ab9d45dcf10a3e59b8ef
+  SwiftGen: 04bbc1fb69add82a7a471380dfbdd00b45912d17
 
 PODFILE CHECKSUM: ab0be90dfdfdbe9042a5c067d79421fe060d2a5f
 
