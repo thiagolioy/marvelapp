@@ -8,18 +8,21 @@
 
 import UIKit
 
-final class CharactersTable: UIView {
+final class CharactersTable: UITableView {
     
-    var tableView: UITableView = {
-        let tb = UITableView(frame: .zero)
-        return tb
-    }()
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        self.buildViewHierarchy()
-        self.setupConstraints()
-        self.configureViews()
+    var didSelectCharacter: ((Character) -> Void)?
+    
+    fileprivate var customDatasource: CharactersDatasource?
+    fileprivate var customDelegate: CharactersTableDelegate?
+    
+    override init(frame: CGRect, style: UITableViewStyle) {
+        super.init(frame: frame, style: style)
+        customDelegate = CharactersTableDelegate(self)
+        customDatasource = CharactersDatasource(items: [],
+                                               tableView: self,
+                                               delegate: customDelegate!)
+        self.backgroundColor = ColorPalette.black
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -28,21 +31,16 @@ final class CharactersTable: UIView {
     
 }
 
-extension CharactersTable: ViewConfiguration {
-    func setupConstraints() {
-        tableView.snp.makeConstraints { make in
-            make.top.equalTo(self)
-            make.left.equalTo(self)
-            make.right.equalTo(self)
-            make.bottom.equalTo(self)
+extension CharactersTable {
+    func updateItems(_ items: [Character]) {
+        customDatasource?.updateItems(items)
+    }
+}
+
+extension CharactersTable: CharactersDelegate {
+    func didSelectCharacter(at index: IndexPath) {
+        if let char = customDatasource?.items[index.row] {
+            didSelectCharacter?(char)
         }
-    }
-    
-    func buildViewHierarchy() {
-        self.addSubview(tableView)
-    }
-    
-    func configureViews(){
-        self.backgroundColor = ColorPalette.black
     }
 }

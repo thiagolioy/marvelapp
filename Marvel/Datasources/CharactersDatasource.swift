@@ -35,6 +35,11 @@ final class CharactersDatasource: NSObject, ItemsTableViewDatasource {
         cell.setup(item: character)
         return cell
     }
+    
+    func updateItems(_ items: [Character]) {
+        self.items = items
+        self.tableView?.reloadData()
+    }
 }
 
 class CharactersTableDelegate: NSObject, UITableViewDelegate {

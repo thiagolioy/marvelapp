@@ -10,19 +10,7 @@ import UIKit
 
 class CharactersContainerView: UIView {
         
-    let searchBar: UISearchBar = {
-        let sb = UISearchBar()
-        sb.showsCancelButton = true
-        sb.searchBarStyle = .minimal
-        return sb
-    }()
-    
-    let activityIndicator: UIActivityIndicatorView = {
-        let ai = UIActivityIndicatorView()
-        ai.color = ColorPalette.white
-        ai.hidesWhenStopped = true
-        return ai
-    }()
+    let searchBar = AppSearchBar()
     
     let charactersTable = CharactersTable()
     
@@ -48,12 +36,6 @@ extension CharactersContainerView: ViewConfiguration {
             make.left.equalTo(self)
             make.right.equalTo(self)
             make.height.equalTo(44)
-        }
-        
-        activityIndicator.snp.makeConstraints { make in
-            make.height.equalTo(20)
-            make.width.equalTo(20)
-            
         }
         
         charactersTable.snp.makeConstraints { make in

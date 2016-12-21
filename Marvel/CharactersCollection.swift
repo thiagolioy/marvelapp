@@ -8,22 +8,24 @@
 
 import UIKit
 
-final class CharactersCollection: UIView {
-    var collectionView: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        let tb = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        tb.backgroundColor = ColorPalette.black
-        return tb
-    }()
+final class CharactersCollection: UICollectionView {
     
+    var didSelectCharacter: ((Character) -> Void)?
     
+    fileprivate var customDatasource: CharactersCollectionDatasource?
+    fileprivate var customDelegate: CharactersCollectionDelegate?
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        self.buildViewHierarchy()
-        self.setupConstraints()
-        self.configureViews()
+    convenience init() {
+        self.init(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
     }
+    
+    override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
+        super.init(frame: frame, collectionViewLayout: layout)
+        customDelegate = CharactersCollectionDelegate(self)
+        customDatasource = CharactersCollectionDatasource(items: [], collectionView: self, delegate: customDelegate!)
+        self.backgroundColor = ColorPalette.black
+    }
+    
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -31,22 +33,17 @@ final class CharactersCollection: UIView {
     
 }
 
-extension CharactersCollection: ViewConfiguration {
-    func setupConstraints() {
-        collectionView.snp.makeConstraints { make in
-            make.top.equalTo(self)
-            make.left.equalTo(self)
-            make.right.equalTo(self)
-            make.bottom.equalTo(self)
-        }
-    }
-    
-    func buildViewHierarchy() {
-        self.addSubview(collectionView)
-    }
-    
-    func configureViews(){
-        self.backgroundColor = ColorPalette.black
+extension CharactersCollection {
+    func updateItems(_ items: [Character]) {
+        customDatasource?.updateItems(items)
     }
 }
 
+
+extension CharactersCollection: CharactersDelegate {
+    func didSelectCharacter(at index: IndexPath) {
+        if let char = customDatasource?.items[index.row] {
+            didSelectCharacter?(char)
+        }
+    }
+}

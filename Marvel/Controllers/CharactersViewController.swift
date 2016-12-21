@@ -19,12 +19,6 @@ fileprivate enum PresentationState {
 final class CharactersViewController: UIViewController {
     var apiManager: MarvelAPICalls = MarvelAPIManager()
     
-    var tableDatasource: CharactersDatasource?
-    var tableDelegate: CharactersTableDelegate?
-    
-    var collectionDatasource: CharactersCollectionDatasource?
-    var collectionDelegate: CharactersCollectionDelegate?
-    
     var characters: [Character] = []
     
     fileprivate var currentPresentationState = PresentationState.table
@@ -57,32 +51,31 @@ extension CharactersViewController {
 extension CharactersViewController {
     func setupNavigationItem() {
         self.navigationItem.title = "Characters"
-        
-        let listButton = UIBarButtonItem(image: UIImage(named: "List Icon"), style: .plain, target: self, action: #selector(showAsTable(_:)))
-        
-        let gridButton = UIBarButtonItem(image: UIImage(named: "Grid Icon"), style: .plain, target: self, action: #selector(showAsGrid(_:)))
-        
-        self.navigationItem.rightBarButtonItems = [gridButton, listButton]
+        self.navigationItem.rightBarButtonItems = [
+           NavigationItems.grid(self, #selector(showAsGrid(_:))).button(),
+           NavigationItems.list(self, #selector(showAsTable(_:))).button()
+        ]
     }
     
     func fetchCharacters(for query: String? = nil) {
         containerView.charactersTable.isHidden = true
         containerView.charactersCollection.isHidden = true
-        containerView.activityIndicator.startAnimating()
+        
         apiManager.characters(query: query) { characters in
-            self.containerView.activityIndicator.stopAnimating()
-            if let characters = characters {
-                if self.currentPresentationState == .table {
-                    self.setupTableView(with: characters)
-                } else {
-                    self.setupCollectionView(with: characters)
-                }
+            self.characters = characters ?? []
+            switch self.currentPresentationState {
+            case .table:
+                self.setupTableView(with: self.characters)
+            case .collection:
+                self.setupCollectionView(with: self.characters)
             }
         }
     }
     
     func setupSearchBar() {
-        self.containerView.searchBar.delegate = self
+        self.containerView.searchBar.doSearch = { query in
+            self.fetchCharacters(for: query)
+        }
     }
     
     fileprivate func setPresentationState(to state: PresentationState) {
@@ -98,19 +91,26 @@ extension CharactersViewController {
     }
     
     func setupTableView(with characters: [Character]) {
-        self.characters = characters
         setPresentationState(to: .table)
-        
-        tableDelegate = CharactersTableDelegate(self)
-        tableDatasource = CharactersDatasource(items: characters, tableView: containerView.charactersTable.tableView, delegate: tableDelegate!)
+        containerView.charactersTable.updateItems(characters)
+        containerView.charactersTable.didSelectCharacter = { [weak self] char in
+            self?.navigateToNextController(with: char)
+        }
     }
     
     func setupCollectionView(with characters: [Character]) {
-        self.characters = characters
         setPresentationState(to: .collection)
-        
-        collectionDelegate = CharactersCollectionDelegate(self)
-        collectionDatasource = CharactersCollectionDatasource(items: characters, collectionView: containerView.charactersCollection.collectionView, delegate: collectionDelegate!)
+        containerView.charactersCollection.updateItems(characters)
+        containerView.charactersCollection.didSelectCharacter = { [weak self] char in
+            self?.navigateToNextController(with: char)
+        }
+    }
+    
+    func navigateToNextController(with character: Character) {
+        self.containerView.searchBar.resignFirstResponder()
+        let nextController = CharacterViewController()
+        nextController.character = character
+        self.navigationController?.pushViewController(nextController, animated: true)
     }
 }
 
@@ -123,27 +123,3 @@ extension CharactersViewController {
         setupTableView(with: characters)
     }
 }
-
-extension CharactersViewController: CharactersDelegate {
-    func didSelectCharacter(at index: IndexPath) {
-        containerView.searchBar.resignFirstResponder()
-        let nextController = CharacterViewController()
-        let character = characters[index.row]
-        nextController.character = character
-        self.navigationController?.pushViewController(nextController, animated: true)
-    }
-}
-
-extension CharactersViewController: UISearchBarDelegate {
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.resignFirstResponder()
-        let query = searchBar.text ?? ""
-        if !query.isEmpty {
-            fetchCharacters(for: query)
-        }
-    }
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.resignFirstResponder()
-    }
-}
-
