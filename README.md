@@ -1,5 +1,4 @@
 # Marvel App
-============
 
 [![Twitter: @tplioy](https://img.shields.io/badge/contact-@tplioy-blue.svg?style=flat)](https://twitter.com/tplioy)
 [![License](http://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/thiagolioy/marvelapp/blob/master/LICENSE)
