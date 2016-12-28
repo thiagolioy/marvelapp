@@ -6,6 +6,7 @@ target 'Marvel' do
   use_frameworks!
 
   plugin 'cocoapods-keys', {
+    :target => "Marvel"
     :project => "Marvel",
     :keys => [
       "MarvelApiKey",
@@ -30,7 +31,7 @@ target 'MarvelTests' do
   pod 'Nimble'
   pod 'Fakery'
   pod 'ObjectMapper'
-   
+
 end
 
 post_install do |installer|
