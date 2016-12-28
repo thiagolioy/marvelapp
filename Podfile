@@ -6,8 +6,8 @@ target 'Marvel' do
   use_frameworks!
 
   plugin 'cocoapods-keys', {
-    :target => "Marvel"
     :project => "Marvel",
+    :target => "Marvel",
     :keys => [
       "MarvelApiKey",
       "MarvelPrivateKey"

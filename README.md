@@ -6,7 +6,7 @@
 [![GitHub forks](https://img.shields.io/github/forks/thiagolioy/marvelapp.svg)](https://github.com/thiagolioy/marvelapp/network)
 [![GitHub stars](https://img.shields.io/github/stars/thiagolioy/marvelapp.svg)](https://github.com/thiagolioy/marvelapp/stargazers)
 [![GitHub issues](https://img.shields.io/github/issues/thiagolioy/marvelapp.svg)](https://github.com/thiagolioy/marvelapp/issues)
-[![codecov](https://codecov.io/gh/thiagolioy/marvelapp/branch/master/graph/badge.svg)](https://codecov.io/gh/thiagolioy/marvelapp)
+
 -------
 <p align="center">
     <a href="#appearance">Appearance</a> &bull;
