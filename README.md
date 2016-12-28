@@ -9,11 +9,18 @@
 
 -------
 <p align="center">
+    <a href="#appearance">Appearance</a> &bull;
     <a href="#motivation">Motivation</a> &bull;
     <a href="#posts">Posts</a> &bull;
     <a href="#installation">Installation</a>
 </p>
 -------
+
+## Appearance
+
+<h3 align="center">
+  <img src="assets/marvel_screens.png" alt="Marvel Screens" />
+</h3>
 
 ## Motivation
 
