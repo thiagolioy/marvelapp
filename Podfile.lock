@@ -4,7 +4,7 @@ PODS:
   - Dollar (6.1.0)
   - Fakery (2.0.0)
   - Keys (1.0.0)
-  - Kingfisher (3.2.3)
+  - Kingfisher (3.2.4)
   - Moya (8.0.0-beta.6):
     - Moya/Core (= 8.0.0-beta.6)
   - Moya-ObjectMapper/Core (2.2.1):
@@ -30,7 +30,7 @@ PODS:
   - Reusable/Storyboard (3.0.1)
   - Reusable/View (3.0.1)
   - RxSwift (3.0.1)
-  - SnapKit (3.0.2)
+  - SnapKit (3.1.2)
   - SwiftGen (4.0.1)
 
 DEPENDENCIES:
@@ -66,7 +66,7 @@ SPEC CHECKSUMS:
   Dollar: 0a9883680f2c1104adf0d19b827c3be71d3e3121
   Fakery: 97b99c23937d2e025d9135c75e2b17351ccd5031
   Keys: 9c35bf00f612ee1d48556f4a4b9b4551e224e90f
-  Kingfisher: 0e789b4069e20da071d6eec59a9cfb4cee67a1cb
+  Kingfisher: 8d80f39da403cd9c9ee11984e1655f4d6a566cdb
   Moya: a29e2503a0c5067d462ba2f07cc6b6b1f3fc172d
   Moya-ObjectMapper: 6852b17a8971dd9f614322ace8d36a4e6f14ba5c
   Nimble: 415e3aa3267e7bc2c96b05fa814ddea7bb686a29
@@ -75,9 +75,9 @@ SPEC CHECKSUMS:
   Result: 4e3ed5995ed94d0cd6a09be9a431fce3f3624bbf
   Reusable: 5362d10271ca8316b104698a21e90498f47e8339
   RxSwift: af5680055c4ad04480189c52d28385b1029493a6
-  SnapKit: 2e456761aa92d4d4067a7a5594c18769d451a8ad
+  SnapKit: 12b24f569cb7c143acc9c22b9d91b23e7b1c84a2
   SwiftGen: 04bbc1fb69add82a7a471380dfbdd00b45912d17
 
-PODFILE CHECKSUM: ab0be90dfdfdbe9042a5c067d79421fe060d2a5f
+PODFILE CHECKSUM: ba7a2f510313b1899adcc37dd07f746f4461039b
 
 COCOAPODS: 1.1.1
