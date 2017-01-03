@@ -130,12 +130,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		99201F3E1E1BB4B6008CF525 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Custom;
+			sourceTree = "<group>";
+		};
 		9922F1581DFDBFF400237BFE /* Apperance */ = {
 			isa = PBXGroup;
 			children = (
 				9922F1591DFDC00900237BFE /* ApperanceProxyHelper.swift */,
 			);
-			name = Apperance;
 			path = Apperance;
 			sourceTree = "<group>";
 		};
@@ -198,13 +204,13 @@
 				99C67AC11DEB007600FB1E68 /* CharacterViewControllerSpec.swift */,
 				993AFDFE1DEA764200857C4F /* CharactersViewControllerSpec.swift */,
 			);
-			name = Controllers;
 			path = Controllers;
 			sourceTree = "<group>";
 		};
 		995FC46A1E06AD19003345A2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				99201F3E1E1BB4B6008CF525 /* Custom */,
 				999D7D041E0AA6B1004139E0 /* AppSearchBar.swift */,
 				995FC46F1E06C40A003345A2 /* CharacterGridView.swift */,
 				995FC46B1E06AD52003345A2 /* CharacterRowView.swift */,
@@ -215,7 +221,6 @@
 				999D7D061E0AAB32004139E0 /* NavigationItems.swift */,
 				995FC46D1E06ADCB003345A2 /* ViewConfiguration.swift */,
 			);
-			name = Views;
 			path = Views;
 			sourceTree = "<group>";
 		};
@@ -224,7 +229,6 @@
 			children = (
 				9976B4F71DEA43F200D2D3C4 /* MockLoader.swift */,
 			);
-			name = TestHelpers;
 			path = TestHelpers;
 			sourceTree = "<group>";
 		};
@@ -257,7 +261,6 @@
 				99C67AC91DEB0B3D00FB1E68 /* CharactersCollectionDatasourceSpec.swift */,
 				99C67AC41DEB032F00FB1E68 /* CharactersDatasourceSpec.swift */,
 			);
-			name = Datasources;
 			path = Datasources;
 			sourceTree = "<group>";
 		};
@@ -267,7 +270,6 @@
 				99C67ACB1DEB0CB800FB1E68 /* CharactersCollectionDelegateSpec.swift */,
 				99C67AC61DEB06C100FB1E68 /* CharactersDelegateSpec.swift */,
 			);
-			name = Delegates;
 			path = Delegates;
 			sourceTree = "<group>";
 		};
@@ -276,7 +278,6 @@
 			children = (
 				99D0DEB91DE268D000FE34D7 /* UIImageView+Kingfisher.swift */,
 			);
-			name = Extensions;
 			path = Extensions;
 			sourceTree = "<group>";
 		};
@@ -324,7 +325,6 @@
 				999665401DEA242300E9A5BF /* CharacterSpec.swift */,
 				99EF5DB51DEA5CCD00B5569F /* ThumbImageSpec.swift */,
 			);
-			name = Models;
 			path = Models;
 			sourceTree = "<group>";
 		};
@@ -334,7 +334,6 @@
 				99F8870F1DEA3EA00044E3B0 /* character.json */,
 				99F8870D1DEA3E6D0044E3B0 /* characters_response.json */,
 			);
-			name = Mocks;
 			path = Mocks;
 			sourceTree = "<group>";
 		};

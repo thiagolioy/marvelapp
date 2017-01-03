@@ -18,9 +18,7 @@ class CharactersContainerView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.buildViewHierarchy()
-        self.setupConstraints()
-        self.configureViews()
+        self.setupViewConfiguration()
     }
     
     required init?(coder aDecoder: NSCoder) {
