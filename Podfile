@@ -7,6 +7,7 @@ target 'Marvel' do
 
   plugin 'cocoapods-keys', {
     :project => "Marvel",
+    :target => "Marvel",
     :keys => [
       "MarvelApiKey",
       "MarvelPrivateKey"
