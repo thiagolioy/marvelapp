@@ -41,10 +41,7 @@ final class CharacterGridView: UIView {
 extension CharacterGridView: ViewConfiguration {
     func setupConstraints() {
         image.snp.makeConstraints { make in
-            make.top.equalTo(self)
-            make.left.equalTo(self)
-            make.right.equalTo(self)
-            make.bottom.equalTo(self)
+            make.edges.equalTo(self).inset(UIEdgeInsetsMake(0, 0, 0, 0))
         }
         
         containerView.snp.makeConstraints { make in
