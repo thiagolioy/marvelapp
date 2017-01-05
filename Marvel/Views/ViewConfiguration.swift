@@ -20,4 +20,8 @@ extension ViewConfiguration {
         setupConstraints()
         configureViews()
     }
+    
+    func configureViews() {
+    
+    }
 }

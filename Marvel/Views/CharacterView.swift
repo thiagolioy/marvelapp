@@ -56,10 +56,7 @@ extension CharacterView: ViewConfiguration {
         }
         
         bio.snp.makeConstraints { make in
-            make.top.equalTo(containerView).offset(15)
-            make.left.equalTo(containerView).offset(15)
-            make.right.equalTo(containerView).offset(-15)
-            make.bottom.equalTo(containerView).offset(-15)
+            make.edges.equalTo(containerView).inset(UIEdgeInsetsMake(15, 15, 15, 15))
         }
     }
     
@@ -71,5 +68,12 @@ extension CharacterView: ViewConfiguration {
     
     func configureViews(){
         self.backgroundColor = ColorPalette.black
+    }
+}
+
+extension CharacterView {
+    func setup(with character: Character) {
+        bio.text = character.bio.isEmpty ? "No description" : character.bio
+        image.download(image: character.thumImage?.fullPath() ?? "")
     }
 }

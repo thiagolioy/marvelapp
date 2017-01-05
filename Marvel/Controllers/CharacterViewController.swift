@@ -31,19 +31,11 @@ final class CharacterViewController: UIViewController {
 extension CharacterViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupView()
+        characterView.setup(with: character)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationItem.title = character.name
-    }
-}
-
-
-extension CharacterViewController {
-    func setupView() {
-        characterView.bio.text = character.bio.isEmpty ? "No description" : character.bio
-        characterView.image.download(image: character.thumImage?.fullPath() ?? "")
     }
 }
