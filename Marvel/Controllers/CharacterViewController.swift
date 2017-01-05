@@ -9,12 +9,15 @@
 import UIKit
 
 final class CharacterViewController: UIViewController {
-    var characterView = CharacterView()
-    var character: Character?
+    let characterView = CharacterView()
+    let character: Character
     
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    
+    init(character: Character) {
+        self.character = character
+        super.init(nibName: nil, bundle: nil)
     }
+    
     
     required init?(coder aDecoder: NSCoder) {
        fatalError("init(coder:) has not been implemented")
@@ -33,15 +36,14 @@ extension CharacterViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationItem.title = character?.name ?? ""
+        self.navigationItem.title = character.name
     }
 }
 
 
 extension CharacterViewController {
     func setupView() {
-        let bio = character?.bio ?? ""
-        characterView.bio.text = bio.isEmpty ? "No description" : bio
-        characterView.image.download(image: character?.thumImage?.fullPath() ?? "")
+        characterView.bio.text = character.bio.isEmpty ? "No description" : character.bio
+        characterView.image.download(image: character.thumImage?.fullPath() ?? "")
     }
 }

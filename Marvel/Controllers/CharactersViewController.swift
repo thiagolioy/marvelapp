@@ -12,27 +12,28 @@ protocol CharactersDelegate {
     func didSelectCharacter(at index: IndexPath)
 }
 
-fileprivate enum PresentationState {
+enum PresentationState {
     case table, collection
 }
 
 final class CharactersViewController: UIViewController {
-    var apiManager: MarvelAPICalls = MarvelAPIManager()
+    let apiManager: MarvelAPICalls
     
     var characters: [Character] = []
     
-    fileprivate var currentPresentationState = PresentationState.table
+    var currentPresentationState = PresentationState.table
     
     let containerView = CharactersContainerView()
     
-    
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    init(apiManager: MarvelAPICalls) {
+        self.apiManager = apiManager
+        super.init(nibName: nil, bundle: nil)
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+
 }
 
 extension CharactersViewController {
@@ -78,7 +79,7 @@ extension CharactersViewController {
         }
     }
     
-    fileprivate func setPresentationState(to state: PresentationState) {
+    func setPresentationState(to state: PresentationState) {
         currentPresentationState = state
         switch state {
         case .collection:
@@ -108,18 +109,17 @@ extension CharactersViewController {
     
     func navigateToNextController(with character: Character) {
         self.containerView.searchBar.resignFirstResponder()
-        let nextController = CharacterViewController()
-        nextController.character = character
+        let nextController = CharacterViewController(character: character)
         self.navigationController?.pushViewController(nextController, animated: true)
     }
 }
 
 extension CharactersViewController {
-    @IBAction func showAsGrid(_ sender: UIButton) {
+    func showAsGrid(_ sender: UIButton) {
         setupCollectionView(with: characters)
     }
     
-    @IBAction func showAsTable(_ sender: UIButton) {
+    func showAsTable(_ sender: UIButton) {
         setupTableView(with: characters)
     }
 }

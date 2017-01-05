@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.backgroundColor = UIColor.white
         
-        let navController = UINavigationController(rootViewController: CharactersViewController())
+        let navController = UINavigationController(rootViewController: CharactersViewController(apiManager: MarvelAPIManager()))
         self.window?.rootViewController = navController
         
         self.window?.makeKeyAndVisible()

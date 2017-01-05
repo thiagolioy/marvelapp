@@ -15,7 +15,6 @@
 		9939CFCF1DDA2E07008CE399 /* MarvelAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9939CFCE1DDA2E07008CE399 /* MarvelAPI.swift */; };
 		9939CFD11DDA30DC008CE399 /* MarvelAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9939CFD01DDA30DC008CE399 /* MarvelAPIManager.swift */; };
 		9939CFD41DDA333D008CE399 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9939CFD31DDA333D008CE399 /* Character.swift */; };
-		993AFDFF1DEA764200857C4F /* CharactersViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993AFDFE1DEA764200857C4F /* CharactersViewControllerSpec.swift */; };
 		995FC46C1E06AD52003345A2 /* CharacterRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995FC46B1E06AD52003345A2 /* CharacterRowView.swift */; };
 		995FC46E1E06ADCB003345A2 /* ViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995FC46D1E06ADCB003345A2 /* ViewConfiguration.swift */; };
 		995FC4701E06C40A003345A2 /* CharacterGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995FC46F1E06C40A003345A2 /* CharacterGridView.swift */; };
@@ -28,11 +27,6 @@
 		999D7D051E0AA6B1004139E0 /* AppSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999D7D041E0AA6B1004139E0 /* AppSearchBar.swift */; };
 		999D7D071E0AAB32004139E0 /* NavigationItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999D7D061E0AAB32004139E0 /* NavigationItems.swift */; };
 		99B248E31DDB427000027C10 /* CharacterTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B248E21DDB427000027C10 /* CharacterTableCell.swift */; };
-		99C67AC21DEB007600FB1E68 /* CharacterViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C67AC11DEB007600FB1E68 /* CharacterViewControllerSpec.swift */; };
-		99C67AC51DEB032F00FB1E68 /* CharactersDatasourceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C67AC41DEB032F00FB1E68 /* CharactersDatasourceSpec.swift */; };
-		99C67AC71DEB06C100FB1E68 /* CharactersDelegateSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C67AC61DEB06C100FB1E68 /* CharactersDelegateSpec.swift */; };
-		99C67ACA1DEB0B3D00FB1E68 /* CharactersCollectionDatasourceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C67AC91DEB0B3D00FB1E68 /* CharactersCollectionDatasourceSpec.swift */; };
-		99C67ACC1DEB0CB800FB1E68 /* CharactersCollectionDelegateSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C67ACB1DEB0CB800FB1E68 /* CharactersCollectionDelegateSpec.swift */; };
 		99D0DEB21DE2598F00FE34D7 /* ItemsCollectionViewDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D0DEB11DE2598F00FE34D7 /* ItemsCollectionViewDatasource.swift */; };
 		99D0DEB41DE259F100FE34D7 /* CharacterCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D0DEB31DE259F100FE34D7 /* CharacterCollectionCell.swift */; };
 		99D0DEB81DE25BF300FE34D7 /* CharactersCollectionDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D0DEB71DE25BF300FE34D7 /* CharactersCollectionDatasource.swift */; };
@@ -70,7 +64,6 @@
 		9939CFCE1DDA2E07008CE399 /* MarvelAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarvelAPI.swift; sourceTree = "<group>"; };
 		9939CFD01DDA30DC008CE399 /* MarvelAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarvelAPIManager.swift; sourceTree = "<group>"; };
 		9939CFD31DDA333D008CE399 /* Character.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
-		993AFDFE1DEA764200857C4F /* CharactersViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharactersViewControllerSpec.swift; sourceTree = "<group>"; };
 		995FC46B1E06AD52003345A2 /* CharacterRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterRowView.swift; sourceTree = "<group>"; };
 		995FC46D1E06ADCB003345A2 /* ViewConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewConfiguration.swift; sourceTree = "<group>"; };
 		995FC46F1E06C40A003345A2 /* CharacterGridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterGridView.swift; sourceTree = "<group>"; };
@@ -85,11 +78,6 @@
 		999D7D041E0AA6B1004139E0 /* AppSearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSearchBar.swift; sourceTree = "<group>"; };
 		999D7D061E0AAB32004139E0 /* NavigationItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationItems.swift; sourceTree = "<group>"; };
 		99B248E21DDB427000027C10 /* CharacterTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterTableCell.swift; sourceTree = "<group>"; };
-		99C67AC11DEB007600FB1E68 /* CharacterViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterViewControllerSpec.swift; sourceTree = "<group>"; };
-		99C67AC41DEB032F00FB1E68 /* CharactersDatasourceSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharactersDatasourceSpec.swift; sourceTree = "<group>"; };
-		99C67AC61DEB06C100FB1E68 /* CharactersDelegateSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharactersDelegateSpec.swift; sourceTree = "<group>"; };
-		99C67AC91DEB0B3D00FB1E68 /* CharactersCollectionDatasourceSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharactersCollectionDatasourceSpec.swift; sourceTree = "<group>"; };
-		99C67ACB1DEB0CB800FB1E68 /* CharactersCollectionDelegateSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharactersCollectionDelegateSpec.swift; sourceTree = "<group>"; };
 		99D0DEB11DE2598F00FE34D7 /* ItemsCollectionViewDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsCollectionViewDatasource.swift; sourceTree = "<group>"; };
 		99D0DEB31DE259F100FE34D7 /* CharacterCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterCollectionCell.swift; sourceTree = "<group>"; };
 		99D0DEB71DE25BF300FE34D7 /* CharactersCollectionDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharactersCollectionDatasource.swift; sourceTree = "<group>"; };
@@ -201,8 +189,6 @@
 		993AFDFD1DEA762C00857C4F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				99C67AC11DEB007600FB1E68 /* CharacterViewControllerSpec.swift */,
-				993AFDFE1DEA764200857C4F /* CharactersViewControllerSpec.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -258,8 +244,6 @@
 		99C67AC31DEB031E00FB1E68 /* Datasources */ = {
 			isa = PBXGroup;
 			children = (
-				99C67AC91DEB0B3D00FB1E68 /* CharactersCollectionDatasourceSpec.swift */,
-				99C67AC41DEB032F00FB1E68 /* CharactersDatasourceSpec.swift */,
 			);
 			path = Datasources;
 			sourceTree = "<group>";
@@ -267,8 +251,6 @@
 		99C67AC81DEB06C700FB1E68 /* Delegates */ = {
 			isa = PBXGroup;
 			children = (
-				99C67ACB1DEB0CB800FB1E68 /* CharactersCollectionDelegateSpec.swift */,
-				99C67AC61DEB06C100FB1E68 /* CharactersDelegateSpec.swift */,
 			);
 			path = Delegates;
 			sourceTree = "<group>";
@@ -574,14 +556,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9976B4F81DEA43F200D2D3C4 /* MockLoader.swift in Sources */,
-				99C67AC51DEB032F00FB1E68 /* CharactersDatasourceSpec.swift in Sources */,
-				99C67AC71DEB06C100FB1E68 /* CharactersDelegateSpec.swift in Sources */,
 				999665411DEA242300E9A5BF /* CharacterSpec.swift in Sources */,
-				99C67AC21DEB007600FB1E68 /* CharacterViewControllerSpec.swift in Sources */,
-				99C67ACA1DEB0B3D00FB1E68 /* CharactersCollectionDatasourceSpec.swift in Sources */,
 				99EF5DB61DEA5CCD00B5569F /* ThumbImageSpec.swift in Sources */,
-				993AFDFF1DEA764200857C4F /* CharactersViewControllerSpec.swift in Sources */,
-				99C67ACC1DEB0CB800FB1E68 /* CharactersCollectionDelegateSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
