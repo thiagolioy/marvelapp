@@ -22,6 +22,5 @@ extension ViewConfiguration {
     }
     
     func configureViews() {
-    
     }
 }

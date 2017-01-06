@@ -21,9 +21,7 @@ final class CharacterTableCell: UITableViewCell {
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        buildViewHierarchy()
-        setupConstraints()
-        configureViews()
+        setupViewConfiguration()
     }
     
     required init?(coder aDecoder: NSCoder) {

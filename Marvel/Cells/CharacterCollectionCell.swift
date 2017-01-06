@@ -21,9 +21,7 @@ final class CharacterCollectionCell: UICollectionViewCell{
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        buildViewHierarchy()
-        setupConstraints()
-        configureViews()
+        setupViewConfiguration()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -32,7 +30,9 @@ final class CharacterCollectionCell: UICollectionViewCell{
     
     func setup(item: Character) {
         gridView.name.text = item.name
-        gridView.image.download(image: item.thumImage?.fullPath() ?? "")
+        if let imagePath = item.thumImage?.fullPath() {
+            gridView.image.download(image: imagePath)
+        }
     }
 }
 
@@ -50,9 +50,5 @@ extension CharacterCollectionCell: ViewConfiguration {
     
     func buildViewHierarchy() {
         self.contentView.addSubview(gridView)
-    }
-    
-    func configureViews() {
-        
     }
 }
