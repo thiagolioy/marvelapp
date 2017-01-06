@@ -24,7 +24,7 @@
 
 ## Motivation
 
-This repository supports a series of posts that will show how to create an iOS app from scratch, using many different pods and tools that will make your life easier. The project will have marvel's theme and use it's [API](https://developer.marvel.com). You can usually find this information elsewhere but it is usually splitted in different unrelated tutorials, my approach here is to convey all within a single project
+This repository supports a series of posts that will show how to create an iOS app from scratch, using many different pods and tools that will make your life easier. The project will have Marvel's theme and use its [API](https://developer.marvel.com). You can usually find this information elsewhere but it is usually splitted in different unrelated tutorials, my approach here is to convey all within a single project
 
 
 
@@ -40,7 +40,7 @@ Creating a Marvel iOS App from scratch..
 
 ## Installation
 
-This project uses [Bundler](http://bundler.io) and [Cocoapods](https://cocoapods.org). All you need to setup it properly is:
+This project uses [Bundler](http://bundler.io) and [CocoaPods](https://cocoapods.org). All you need to setup it properly is:
 ```
 bundle
 bundle exec pod install
