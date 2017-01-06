@@ -15,11 +15,11 @@ class CharacterViewControllerSpec: QuickSpec {
         describe("a character view controller") {
             
             var controller: CharacterViewController!
-            
+            var character: Marvel.Character!
             beforeEach {
                 let testBundle = Bundle(for: type(of: self))
                 let mockLoader = MockLoader(file: "character", in: testBundle)
-                let character = mockLoader?.map(to: Character.self)
+                character = mockLoader?.map(to: Character.self)
                 
                 controller = CharacterViewController(character: character!)
             }
@@ -30,6 +30,18 @@ class CharacterViewControllerSpec: QuickSpec {
             
             it("should have a view of type") {
                 expect(controller.view).to(beAKindOf(CharacterView.self))
+            }
+            
+            it("should have the expected navigation title") {
+                let _ = UINavigationController(rootViewController: controller)
+                controller.viewWillAppear(true)
+                expect(controller.navigationItem.title).to(equal(character!.name))
+            }
+            
+            it("should trigger fatal error if init with coder") {
+                expect { () -> Void in
+                    let _ = CharacterViewController(coder: NSCoder())
+                }.to(throwAssertion())
             }
             
         }

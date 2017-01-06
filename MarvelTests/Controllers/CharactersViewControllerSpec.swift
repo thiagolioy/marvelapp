@@ -11,7 +11,7 @@ import Nimble
 @testable import Marvel
 
 struct MarvelAPICallsMock: MarvelAPICalls {
-    let characters: [Marvel.Character]
+    let characters: [Marvel.Character]?
     
     func characters(query: String? = nil, completion: @escaping ([Marvel.Character]?) -> Void) {
         completion(characters)
@@ -23,11 +23,11 @@ class CharactersViewControllerSpec: QuickSpec {
         describe("a characters view controller") {
             
             var controller: CharactersViewController!
-            
+            var character: Marvel.Character!
             beforeEach {
                 let testBundle = Bundle(for: type(of: self))
                 let mockLoader = MockLoader(file: "character", in: testBundle)
-                let character = mockLoader?.map(to: Character.self)
+                character = mockLoader?.map(to: Character.self)
                 let apiMock = MarvelAPICallsMock(characters: [character!])
                 controller = CharactersViewController(apiManager: apiMock)
             }
@@ -53,6 +53,56 @@ class CharactersViewControllerSpec: QuickSpec {
                 controller.currentPresentationState = .collection
                 controller.showAsTable(UIButton())
                 expect(controller.currentPresentationState == .table).to(beTruthy())
+            }
+            
+            it("should trigger fatal error if init with coder") {
+                expect { () -> Void in
+                    let _ = CharactersViewController(coder: NSCoder())
+                    }.to(throwAssertion())
+            }
+            
+            context("nil response from api") {
+                it("should follow regular flow and init characters with []"){
+                    let apiMock = MarvelAPICallsMock(characters: nil)
+                    let ct = CharactersViewController(apiManager: apiMock)
+                    expect(ct.characters.isEmpty).to(beTruthy())
+                }
+                it("should follow regular flow and init characters with []"){
+                    let apiMock = MarvelAPICallsMock(characters: nil)
+                    let ct = CharactersViewController(apiManager: apiMock)
+                    ct.currentPresentationState = .collection
+                    ct.viewDidLoad()
+                    expect(ct.characters.isEmpty).to(beTruthy())
+                }
+            }
+            
+            it("should setup search callback properly") {
+                controller.setupSearchBar()
+                expect(controller.containerView.searchBar.doSearch).toNot(beNil())
+                expect { () -> Void in
+                    controller.containerView
+                        .searchBar.doSearch!("")
+                    }.toNot(throwAssertion())
+            }
+            
+            it("should setup didSelectCharacter callback properly for table") {
+                controller.setupTableView(with: [])
+                expect(controller.containerView
+                    .charactersTable.didSelectCharacter).toNot(beNil())
+                expect { () -> Void in
+                    controller.containerView
+                        .charactersTable.didSelectCharacter!(character!)
+                    }.toNot(throwAssertion())
+            }
+            
+            it("should setup didSelectCharacter callback properly for collection") {
+                controller.setupCollectionView(with: [])
+                expect(controller.containerView
+                    .charactersCollection.didSelectCharacter).toNot(beNil())
+                expect { () -> Void in
+                    controller.containerView
+                        .charactersCollection.didSelectCharacter!(character!)
+                    }.toNot(throwAssertion())
             }
         }
     }

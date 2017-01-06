@@ -1,16 +1,16 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
 <html>
 <head>
-<title>CharacterViewController.swift - Slather</title>
+<title>AppSearchBar.swift - Slather</title>
 <link href="slather.css" media="all" rel="stylesheet">
 </head>
 <body>
 <header><div class="row"><a href="index.html"><img src="logo.jpg" alt="Slather logo"></a></div></header><div class="row"><div id="reports">
 <h2 class="cov_title">
-<span>Coverage for "CharacterViewController.swift" : </span><span class="cov_high">100.00%</span>
+<span>Coverage for "AppSearchBar.swift" : </span><span class="cov_low">40.91%</span>
 </h2>
-<h4 class="cov_subtitle">(18 of 18 relevant lines covered)</h4>
-<h4 class="cov_filepath">Marvel/Controllers/CharacterViewController.swift</h4>
+<h4 class="cov_subtitle">(9 of 22 relevant lines covered)</h4>
+<h4 class="cov_filepath">Marvel/Views/AppSearchBar.swift</h4>
 <table class="source_code">
 <tr class="never">
 <td class="num">1</td>
@@ -19,7 +19,7 @@
 </tr>
 <tr class="never">
 <td class="num">2</td>
-<td class="src"><pre><code class="objc">//  CharacterViewController.swift</code></pre></td>
+<td class="src"><pre><code class="objc">//  AppSearchBar.swift</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
@@ -34,7 +34,7 @@
 </tr>
 <tr class="never">
 <td class="num">5</td>
-<td class="src"><pre><code class="objc">//  Created by Thiago Lioy on 14/11/16.</code></pre></td>
+<td class="src"><pre><code class="objc">//  Created by Thiago Lioy on 21/12/16.</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
@@ -64,17 +64,17 @@
 </tr>
 <tr class="never">
 <td class="num">11</td>
-<td class="src"><pre><code class="objc">final class CharacterViewController: UIViewController {</code></pre></td>
+<td class="src"><pre><code class="objc">class AppSearchBar: UISearchBar {</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
 <td class="num">12</td>
-<td class="src"><pre><code class="objc">    let characterView = CharacterView()</code></pre></td>
+<td class="src"><pre><code class="objc">    </code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
 <td class="num">13</td>
-<td class="src"><pre><code class="objc">    let character: Character</code></pre></td>
+<td class="src"><pre><code class="objc">    var doSearch: ((String) -&gt; Void)?</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
@@ -82,75 +82,75 @@
 <td class="src"><pre><code class="objc">    </code></pre></td>
 <td class="coverage"></td>
 </tr>
-<tr class="never">
+<tr class="covered">
 <td class="num">15</td>
-<td class="src"><pre><code class="objc">    </code></pre></td>
-<td class="coverage"></td>
+<td class="src"><pre><code class="objc">    override init(frame: CGRect) {</code></pre></td>
+<td class="coverage">15x</td>
 </tr>
 <tr class="covered">
 <td class="num">16</td>
-<td class="src"><pre><code class="objc">    init(character: Character) {</code></pre></td>
-<td class="coverage">6x</td>
+<td class="src"><pre><code class="objc">        super.init(frame: frame)</code></pre></td>
+<td class="coverage">15x</td>
 </tr>
 <tr class="covered">
 <td class="num">17</td>
-<td class="src"><pre><code class="objc">        self.character = character</code></pre></td>
-<td class="coverage">6x</td>
+<td class="src"><pre><code class="objc">        self.delegate = self</code></pre></td>
+<td class="coverage">15x</td>
 </tr>
 <tr class="covered">
 <td class="num">18</td>
-<td class="src"><pre><code class="objc">        super.init(nibName: nil, bundle: nil)</code></pre></td>
-<td class="coverage">6x</td>
+<td class="src"><pre><code class="objc">        customizeStyle()</code></pre></td>
+<td class="coverage">15x</td>
 </tr>
 <tr class="covered">
 <td class="num">19</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">6x</td>
+<td class="coverage">15x</td>
 </tr>
 <tr class="never">
 <td class="num">20</td>
 <td class="src"><pre><code class="objc">    </code></pre></td>
 <td class="coverage"></td>
 </tr>
-<tr class="never">
+<tr class="missed">
 <td class="num">21</td>
-<td class="src"><pre><code class="objc">    </code></pre></td>
-<td class="coverage"></td>
-</tr>
-<tr class="covered">
-<td class="num">22</td>
 <td class="src"><pre><code class="objc">    required init?(coder aDecoder: NSCoder) {</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">!</td>
 </tr>
-<tr class="covered">
+<tr class="missed">
+<td class="num">22</td>
+<td class="src"><pre><code class="objc">        fatalError("init(coder:) has not been implemented")</code></pre></td>
+<td class="coverage">!</td>
+</tr>
+<tr class="missed">
 <td class="num">23</td>
-<td class="src"><pre><code class="objc">       fatalError("init(coder:) has not been implemented")</code></pre></td>
-<td class="coverage">1x</td>
-</tr>
-<tr class="covered">
-<td class="num">24</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">!</td>
 </tr>
 <tr class="never">
-<td class="num">25</td>
+<td class="num">24</td>
 <td class="src"><pre><code class="objc">    </code></pre></td>
 <td class="coverage"></td>
+</tr>
+<tr class="covered">
+<td class="num">25</td>
+<td class="src"><pre><code class="objc">    func customizeStyle() {</code></pre></td>
+<td class="coverage">15x</td>
 </tr>
 <tr class="covered">
 <td class="num">26</td>
-<td class="src"><pre><code class="objc">    override func loadView() {</code></pre></td>
-<td class="coverage">1x</td>
+<td class="src"><pre><code class="objc">        self.showsCancelButton = true</code></pre></td>
+<td class="coverage">15x</td>
 </tr>
 <tr class="covered">
 <td class="num">27</td>
-<td class="src"><pre><code class="objc">        self.view = characterView</code></pre></td>
-<td class="coverage">1x</td>
+<td class="src"><pre><code class="objc">        self.searchBarStyle = .minimal</code></pre></td>
+<td class="coverage">15x</td>
 </tr>
 <tr class="covered">
 <td class="num">28</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">15x</td>
 </tr>
 <tr class="never">
 <td class="num">29</td>
@@ -164,56 +164,61 @@
 </tr>
 <tr class="never">
 <td class="num">31</td>
-<td class="src"><pre><code class="objc">extension CharacterViewController {</code></pre></td>
+<td class="src"><pre><code class="objc">extension AppSearchBar: UISearchBarDelegate {</code></pre></td>
 <td class="coverage"></td>
 </tr>
-<tr class="covered">
+<tr class="missed">
 <td class="num">32</td>
-<td class="src"><pre><code class="objc">    override func viewDidLoad() {</code></pre></td>
-<td class="coverage">1x</td>
+<td class="src"><pre><code class="objc">    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {</code></pre></td>
+<td class="coverage">!</td>
 </tr>
-<tr class="covered">
+<tr class="missed">
 <td class="num">33</td>
-<td class="src"><pre><code class="objc">        super.viewDidLoad()</code></pre></td>
-<td class="coverage">1x</td>
+<td class="src"><pre><code class="objc">        searchBar.resignFirstResponder()</code></pre></td>
+<td class="coverage">!</td>
 </tr>
-<tr class="covered">
+<tr class="missed">
 <td class="num">34</td>
-<td class="src"><pre><code class="objc">        characterView.setup(with: character)</code></pre></td>
-<td class="coverage">1x</td>
+<td class="src"><pre><code class="objc">        let query = searchBar.text ?? ""</code></pre></td>
+<td class="coverage">!</td>
 </tr>
-<tr class="covered">
+<tr class="missed">
 <td class="num">35</td>
-<td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">1x</td>
+<td class="src"><pre><code class="objc">        if !query.isEmpty {</code></pre></td>
+<td class="coverage">!</td>
 </tr>
-<tr class="never">
+<tr class="missed">
 <td class="num">36</td>
-<td class="src"><pre><code class="objc">    </code></pre></td>
-<td class="coverage"></td>
+<td class="src"><pre><code class="objc">            doSearch?(query)</code></pre></td>
+<td class="coverage">!</td>
 </tr>
-<tr class="covered">
+<tr class="missed">
 <td class="num">37</td>
-<td class="src"><pre><code class="objc">    override func viewWillAppear(_ animated: Bool) {</code></pre></td>
-<td class="coverage">1x</td>
+<td class="src"><pre><code class="objc">        }</code></pre></td>
+<td class="coverage">!</td>
 </tr>
-<tr class="covered">
+<tr class="missed">
 <td class="num">38</td>
-<td class="src"><pre><code class="objc">        super.viewWillAppear(animated)</code></pre></td>
-<td class="coverage">1x</td>
-</tr>
-<tr class="covered">
-<td class="num">39</td>
-<td class="src"><pre><code class="objc">        self.navigationItem.title = character.name</code></pre></td>
-<td class="coverage">1x</td>
-</tr>
-<tr class="covered">
-<td class="num">40</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">!</td>
+</tr>
+<tr class="missed">
+<td class="num">39</td>
+<td class="src"><pre><code class="objc">    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {</code></pre></td>
+<td class="coverage">!</td>
+</tr>
+<tr class="missed">
+<td class="num">40</td>
+<td class="src"><pre><code class="objc">        searchBar.resignFirstResponder()</code></pre></td>
+<td class="coverage">!</td>
+</tr>
+<tr class="missed">
+<td class="num">41</td>
+<td class="src"><pre><code class="objc">    }</code></pre></td>
+<td class="coverage">!</td>
 </tr>
 <tr class="never">
-<td class="num">41</td>
+<td class="num">42</td>
 <td class="src"><pre><code class="objc">}</code></pre></td>
 <td class="coverage"></td>
 </tr>

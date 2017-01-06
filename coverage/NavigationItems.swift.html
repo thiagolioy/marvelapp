@@ -1,16 +1,16 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
 <html>
 <head>
-<title>UIImageView+Kingfisher.swift - Slather</title>
+<title>NavigationItems.swift - Slather</title>
 <link href="slather.css" media="all" rel="stylesheet">
 </head>
 <body>
 <header><div class="row"><a href="index.html"><img src="logo.jpg" alt="Slather logo"></a></div></header><div class="row"><div id="reports">
 <h2 class="cov_title">
-<span>Coverage for "UIImageView+Kingfisher.swift" : </span><span class="cov_low">66.67%</span>
+<span>Coverage for "NavigationItems.swift" : </span><span class="cov_high">100.00%</span>
 </h2>
-<h4 class="cov_subtitle">(4 of 6 relevant lines covered)</h4>
-<h4 class="cov_filepath">Marvel/Extensions/UIImageView+Kingfisher.swift</h4>
+<h4 class="cov_subtitle">(8 of 8 relevant lines covered)</h4>
+<h4 class="cov_filepath">Marvel/Views/NavigationItems.swift</h4>
 <table class="source_code">
 <tr class="never">
 <td class="num">1</td>
@@ -19,7 +19,7 @@
 </tr>
 <tr class="never">
 <td class="num">2</td>
-<td class="src"><pre><code class="objc">//  UIImage+Kingfisher.swift</code></pre></td>
+<td class="src"><pre><code class="objc">//  NavigationItemsFactory.swift</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
@@ -34,7 +34,7 @@
 </tr>
 <tr class="never">
 <td class="num">5</td>
-<td class="src"><pre><code class="objc">//  Created by Thiago Lioy on 20/11/16.</code></pre></td>
+<td class="src"><pre><code class="objc">//  Created by Thiago Lioy on 21/12/16.</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
@@ -59,51 +59,71 @@
 </tr>
 <tr class="never">
 <td class="num">10</td>
-<td class="src"><pre><code class="objc">import Kingfisher</code></pre></td>
-<td class="coverage"></td>
-</tr>
-<tr class="never">
-<td class="num">11</td>
 <td class="src"><pre><code class="objc"></code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
+<td class="num">11</td>
+<td class="src"><pre><code class="objc">enum NavigationItems {</code></pre></td>
+<td class="coverage"></td>
+</tr>
+<tr class="never">
 <td class="num">12</td>
-<td class="src"><pre><code class="objc">extension UIImageView {</code></pre></td>
+<td class="src"><pre><code class="objc">    case list(Any, Selector)</code></pre></td>
+<td class="coverage"></td>
+</tr>
+<tr class="never">
+<td class="num">13</td>
+<td class="src"><pre><code class="objc">    case grid(Any, Selector)</code></pre></td>
+<td class="coverage"></td>
+</tr>
+<tr class="never">
+<td class="num">14</td>
+<td class="src"><pre><code class="objc">    </code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="covered">
-<td class="num">13</td>
-<td class="src"><pre><code class="objc">    func download(image url: String) {</code></pre></td>
-<td class="coverage">1x</td>
-</tr>
-<tr class="missed">
-<td class="num">14</td>
-<td class="src"><pre><code class="objc">        guard let imageURL = URL(string:url) else {</code></pre></td>
-<td class="coverage">!</td>
-</tr>
-<tr class="missed">
 <td class="num">15</td>
-<td class="src"><pre><code class="objc">            return</code></pre></td>
-<td class="coverage">!</td>
+<td class="src"><pre><code class="objc">    func button() -&gt; UIBarButtonItem {</code></pre></td>
+<td class="coverage">6x</td>
 </tr>
 <tr class="covered">
 <td class="num">16</td>
-<td class="src"><pre><code class="objc">        }</code></pre></td>
-<td class="coverage">1x</td>
+<td class="src"><pre><code class="objc">        switch self {</code></pre></td>
+<td class="coverage">6x</td>
 </tr>
 <tr class="covered">
 <td class="num">17</td>
-<td class="src"><pre><code class="objc">        self.kf.setImage(with: ImageResource(downloadURL: imageURL))</code></pre></td>
-<td class="coverage">1x</td>
+<td class="src"><pre><code class="objc">        case .list(let target, let selector):</code></pre></td>
+<td class="coverage">3x</td>
 </tr>
 <tr class="covered">
 <td class="num">18</td>
+<td class="src"><pre><code class="objc">            return UIBarButtonItem(image: UIImage(named: "List Icon"), style: .plain, target: target, action: selector)</code></pre></td>
+<td class="coverage">3x</td>
+</tr>
+<tr class="covered">
+<td class="num">19</td>
+<td class="src"><pre><code class="objc">        case .grid(let target, let selector):</code></pre></td>
+<td class="coverage">3x</td>
+</tr>
+<tr class="covered">
+<td class="num">20</td>
+<td class="src"><pre><code class="objc">            return UIBarButtonItem(image: UIImage(named: "Grid Icon"), style: .plain, target: target, action: selector)</code></pre></td>
+<td class="coverage">3x</td>
+</tr>
+<tr class="covered">
+<td class="num">21</td>
+<td class="src"><pre><code class="objc">        }</code></pre></td>
+<td class="coverage">6x</td>
+</tr>
+<tr class="covered">
+<td class="num">22</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">6x</td>
 </tr>
 <tr class="never">
-<td class="num">19</td>
+<td class="num">23</td>
 <td class="src"><pre><code class="objc">}</code></pre></td>
 <td class="coverage"></td>
 </tr>
