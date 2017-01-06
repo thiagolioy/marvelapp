@@ -65,6 +65,4 @@ extension CharacterGridView: ViewConfiguration {
         self.addSubview(containerView)
     }
     
-    func configureViews() {
-    }
 }

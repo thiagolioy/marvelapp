@@ -34,7 +34,10 @@ final class CharacterTableCell: UITableViewCell {
     func setup(item: Character) {
         characterRow.name.text = item.name
         characterRow.bio.text = item.bio.isEmpty ? "No description" : item.bio
-        characterRow.imageThumb.download(image: item.thumImage?.fullPath() ?? "")
+        if let imagePath = item.thumImage?.fullPath() {
+            characterRow.imageThumb.download(image: imagePath)
+        }
+        
     }
 }
 

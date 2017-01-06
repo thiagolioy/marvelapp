@@ -68,8 +68,5 @@ extension CharacterRowView: ViewConfiguration {
         self.addSubview(name)
         self.addSubview(bio)
     }
-    
-    func configureViews() {
-    }
 }
 

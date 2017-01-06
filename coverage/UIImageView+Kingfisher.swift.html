@@ -7,9 +7,9 @@
 <body>
 <header><div class="row"><a href="index.html"><img src="logo.jpg" alt="Slather logo"></a></div></header><div class="row"><div id="reports">
 <h2 class="cov_title">
-<span>Coverage for "UIImageView+Kingfisher.swift" : </span><span class="cov_low">66.67%</span>
+<span>Coverage for "UIImageView+Kingfisher.swift" : </span><span class="cov_high">100.00%</span>
 </h2>
-<h4 class="cov_subtitle">(4 of 6 relevant lines covered)</h4>
+<h4 class="cov_subtitle">(5 of 5 relevant lines covered)</h4>
 <h4 class="cov_filepath">Marvel/Extensions/UIImageView+Kingfisher.swift</h4>
 <table class="source_code">
 <tr class="never">
@@ -75,35 +75,30 @@
 <tr class="covered">
 <td class="num">13</td>
 <td class="src"><pre><code class="objc">    func download(image url: String) {</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">7x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">14</td>
-<td class="src"><pre><code class="objc">        guard let imageURL = URL(string:url) else {</code></pre></td>
-<td class="coverage">!</td>
+<td class="src"><pre><code class="objc">        if let imageURL = URL(string:url) {</code></pre></td>
+<td class="coverage">7x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">15</td>
-<td class="src"><pre><code class="objc">            return</code></pre></td>
-<td class="coverage">!</td>
+<td class="src"><pre><code class="objc">            self.kf.setImage(with: ImageResource(downloadURL: imageURL))</code></pre></td>
+<td class="coverage">7x</td>
 </tr>
 <tr class="covered">
 <td class="num">16</td>
 <td class="src"><pre><code class="objc">        }</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">7x</td>
 </tr>
 <tr class="covered">
 <td class="num">17</td>
-<td class="src"><pre><code class="objc">        self.kf.setImage(with: ImageResource(downloadURL: imageURL))</code></pre></td>
-<td class="coverage">1x</td>
-</tr>
-<tr class="covered">
-<td class="num">18</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">7x</td>
 </tr>
 <tr class="never">
-<td class="num">19</td>
+<td class="num">18</td>
 <td class="src"><pre><code class="objc">}</code></pre></td>
 <td class="coverage"></td>
 </tr>

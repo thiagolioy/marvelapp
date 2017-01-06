@@ -11,9 +11,8 @@ import Kingfisher
 
 extension UIImageView {
     func download(image url: String) {
-        guard let imageURL = URL(string:url) else {
-            return
+        if let imageURL = URL(string:url) {
+            self.kf.setImage(with: ImageResource(downloadURL: imageURL))
         }
-        self.kf.setImage(with: ImageResource(downloadURL: imageURL))
     }
 }
