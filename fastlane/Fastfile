@@ -31,7 +31,6 @@ platform :ios do
       proj: "Marvel.xcodeproj",
       html: true,
       ignore: [
-        "**/Storyboard.swift",
         "**/MarvelAPI.swift",
         "**/MarvelAPIManager.swift"
       ]
