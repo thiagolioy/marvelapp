@@ -42,6 +42,11 @@ extension CharactersCollection {
 
 extension CharactersCollection: CharactersDelegate {
     func didSelectCharacter(at index: IndexPath) {
+        let itemsCount = numberOfItems(inSection: 0)
+        guard itemsCount > index.row else {
+            return
+        }
+        
         if let char = customDatasource?.items[index.row] {
             didSelectCharacter?(char)
         }
