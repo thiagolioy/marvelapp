@@ -28,8 +28,8 @@ class CharactersViewControllerSpec: QuickSpec {
                 let testBundle = Bundle(for: type(of: self))
                 let mockLoader = MockLoader(file: "character", in: testBundle)
                 let character = mockLoader?.map(to: Character.self)
-                
-                controller = CharactersViewController(apiManager: character!)
+                let apiMock = MarvelAPICallsMock(characters: [character!])
+                controller = CharactersViewController(apiManager: apiMock)
             }
             
             it("should be able to create a controller") {
@@ -37,9 +37,23 @@ class CharactersViewControllerSpec: QuickSpec {
             }
             
             it("should have a view of type") {
-                expect(controller.view).to(beAKindOf(CharacterView.self))
+                expect(controller.view).to(beAKindOf(CharactersContainerView.self))
             }
             
+            it("should have have the expected presentation style") {
+                expect(controller.currentPresentationState == .table).to(beTruthy())
+            }
+            
+            it("should change presentation style to collection after click on grid icon") {
+                controller.showAsGrid(UIButton())
+                expect(controller.currentPresentationState == .collection).to(beTruthy())
+            }
+            
+            it("should change presentation style to table after click on row icon") {
+                controller.currentPresentationState = .collection
+                controller.showAsTable(UIButton())
+                expect(controller.currentPresentationState == .table).to(beTruthy())
+            }
         }
     }
 }
