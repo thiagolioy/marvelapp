@@ -31,9 +31,10 @@ class AppSearchBar: UISearchBar {
 extension AppSearchBar: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
-        let query = searchBar.text ?? ""
-        if !query.isEmpty {
-            doSearch?(query)
+        if let query = searchBar.text {
+            if !query.isEmpty {
+                doSearch?(query)
+            }
         }
     }
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
