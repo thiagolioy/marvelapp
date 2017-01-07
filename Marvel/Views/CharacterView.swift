@@ -74,6 +74,8 @@ extension CharacterView: ViewConfiguration {
 extension CharacterView {
     func setup(with character: Character) {
         bio.text = character.bio.isEmpty ? "No description" : character.bio
-        image.download(image: character.thumImage?.fullPath() ?? "")
+        if let imagePath = character.thumImage?.fullPath() {
+            image.download(image: imagePath)
+        }
     }
 }

@@ -51,6 +51,7 @@ class CharactersCollectionSpec: QuickSpec {
                     }.toNot(throwAssertion())
                 }
             }
+            
             it("should trigger fatal error if init with coder") {
                 expect { () -> Void in
                     let _ = CharactersCollection(coder: NSCoder())
