@@ -15,6 +15,7 @@ target 'Marvel' do
 
   # Pods for Marvel
    pod 'SwiftGen'
+   pod "RxRealm"
    pod 'RxSwift', '~> 3.0.0-beta.2'
    pod 'Moya/RxSwift','~> 8.0.0-beta.1'
    pod 'Moya-ObjectMapper/RxSwift', :git => 'https://github.com/ivanbruel/Moya-ObjectMapper'
