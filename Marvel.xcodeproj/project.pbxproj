@@ -30,6 +30,7 @@
 		999D7D051E0AA6B1004139E0 /* AppSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999D7D041E0AA6B1004139E0 /* AppSearchBar.swift */; };
 		999D7D071E0AAB32004139E0 /* NavigationItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999D7D061E0AAB32004139E0 /* NavigationItems.swift */; };
 		99B248E31DDB427000027C10 /* CharacterTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B248E21DDB427000027C10 /* CharacterTableCell.swift */; };
+		99B4FE271E2D904800A1D17A /* ImageAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B4FE261E2D904800A1D17A /* ImageAssets.swift */; };
 		99CB631A1E1FC15D00900E77 /* CharacterCollectionCellSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CB63191E1FC15D00900E77 /* CharacterCollectionCellSpec.swift */; };
 		99D0DEB21DE2598F00FE34D7 /* ItemsCollectionViewDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D0DEB11DE2598F00FE34D7 /* ItemsCollectionViewDatasource.swift */; };
 		99D0DEB41DE259F100FE34D7 /* CharacterCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D0DEB31DE259F100FE34D7 /* CharacterCollectionCell.swift */; };
@@ -96,6 +97,7 @@
 		999D7D041E0AA6B1004139E0 /* AppSearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSearchBar.swift; sourceTree = "<group>"; };
 		999D7D061E0AAB32004139E0 /* NavigationItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationItems.swift; sourceTree = "<group>"; };
 		99B248E21DDB427000027C10 /* CharacterTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterTableCell.swift; sourceTree = "<group>"; };
+		99B4FE261E2D904800A1D17A /* ImageAssets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageAssets.swift; sourceTree = "<group>"; };
 		99CB63191E1FC15D00900E77 /* CharacterCollectionCellSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterCollectionCellSpec.swift; sourceTree = "<group>"; };
 		99D0DEB11DE2598F00FE34D7 /* ItemsCollectionViewDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsCollectionViewDatasource.swift; sourceTree = "<group>"; };
 		99D0DEB31DE259F100FE34D7 /* CharacterCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterCollectionCell.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 		9939CFCB1DDA26A3008CE399 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				99B4FE261E2D904800A1D17A /* ImageAssets.swift */,
 				99E1DFEA1DDA1F4C006F9D96 /* Assets.xcassets */,
 				9922F1561DFDB69200237BFE /* ColorPalette.swift */,
 				99E1DFEF1DDA1F4C006F9D96 /* Info.plist */,
@@ -445,6 +448,7 @@
 				99E1DFDE1DDA1F4C006F9D96 /* Resources */,
 				65B66DF972813F1C9E6FAB9F /* [CP] Embed Pods Frameworks */,
 				572BC285D19F6AE624CEB662 /* [CP] Copy Pods Resources */,
+				99B4FE251E2D8E5E00A1D17A /* SwiftGen Images */,
 			);
 			buildRules = (
 			);
@@ -594,6 +598,20 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Marvel/Pods-Marvel-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		99B4FE251E2D8E5E00A1D17A /* SwiftGen Images */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "SwiftGen Images";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "$PODS_ROOT/SwiftGen/bin/swiftgen images -t swift3 \"${SRCROOT}/Marvel/Resources/Assets.xcassets\" --output $SOURCE_ROOT/Marvel/Resources/ImageAssets.swift --enumName ImageAssets";
+		};
 		AF9627A2960EE733DD7D8871 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -645,6 +663,7 @@
 				99D0DEB81DE25BF300FE34D7 /* CharactersCollectionDatasource.swift in Sources */,
 				99FC2BC81DDDB0F3006CB7EE /* ItemsTableViewDatasource.swift in Sources */,
 				995FC46C1E06AD52003345A2 /* CharacterRowView.swift in Sources */,
+				99B4FE271E2D904800A1D17A /* ImageAssets.swift in Sources */,
 				998E15851E07195B0057DE2C /* CharactersContainerView.swift in Sources */,
 				9939CFD11DDA30DC008CE399 /* MarvelAPIManager.swift in Sources */,
 				995FC4721E06D017003345A2 /* CharacterView.swift in Sources */,
