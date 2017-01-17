@@ -24,15 +24,6 @@ target 'Marvel' do
    pod "Reusable"
 end
 
-target 'MarvelTests' do
-  use_frameworks!
-
-  pod 'Quick'
-  pod 'Nimble'
-  pod 'Fakery'
-  pod 'ObjectMapper'
-
-end
 
 post_install do |installer|
   installer.pods_project.targets.each do |target|
