@@ -14,9 +14,12 @@ final class CharacterCollectionCell: UICollectionViewCell, NibReusable {
     @IBOutlet weak var thumb: UIImageView!
     
     
+    static let paddingBtwCells = CGFloat(10)
+    
     static func size(for parentWidth: CGFloat) -> CGSize {
         let numberOfCells = CGFloat(2)
-        let width = parentWidth / numberOfCells
+        let totalPadding = CGFloat(numberOfCells+1) * paddingBtwCells
+        let width = (parentWidth - totalPadding) / numberOfCells
         return CGSize(width: width, height: width)
     }
     

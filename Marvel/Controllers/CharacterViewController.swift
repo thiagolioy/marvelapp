@@ -9,7 +9,7 @@
 import UIKit
 
 final class CharacterViewController: UIViewController {
-    @IBOutlet weak var characterDescription: UILabel!
+    @IBOutlet weak var name: UILabel!
     @IBOutlet weak var image: UIImageView!
     
     var character: Character?
@@ -20,19 +20,12 @@ extension CharacterViewController {
         super.viewDidLoad()
         setupView()
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationItem.title = character?.name ?? ""
-    }
 }
 
 
 extension CharacterViewController {
     func setupView() {
-        let bio = character?.bio ?? ""
-        characterDescription.text = bio.isEmpty ? "No description" : bio
-        
+        name.text = character?.name ?? ""
         image.download(image: character?.thumImage?.fullPath() ?? "")
     }
 }
