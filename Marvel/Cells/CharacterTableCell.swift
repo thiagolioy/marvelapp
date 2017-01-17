@@ -30,13 +30,14 @@ final class CharacterTableCell: UITableViewCell {
     
     
     func setup(item: Character) {
-        characterRow.name.text = item.name
-        characterRow.bio.text = item.bio.isEmpty ? "No description" : item.bio
-        if let imagePath = item.thumImage?.fullPath() {
-            characterRow.imageThumb.download(image: imagePath)
-        }
-        
+        characterRow.setup(with: item)
     }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        characterRow.favoriteView.viewState = .notFavourited
+    }
+    
 }
 
 extension CharacterTableCell: Reusable {

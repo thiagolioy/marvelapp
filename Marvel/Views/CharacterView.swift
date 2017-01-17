@@ -28,6 +28,8 @@ final class CharacterView: UIView {
         return lb
     }()
     
+    let favoriteView = FavoriteView()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.setupViewConfiguration()
@@ -48,6 +50,13 @@ extension CharacterView: ViewConfiguration {
             make.height.equalTo(350)
         }
         
+        favoriteView.snp.makeConstraints { make in
+            make.height.equalTo(44)
+            make.width.equalTo(44)
+            make.top.equalTo(self).offset(64)
+            make.right.equalTo(self)
+        }
+        
         containerView.snp.makeConstraints { make in
             make.top.equalTo(image.snp.bottom)
             make.bottom.equalTo(self)
@@ -62,6 +71,7 @@ extension CharacterView: ViewConfiguration {
     
     func buildViewHierarchy() {
         self.addSubview(image)
+        self.addSubview(favoriteView)
         containerView.addSubview(bio)
         self.addSubview(containerView)
     }

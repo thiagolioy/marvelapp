@@ -10,6 +10,8 @@
 		577769109DC3FB06E7D1882F /* Pods_Marvel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8D7213E1EA596B7C60C8E59 /* Pods_Marvel.framework */; };
 		991E73E71E1E648B003F3C37 /* CharacterViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991E73E61E1E648B003F3C37 /* CharacterViewControllerSpec.swift */; };
 		991E73E91E1E65EA003F3C37 /* CharactersViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991E73E81E1E65EA003F3C37 /* CharactersViewControllerSpec.swift */; };
+		992196CB1E2E1A7500EB8CBA /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992196CA1E2E1A7500EB8CBA /* FavoriteView.swift */; };
+		992196CE1E2E34A800EB8CBA /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992196CD1E2E34A800EB8CBA /* RealmManager.swift */; };
 		9922F1571DFDB69200237BFE /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9922F1561DFDB69200237BFE /* ColorPalette.swift */; };
 		9922F15A1DFDC00900237BFE /* ApperanceProxyHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9922F1591DFDC00900237BFE /* ApperanceProxyHelper.swift */; };
 		9939CFC71DDA244A008CE399 /* CharactersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9939CFC61DDA244A008CE399 /* CharactersViewController.swift */; };
@@ -75,6 +77,8 @@
 		8C6A61295B862198BB138719 /* Pods_MarvelTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarvelTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		991E73E61E1E648B003F3C37 /* CharacterViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterViewControllerSpec.swift; sourceTree = "<group>"; };
 		991E73E81E1E65EA003F3C37 /* CharactersViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharactersViewControllerSpec.swift; sourceTree = "<group>"; };
+		992196CA1E2E1A7500EB8CBA /* FavoriteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
+		992196CD1E2E34A800EB8CBA /* RealmManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		9922F1561DFDB69200237BFE /* ColorPalette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
 		9922F1591DFDC00900237BFE /* ApperanceProxyHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApperanceProxyHelper.swift; sourceTree = "<group>"; };
 		9939CFC61DDA244A008CE399 /* CharactersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharactersViewController.swift; sourceTree = "<group>"; };
@@ -155,6 +159,14 @@
 			children = (
 			);
 			name = Custom;
+			sourceTree = "<group>";
+		};
+		992196CC1E2E349A00EB8CBA /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				992196CD1E2E34A800EB8CBA /* RealmManager.swift */,
+			);
+			name = Realm;
 			sourceTree = "<group>";
 		};
 		9922F1581DFDBFF400237BFE /* Apperance */ = {
@@ -241,6 +253,7 @@
 				998E15821E0718880057DE2C /* CharactersTable.swift */,
 				999D7D061E0AAB32004139E0 /* NavigationItems.swift */,
 				995FC46D1E06ADCB003345A2 /* ViewConfiguration.swift */,
+				992196CA1E2E1A7500EB8CBA /* FavoriteView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -336,6 +349,7 @@
 		99E1DFE21DDA1F4C006F9D96 /* Marvel */ = {
 			isa = PBXGroup;
 			children = (
+				992196CC1E2E349A00EB8CBA /* Realm */,
 				9939CFCC1DDA2716008CE399 /* AppDelegate */,
 				9922F1581DFDBFF400237BFE /* Apperance */,
 				99B248E11DDB423900027C10 /* Cells */,
@@ -664,6 +678,7 @@
 				99FC2BC81DDDB0F3006CB7EE /* ItemsTableViewDatasource.swift in Sources */,
 				995FC46C1E06AD52003345A2 /* CharacterRowView.swift in Sources */,
 				99B4FE271E2D904800A1D17A /* ImageAssets.swift in Sources */,
+				992196CE1E2E34A800EB8CBA /* RealmManager.swift in Sources */,
 				998E15851E07195B0057DE2C /* CharactersContainerView.swift in Sources */,
 				9939CFD11DDA30DC008CE399 /* MarvelAPIManager.swift in Sources */,
 				995FC4721E06D017003345A2 /* CharacterView.swift in Sources */,
@@ -675,6 +690,7 @@
 				9939CFC71DDA244A008CE399 /* CharactersViewController.swift in Sources */,
 				999D7D071E0AAB32004139E0 /* NavigationItems.swift in Sources */,
 				99D0DEB21DE2598F00FE34D7 /* ItemsCollectionViewDatasource.swift in Sources */,
+				992196CB1E2E1A7500EB8CBA /* FavoriteView.swift in Sources */,
 				9939CFD41DDA333D008CE399 /* Character.swift in Sources */,
 				9922F1571DFDB69200237BFE /* ColorPalette.swift in Sources */,
 				998E15871E0719700057DE2C /* CharactersCollection.swift in Sources */,

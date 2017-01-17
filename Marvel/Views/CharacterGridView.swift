@@ -28,6 +28,8 @@ final class CharacterGridView: UIView {
         return lb
     }()
     
+    let favoriteView = FavoriteView()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.setupViewConfiguration()
@@ -42,6 +44,13 @@ extension CharacterGridView: ViewConfiguration {
     func setupConstraints() {
         image.snp.makeConstraints { make in
             make.edges.equalTo(self).inset(UIEdgeInsetsMake(0, 0, 0, 0))
+        }
+        
+        favoriteView.snp.makeConstraints { make in
+            make.height.equalTo(44)
+            make.width.equalTo(44)
+            make.top.equalTo(self)
+            make.right.equalTo(self)
         }
         
         containerView.snp.makeConstraints { make in
@@ -61,6 +70,7 @@ extension CharacterGridView: ViewConfiguration {
     
     func buildViewHierarchy() {
         self.addSubview(image)
+        self.addSubview(favoriteView)
         containerView.addSubview(name)
         self.addSubview(containerView)
     }
