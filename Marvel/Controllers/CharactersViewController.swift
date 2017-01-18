@@ -61,9 +61,10 @@ extension CharactersViewController {
     func fetchCharacters(for query: String? = nil) {
         containerView.charactersTable.isHidden = true
         containerView.charactersCollection.isHidden = true
-        
+        containerView.activityIndicator.startAnimating()
         apiManager.characters(query: query) { characters in
             self.characters = characters ?? []
+            self.containerView.activityIndicator.stopAnimating()
             switch self.currentPresentationState {
             case .table:
                 self.setupTableView(with: self.characters)

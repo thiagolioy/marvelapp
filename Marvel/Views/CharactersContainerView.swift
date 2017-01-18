@@ -12,6 +12,13 @@ class CharactersContainerView: UIView {
         
     let searchBar = AppSearchBar()
     
+    let activityIndicator: UIActivityIndicatorView = {
+        let ai = UIActivityIndicatorView()
+        ai.hidesWhenStopped = true
+        ai.tintColor = ColorPalette.white
+        return ai
+    }()
+    
     let charactersTable = CharactersTable()
     
     let charactersCollection = CharactersCollection()
@@ -48,12 +55,19 @@ extension CharactersContainerView: ViewConfiguration {
             make.right.equalTo(self)
             make.bottom.equalTo(self)
         }
+        activityIndicator.snp.makeConstraints { make in
+            make.height.equalTo(20)
+            make.width.equalTo(20)
+            make.centerX.equalTo(self)
+            make.centerY.equalTo(self)
+        }
     }
     
     func buildViewHierarchy() {
         self.addSubview(searchBar)
         self.addSubview(charactersTable)
         self.addSubview(charactersCollection)
+        self.addSubview(activityIndicator)
     }
     
     func configureViews(){

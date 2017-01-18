@@ -58,15 +58,15 @@ class CharacterFavoriteView: FavoriteView {
 }
 
 extension CharacterFavoriteView {
-    func removeNotifications() {
+    fileprivate func removeNotifications() {
         NotificationCenter.default.removeObserver(target, name: NSNotification.Name(rawValue: "FavoriteStatusChanged"), object: nil)
     }
     
-    func postFavoriteStatusChangedNotification() {
+    fileprivate func postFavoriteStatusChangedNotification() {
         NotificationCenter.default.post(name: Notification.Name("FavoriteStatusChanged"), object: nil)
     }
     
-    func addNotifications() {
+    fileprivate func addNotifications() {
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(favoriteStatusChanged),

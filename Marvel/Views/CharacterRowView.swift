@@ -72,14 +72,14 @@ extension CharacterRowView: ViewConfiguration {
         name.snp.makeConstraints { make in
             make.top.equalTo(self).offset(15)
             make.left.equalTo(imageThumb.snp.right).offset(15)
-            make.right.equalTo(favoriteView).offset(-10)
+            make.right.equalTo(favoriteView.snp.left).offset(-10)
             make.height.equalTo(21)
         }
         
         bio.snp.makeConstraints { make in
             make.top.equalTo(name.snp.bottom).offset(8)
             make.left.equalTo(imageThumb.snp.right).offset(15)
-            make.right.equalTo(favoriteView).offset(-10)
+            make.right.equalTo(favoriteView.snp.left).offset(-10)
             make.bottom.equalTo(self).offset(-15)
         }
     }
