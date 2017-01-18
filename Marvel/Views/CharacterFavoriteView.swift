@@ -11,9 +11,15 @@ import UIKit
 class CharacterFavoriteView: FavoriteView {
 
     let realmManager = RealmManager()
+    var character: Character?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        addNotifications()
+    }
+    
+    deinit {
+        removeNotifications()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -21,19 +27,50 @@ class CharacterFavoriteView: FavoriteView {
     }
     
     func setup(with character: Character) {
+        self.character = character
+        
         realmManager.isFavorite(character: character)
             .subscribe(onNext: { [weak self] _ in
                 self?.viewState = .favourited
             }).dispose()
         
-        
         didFavorite = { [weak self] in
             self?.realmManager.favorite(character: character)
+            self?.postFavoriteStatusChangedNotification()
         }
         
         didUnfavorite = { [weak self] in
             self?.realmManager.unfavorite(character: character)
+            self?.postFavoriteStatusChangedNotification()
         }
     }
     
+    func favoriteStatusChanged() {
+        if let character = character {
+            self.viewState = .notFavourited
+            realmManager.isFavorite(character: character)
+                .subscribe(onNext: { [weak self] _ in
+                    self?.viewState = .favourited
+                }).dispose()
+        }
+    }
+    
+}
+
+extension CharacterFavoriteView {
+    func removeNotifications() {
+        NotificationCenter.default.removeObserver(target, name: NSNotification.Name(rawValue: "FavoriteStatusChanged"), object: nil)
+    }
+    
+    func postFavoriteStatusChangedNotification() {
+        NotificationCenter.default.post(name: Notification.Name("FavoriteStatusChanged"), object: nil)
+    }
+    
+    func addNotifications() {
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(favoriteStatusChanged),
+            name: NSNotification.Name(rawValue: "FavoriteStatusChanged"),
+            object: nil)
+    }
 }
