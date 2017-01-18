@@ -51,10 +51,11 @@ extension CharacterRowView {
             imageThumb.download(image: imagePath)
         }
         
-        realmManager.isFavorite(character: character) { [weak self] isFavorite in
-            self?.favoriteView.viewState = isFavorite ?
-                .favourited : .notFavourited
-        }
+        realmManager.isFavorite(character: character)
+            .subscribe(onNext: { [weak self] _ in
+                self?.favoriteView.viewState = .favourited
+            }).dispose()
+        
         
         favoriteView.didFavorite = { [weak self] in
             self?.realmManager.favorite(character: character)

@@ -7,6 +7,8 @@
 //
 
 import RealmSwift
+import RxRealm
+import RxSwift
 
 class FavoriteCharacter: Object {
     dynamic var id = 0
@@ -16,39 +18,43 @@ class FavoriteCharacter: Object {
         self.init()
         id = character.id
     }
+    
+    override static func primaryKey() -> String? {
+        return "id"
+    }
 }
 
 struct RealmManager {
     
-    func isFavorite(character: Character, completion: @escaping (Bool) -> Void) {
-        DispatchQueue(label: "background").async {
-            let realm = try? Realm()
-            let count = realm?.objects(FavoriteCharacter.self)
-                .filter("id == \(character.id)").count ?? 0
-            completion(count > 0)
-        }
+    let disposeBag = DisposeBag()
+    
+    func isFavorite(character: Character) -> Observable<FavoriteCharacter>{
+        return favorites(filter: "id == \(character.id)")
     }
     
     func favorite(character: Character) {
-        DispatchQueue(label: "background").async {
-            let favorite = FavoriteCharacter(character: character)
-            let realm = try? Realm()
-            try? realm?.write {
-                realm?.add(favorite)
-            }
+        let favorite = FavoriteCharacter(character: character)
+        Observable.just(favorite)
+            .subscribe(Realm.rx.add())
+            .addDisposableTo(disposeBag)
+    }
+    
+    func favorites(filter predicateFormat: String? = nil) -> Observable<FavoriteCharacter> {
+        guard let realm = try? Realm() else {
+            return Observable.empty()
         }
+        var results = realm.objects(FavoriteCharacter.self)
+        if let predicate = predicateFormat {
+            results = results.filter(predicate)
+        }
+        let list = results.toArray()
+        return Observable.from(list)
     }
     
     func unfavorite(character: Character) {
-        DispatchQueue(label: "background").async {
-            let realm = try? Realm()
-            if let obj = realm?.objects(FavoriteCharacter.self)
-                .filter("id == \(character.id)").first {
-                try? realm?.write {
-                    realm?.delete(obj)
-                }
-            }
-        }
+        favorites(filter: "id == \(character.id)")
+            .subscribe(Realm.rx.delete())
+            .addDisposableTo(disposeBag)
     }
     
 }
