@@ -82,7 +82,4 @@ extension FavoriteView: ViewConfiguration {
         self.addSubview(starImage)
         self.addSubview(button)
     }
-    
-    func configureViews(){
-    }
 }
