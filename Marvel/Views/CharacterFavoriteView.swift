@@ -29,6 +29,7 @@ class CharacterFavoriteView: FavoriteView {
     func setup(with character: Character) {
         self.character = character
         
+        self.viewState = .notFavourited
         realmManager.isFavorite(character: character)
             .subscribe(onNext: { [weak self] _ in
                 self?.viewState = .favourited

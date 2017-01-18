@@ -33,11 +33,6 @@ final class CharacterTableCell: UITableViewCell {
         characterRow.setup(with: item)
     }
     
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        characterRow.favoriteView.viewState = .notFavourited
-    }
-    
 }
 
 extension CharacterTableCell: Reusable {
