@@ -29,10 +29,7 @@ final class CharacterCollectionCell: UICollectionViewCell{
     }
     
     func setup(item: Character) {
-        gridView.name.text = item.name
-        if let imagePath = item.thumImage?.fullPath() {
-            gridView.image.download(image: imagePath)
-        }
+        gridView.setup(with: item)
     }
 }
 

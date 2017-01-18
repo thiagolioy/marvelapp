@@ -29,9 +29,8 @@ final class CharacterRowView: UIView {
         return lb
     }()
     
-    let favoriteView = FavoriteView()
+    let favoriteView = CharacterFavoriteView()
     
-    let realmManager = RealmManager()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -50,21 +49,7 @@ extension CharacterRowView {
         if let imagePath = character.thumImage?.fullPath() {
             imageThumb.download(image: imagePath)
         }
-        
-        realmManager.isFavorite(character: character)
-            .subscribe(onNext: { [weak self] _ in
-                self?.favoriteView.viewState = .favourited
-            }).dispose()
-        
-        
-        favoriteView.didFavorite = { [weak self] in
-            self?.realmManager.favorite(character: character)
-        }
-        
-        favoriteView.didUnfavorite = { [weak self] in
-            self?.realmManager.unfavorite(character: character)
-        }
-        
+        favoriteView.setup(with: character)
     }
 }
 

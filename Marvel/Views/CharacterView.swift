@@ -28,7 +28,7 @@ final class CharacterView: UIView {
         return lb
     }()
     
-    let favoriteView = FavoriteView()
+    let favoriteView = CharacterFavoriteView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -39,6 +39,17 @@ final class CharacterView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+}
+
+extension CharacterView {
+    func setup(with character: Character) {
+        bio.text = character.bio.isEmpty ? "No description" : character.bio
+        if let imagePath = character.thumImage?.fullPath() {
+            image.download(image: imagePath)
+        }
+        
+        favoriteView.setup(with: character)
+    }
 }
 
 extension CharacterView: ViewConfiguration {
@@ -81,11 +92,4 @@ extension CharacterView: ViewConfiguration {
     }
 }
 
-extension CharacterView {
-    func setup(with character: Character) {
-        bio.text = character.bio.isEmpty ? "No description" : character.bio
-        if let imagePath = character.thumImage?.fullPath() {
-            image.download(image: imagePath)
-        }
-    }
-}
+

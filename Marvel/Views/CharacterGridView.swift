@@ -28,7 +28,7 @@ final class CharacterGridView: UIView {
         return lb
     }()
     
-    let favoriteView = FavoriteView()
+    let favoriteView = CharacterFavoriteView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -37,6 +37,16 @@ final class CharacterGridView: UIView {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+
+extension CharacterGridView {
+    func setup(with character: Character) {
+        name.text = character.name
+        if let imagePath = character.thumImage?.fullPath() {
+            image.download(image: imagePath)
+        }
+        favoriteView.setup(with: character)
     }
 }
 
