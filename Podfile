@@ -15,15 +15,15 @@ target 'Marvel' do
 
   # Pods for Marvel
    pod 'SwiftGen'
-   pod "RxRealm"
-   pod 'RxSwift', '~> 3.0.0-beta.2'
-   pod 'Moya/RxSwift','~> 8.0.0-beta.1'
+   pod 'RxRealm', :git => 'https://github.com/RxSwiftCommunity/RxRealm.git', :branch => 'master'
+   pod 'RxSwift'
+   pod 'Moya/RxSwift'
    pod 'Moya-ObjectMapper/RxSwift', :git => 'https://github.com/ivanbruel/Moya-ObjectMapper'
    pod 'CryptoSwift'
    pod 'Dollar'
    pod 'Kingfisher'
-   pod "Reusable"
-   pod "SnapKit"
+   pod 'Reusable'
+   pod 'SnapKit'
 end
 
 target 'MarvelTests' do

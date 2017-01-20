@@ -5,41 +5,41 @@ PODS:
   - Fakery (2.0.0)
   - Keys (1.0.0)
   - Kingfisher (3.2.4)
-  - Moya (8.0.0-beta.6):
-    - Moya/Core (= 8.0.0-beta.6)
-  - Moya-ObjectMapper/Core (2.2.1):
-    - Moya (>= 8.0.0-beta.4)
-    - ObjectMapper (= 2.2.1)
-  - Moya-ObjectMapper/RxSwift (2.2.1):
+  - Moya (8.0.0):
+    - Moya/Core (= 8.0.0)
+  - Moya-ObjectMapper/Core (2.3):
+    - Moya (>= 8.0.0)
+    - ObjectMapper (= 2.2.2)
+  - Moya-ObjectMapper/RxSwift (2.3):
     - Moya-ObjectMapper/Core
     - Moya/RxSwift
-    - RxSwift (= 3.0.1)
-  - Moya/Core (8.0.0-beta.6):
-    - Alamofire (~> 4.0)
-    - Result (~> 3.0)
-  - Moya/RxSwift (8.0.0-beta.6):
+    - RxSwift (= 3.1.0)
+  - Moya/Core (8.0.0):
+    - Alamofire (~> 4.2.0)
+    - Result (~> 3.1.0)
+  - Moya/RxSwift (8.0.0):
     - Moya/Core
-    - RxSwift (~> 3.0)
+    - RxSwift (~> 3.1.0)
   - Nimble (5.1.1)
-  - ObjectMapper (2.2.1)
+  - ObjectMapper (2.2.2)
   - Quick (1.0.0)
-  - Realm (2.1.2):
-    - Realm/Headers (= 2.1.2)
-  - Realm/Headers (2.1.2)
-  - RealmSwift (2.1.2):
-    - Realm (= 2.1.2)
+  - Realm (2.3.0):
+    - Realm/Headers (= 2.3.0)
+  - Realm/Headers (2.3.0)
+  - RealmSwift (2.3.0):
+    - Realm (= 2.3.0)
   - Result (3.1.0)
   - Reusable (3.0.1):
     - Reusable/Storyboard (= 3.0.1)
     - Reusable/View (= 3.0.1)
   - Reusable/Storyboard (3.0.1)
   - Reusable/View (3.0.1)
-  - RxRealm (0.4.0):
-    - RealmSwift (~> 2.0)
-    - RxSwift (~> 3.0.0)
-  - RxSwift (3.0.1)
+  - RxRealm (0.4.1):
+    - RealmSwift (~> 2.2)
+    - RxSwift (~> 3.1)
+  - RxSwift (3.1.0)
   - SnapKit (3.1.2)
-  - SwiftGen (4.0.1)
+  - SwiftGen (4.1.0)
 
 DEPENDENCIES:
   - CryptoSwift
@@ -48,13 +48,13 @@ DEPENDENCIES:
   - Keys (from `Pods/CocoaPodsKeys`)
   - Kingfisher
   - Moya-ObjectMapper/RxSwift (from `https://github.com/ivanbruel/Moya-ObjectMapper`)
-  - Moya/RxSwift (~> 8.0.0-beta.1)
+  - Moya/RxSwift
   - Nimble
   - ObjectMapper
   - Quick
   - Reusable
-  - RxRealm
-  - RxSwift (~> 3.0.0-beta.2)
+  - RxRealm (from `https://github.com/RxSwiftCommunity/RxRealm.git`, branch `master`)
+  - RxSwift
   - SnapKit
   - SwiftGen
 
@@ -63,11 +63,17 @@ EXTERNAL SOURCES:
     :path: Pods/CocoaPodsKeys
   Moya-ObjectMapper:
     :git: https://github.com/ivanbruel/Moya-ObjectMapper
+  RxRealm:
+    :branch: master
+    :git: https://github.com/RxSwiftCommunity/RxRealm.git
 
 CHECKOUT OPTIONS:
   Moya-ObjectMapper:
-    :commit: 2c82539c7189a0a1bef360289a06090a5f56d5b8
+    :commit: 7e56b363e71d70b3c2c1aff4e909bcf92a05c20d
     :git: https://github.com/ivanbruel/Moya-ObjectMapper
+  RxRealm:
+    :commit: c161c16924c0b831258f9a9678879591e4ee40ff
+    :git: https://github.com/RxSwiftCommunity/RxRealm.git
 
 SPEC CHECKSUMS:
   Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
@@ -76,20 +82,20 @@ SPEC CHECKSUMS:
   Fakery: 97b99c23937d2e025d9135c75e2b17351ccd5031
   Keys: 9c35bf00f612ee1d48556f4a4b9b4551e224e90f
   Kingfisher: 8d80f39da403cd9c9ee11984e1655f4d6a566cdb
-  Moya: a29e2503a0c5067d462ba2f07cc6b6b1f3fc172d
-  Moya-ObjectMapper: 6852b17a8971dd9f614322ace8d36a4e6f14ba5c
+  Moya: 850a166ab8241bd1c1cea6dbe012e3a2ad62944a
+  Moya-ObjectMapper: 1d2799d27c1173cb8c95c606a44fbd218526fd06
   Nimble: 415e3aa3267e7bc2c96b05fa814ddea7bb686a29
-  ObjectMapper: 41e43e1a89f8060ef5ea5d04ba852e269a621d68
+  ObjectMapper: 9e385c2295bcc4e16eabbcfc85db801442bba545
   Quick: 8024e4a47e6cc03a9d5245ef0948264fc6d27cff
-  Realm: efe855f4d977c8ce5a82d3116d9f1ff155a6550c
-  RealmSwift: 17d6ee30b6f9df86364408c2197492e33bfea567
+  Realm: 69d7de9aa569a11eed490aaabc8f2109e3985ecf
+  RealmSwift: dc6f99ea55e59490cec69c860f91932b6bf7efb6
   Result: 4e3ed5995ed94d0cd6a09be9a431fce3f3624bbf
   Reusable: 5362d10271ca8316b104698a21e90498f47e8339
-  RxRealm: 6c1052b72118ed6929115801c38f90f0c962f2cf
-  RxSwift: af5680055c4ad04480189c52d28385b1029493a6
+  RxRealm: 13137f8fd638053a3adc908c8ec7d5961df5ce22
+  RxSwift: 83ff553e7593fdfdcb2562933a64c0284dffdadc
   SnapKit: 12b24f569cb7c143acc9c22b9d91b23e7b1c84a2
-  SwiftGen: 04bbc1fb69add82a7a471380dfbdd00b45912d17
+  SwiftGen: d29fd8b7aa52092411d415fb09d0abd3d79ea1a5
 
-PODFILE CHECKSUM: fe4d12e51a46ec339bbe8aebb2f648ef28dbb8de
+PODFILE CHECKSUM: d21b7d28a68e46c0c9d51da9b2a9f2b622819a4b
 
 COCOAPODS: 1.1.1
