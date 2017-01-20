@@ -11,6 +11,7 @@ import Moya
 import CryptoSwift
 import Dollar
 import Keys
+import Alamofire
 
 fileprivate struct MarvelAPIConfig {
     fileprivate static let keys = MarvelKeys()
@@ -59,6 +60,10 @@ extension MarvelAPI: TargetType {
             }
             return authParameters()
         }
+    }
+    
+    var parameterEncoding: ParameterEncoding {
+        return URLEncoding()
     }
     
     var task: Task {

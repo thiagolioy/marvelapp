@@ -7,8 +7,8 @@
 //
 
 import RealmSwift
-import RxRealm
 import RxSwift
+import RxRealm
 
 class FavoriteCharacter: Object {
     dynamic var id = 0
@@ -28,7 +28,7 @@ struct RealmManager {
     
     let disposeBag = DisposeBag()
     
-    func isFavorite(character: Character) -> Observable<FavoriteCharacter>{
+    func isFavorite(character: Character) -> Observable<Results<FavoriteCharacter>>{
         return favorites(filter: "id == \(character.id)")
     }
     
@@ -39,22 +39,22 @@ struct RealmManager {
             .addDisposableTo(disposeBag)
     }
     
-    func favorites(filter predicateFormat: String? = nil) -> Observable<FavoriteCharacter> {
+    func favorites(filter predicateFormat: String? = nil) -> Observable<Results<FavoriteCharacter>> {
         guard let realm = try? Realm() else {
             return Observable.empty()
         }
-        var results = realm.objects(FavoriteCharacter.self)
+        var results: Results<FavoriteCharacter> = realm.objects(FavoriteCharacter.self)
         if let predicate = predicateFormat {
             results = results.filter(predicate)
         }
-        let list = results.toArray()
-        return Observable.from(list)
+        
+        return Observable.collection(from: results)
     }
     
     func unfavorite(character: Character) {
         favorites(filter: "id == \(character.id)")
             .subscribe(Realm.rx.delete())
-            .addDisposableTo(disposeBag)
+            .dispose()
     }
     
 }
