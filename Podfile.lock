@@ -72,7 +72,7 @@ CHECKOUT OPTIONS:
     :commit: 7e56b363e71d70b3c2c1aff4e909bcf92a05c20d
     :git: https://github.com/ivanbruel/Moya-ObjectMapper
   RxRealm:
-    :commit: c161c16924c0b831258f9a9678879591e4ee40ff
+    :commit: f43cedce7b3d14bcf5b85735ccacf8f9ce6c1f06
     :git: https://github.com/RxSwiftCommunity/RxRealm.git
 
 SPEC CHECKSUMS:
