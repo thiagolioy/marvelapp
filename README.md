@@ -34,8 +34,8 @@ Creating a Marvel iOS App from scratch..
 
 - [Part 1 | Tools, pods, tricks of the trade and more](https://medium.com/cocoaacademymag/creating-a-ios-app-from-scratch-tools-pods-tricks-of-the-trade-and-more-part-1-a0a3f18fbd13#.fu8u4puxu)
 - [Part 2 | Tests, coverage and more](https://medium.com/cocoaacademymag/creating-a-ios-app-from-scratch-part-2-tests-coverage-and-more-73b94178b695#.4s4omxm48)
-- [Part 3 | Travis, Danger and Fastlane](https://medium.com/cocoaacademymag/creating-a-ios-app-from-scratch-part-2-tests-coverage-and-more-73b94178b695#.4s4omxm48)
-- [Part 4 | Sketch for developers](https://medium.com/cocoaacademymag/creating-a-ios-app-from-scratch-part-2-tests-coverage-and-more-73b94178b695#.4s4omxm48)
+- [Part 3 | Travis, Danger and Fastlane](https://medium.com/cocoaacademymag/creating-a-ios-app-from-scratch-part-3-travis-danger-and-fastlane-8ac91a003c95#.ii2fy9oc5)
+- [Part 4 | Sketch for developers](https://medium.com/cocoaacademymag/creating-a-marvel-ios-app-from-scratch-part-4-sketch-for-developers-2344a221482a#.kr3lhhobz)
 
 
 ## Installation
