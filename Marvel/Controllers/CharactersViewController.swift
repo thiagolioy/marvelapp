@@ -19,11 +19,13 @@ enum PresentationState {
 
 final class CharactersViewController: UIViewController, StoreSubscriber {
     var currentPresentationState = PresentationState.table
-    
     let containerView = CharactersContainerView()
     
     init() {
         super.init(nibName: nil, bundle: nil)
+        store.subscribe(self) { state in
+            state.fetchedCharactersState
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -31,8 +33,11 @@ final class CharactersViewController: UIViewController, StoreSubscriber {
     }
     
     func newState(state: FetchedCharactersState) {
-        if state.requestState == .finished {
-            setupFinishedFetchState(state: state)
+        switch state.characters {
+        case .finished(let characters):
+            updateUI(with: characters)
+        default:
+            break
         }
     }
     
@@ -46,13 +51,13 @@ final class CharactersViewController: UIViewController, StoreSubscriber {
         store.unsubscribe(self)
     }
     
-    func setupFinishedFetchState(state: FetchedCharactersState) {
+    func updateUI(with characters: [Character]) {
         self.containerView.activityIndicator.stopAnimating()
         switch self.currentPresentationState {
         case .table:
-            self.setupTableView(with: state.characters)
+            self.setupTableView(with: characters)
         case .collection:
-            self.setupCollectionView(with: state.characters)
+            self.setupCollectionView(with: characters)
         }
     }
 }
@@ -62,9 +67,6 @@ extension CharactersViewController {
         super.viewDidLoad()
         setupNavigationItem()
         setupSearchBar()
-        store.subscribe(self) { state in
-            state.fetchedCharactersState
-        }
         fetchCharacters()
     }
     
@@ -130,10 +132,22 @@ extension CharactersViewController {
 
 extension CharactersViewController {
     func showAsGrid(_ sender: UIButton) {
-        setupCollectionView(with: store.state.fetchedCharactersState.characters)
+        let result = store.state.fetchedCharactersState.characters
+        switch result {
+        case .finished(let characters):
+            setupCollectionView(with: characters)
+        default:
+            break
+        }
     }
     
     func showAsTable(_ sender: UIButton) {
-        setupTableView(with: store.state.fetchedCharactersState.characters)
+        let result = store.state.fetchedCharactersState.characters
+        switch result {
+        case .finished(let characters):
+            setupTableView(with: characters)
+        default:
+            break
+        }
     }
 }

@@ -8,9 +8,6 @@
 
 import Foundation
 import ReSwift
-import RealmSwift
-import RxSwift
-import RxRealm
 
 struct AppState: StateType {
     var favoritesState: FavoritesState
@@ -21,12 +18,11 @@ struct FavoritesState: StateType {
     var favorites: [FavoriteCharacter] = []
 }
 
-enum RequestState {
+enum Result<T> {
     case loading
-    case finished
+    case failed
+    case finished(T)
 }
-
 struct FetchedCharactersState: StateType {
-    var requestState: RequestState = .loading
-    var characters: [Character] = []
+    var characters: Result<[Character]> = .loading
 }

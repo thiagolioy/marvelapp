@@ -21,7 +21,6 @@ class CharacterFavoriteView: FavoriteView, StoreSubscriber {
         }
     }
     
-    
     deinit {
         store.unsubscribe(self)
     }
