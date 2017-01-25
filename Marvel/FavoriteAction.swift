@@ -16,3 +16,11 @@ struct FavoriteAction: Action {
 struct UnfavoriteAction: Action {
     let character: Character
 }
+
+struct FetchCharactersAction: Action {
+    let query: String?
+}
+
+struct SetCharactersAction: Action {
+    let characters: [Character]
+}

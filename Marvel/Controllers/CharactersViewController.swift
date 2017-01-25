@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ReSwift
 
 protocol CharactersDelegate {
     func didSelectCharacter(at index: IndexPath)
@@ -16,24 +17,44 @@ enum PresentationState {
     case table, collection
 }
 
-final class CharactersViewController: UIViewController {
-    let apiManager: MarvelAPICalls
-    
-    var characters: [Character] = []
-    
+final class CharactersViewController: UIViewController, StoreSubscriber {
     var currentPresentationState = PresentationState.table
     
     let containerView = CharactersContainerView()
     
-    init(apiManager: MarvelAPICalls) {
-        self.apiManager = apiManager
+    init() {
         super.init(nibName: nil, bundle: nil)
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
+    func newState(state: FetchedCharactersState) {
+        if state.requestState == .finished {
+            setupFinishedFetchState(state: state)
+        }
+    }
+    
+    func setupLoadingState() {
+        containerView.charactersTable.isHidden = true
+        containerView.charactersCollection.isHidden = true
+        containerView.activityIndicator.startAnimating()
+    }
+    
+    deinit {
+        store.unsubscribe(self)
+    }
+    
+    func setupFinishedFetchState(state: FetchedCharactersState) {
+        self.containerView.activityIndicator.stopAnimating()
+        switch self.currentPresentationState {
+        case .table:
+            self.setupTableView(with: state.characters)
+        case .collection:
+            self.setupCollectionView(with: state.characters)
+        }
+    }
 }
 
 extension CharactersViewController {
@@ -41,6 +62,9 @@ extension CharactersViewController {
         super.viewDidLoad()
         setupNavigationItem()
         setupSearchBar()
+        store.subscribe(self) { state in
+            state.fetchedCharactersState
+        }
         fetchCharacters()
     }
     
@@ -59,19 +83,8 @@ extension CharactersViewController {
     }
     
     func fetchCharacters(for query: String? = nil) {
-        containerView.charactersTable.isHidden = true
-        containerView.charactersCollection.isHidden = true
-        containerView.activityIndicator.startAnimating()
-        apiManager.characters(query: query) { characters in
-            self.characters = characters ?? []
-            self.containerView.activityIndicator.stopAnimating()
-            switch self.currentPresentationState {
-            case .table:
-                self.setupTableView(with: self.characters)
-            case .collection:
-                self.setupCollectionView(with: self.characters)
-            }
-        }
+        setupLoadingState()
+        store.dispatch(FetchCharactersAction(query: query))
     }
     
     func setupSearchBar() {
@@ -117,10 +130,10 @@ extension CharactersViewController {
 
 extension CharactersViewController {
     func showAsGrid(_ sender: UIButton) {
-        setupCollectionView(with: characters)
+        setupCollectionView(with: store.state.fetchedCharactersState.characters)
     }
     
     func showAsTable(_ sender: UIButton) {
-        setupTableView(with: characters)
+        setupTableView(with: store.state.fetchedCharactersState.characters)
     }
 }

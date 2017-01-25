@@ -14,8 +14,19 @@ import RxRealm
 
 struct AppState: StateType {
     var favoritesState: FavoritesState
+    var fetchedCharactersState: FetchedCharactersState
 }
 
 struct FavoritesState: StateType {
     var favorites: [FavoriteCharacter] = []
+}
+
+enum RequestState {
+    case loading
+    case finished
+}
+
+struct FetchedCharactersState: StateType {
+    var requestState: RequestState = .loading
+    var characters: [Character] = []
 }
