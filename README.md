@@ -37,6 +37,19 @@ Creating a Marvel iOS App from scratch..
 - [Part 3 | Travis, Danger and Fastlane](https://medium.com/cocoaacademymag/creating-a-ios-app-from-scratch-part-3-travis-danger-and-fastlane-8ac91a003c95#.ii2fy9oc5)
 - [Part 4 | Sketch for developers](https://medium.com/cocoaacademymag/creating-a-marvel-ios-app-from-scratch-part-4-sketch-for-developers-2344a221482a#.kr3lhhobz)
 
+Other posts built upon Marvel's iOS App..
+
+- [Migrating a Marvel's App to view code!](https://medium.com/cocoaacademymag/migrating-an-app-to-view-code-ffe3f1510408#.jwzemxaqa)
+- [Testing Marvel's View Code project .. With 100 % Code coverage !!](https://medium.com/cocoaacademymag/testing-marvels-view-code-project-with-100-code-coverage-23c55de4053b#.j16lslb7k)
+
+- [Marvel iOS App! Favoriting a character with View Code, Realm & RxSwift ..](https://medium.com/cocoaacademymag/marvel-ios-app-favoriting-a-character-with-view-code-realm-rxswift-e43b187c0f8e#.dd6bmjkil)
+
+- [Architecture Thoughts: Migrating Marvel's iOS App to ReSwift](https://medium.com/cocoaacademymag/architecture-thoughts-migrating-marvels-ios-app-to-reswift-ef7f20e84e60#.nl0b3aizp)
+
+
+
+
+
 
 ## Installation
 
