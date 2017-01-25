@@ -29,6 +29,7 @@ PODS:
   - RealmSwift (2.3.0):
     - Realm (= 2.3.0)
   - Result (3.1.0)
+  - ReSwift (3.0.0)
   - Reusable (3.0.1):
     - Reusable/Storyboard (= 3.0.1)
     - Reusable/View (= 3.0.1)
@@ -52,6 +53,7 @@ DEPENDENCIES:
   - Nimble
   - ObjectMapper
   - Quick
+  - ReSwift
   - Reusable
   - RxRealm (from `https://github.com/RxSwiftCommunity/RxRealm.git`, branch `master`)
   - RxSwift
@@ -90,12 +92,13 @@ SPEC CHECKSUMS:
   Realm: 69d7de9aa569a11eed490aaabc8f2109e3985ecf
   RealmSwift: dc6f99ea55e59490cec69c860f91932b6bf7efb6
   Result: 4e3ed5995ed94d0cd6a09be9a431fce3f3624bbf
+  ReSwift: f0255f4b4f2dacd12c5d97d34d13fc5dad6d6371
   Reusable: 5362d10271ca8316b104698a21e90498f47e8339
   RxRealm: 13137f8fd638053a3adc908c8ec7d5961df5ce22
   RxSwift: 83ff553e7593fdfdcb2562933a64c0284dffdadc
   SnapKit: 12b24f569cb7c143acc9c22b9d91b23e7b1c84a2
   SwiftGen: d29fd8b7aa52092411d415fb09d0abd3d79ea1a5
 
-PODFILE CHECKSUM: d21b7d28a68e46c0c9d51da9b2a9f2b622819a4b
+PODFILE CHECKSUM: 9e3e1517de96d5073d9c648627491b432eb68b8f
 
 COCOAPODS: 1.1.1

@@ -24,6 +24,7 @@ target 'Marvel' do
    pod 'Kingfisher'
    pod 'Reusable'
    pod 'SnapKit'
+   pod 'ReSwift'
 end
 
 target 'MarvelTests' do

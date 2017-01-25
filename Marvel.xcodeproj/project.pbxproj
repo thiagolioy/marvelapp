@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0ACF9A101E37C37200CA368B /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACF9A0F1E37C37200CA368B /* AppReducer.swift */; };
+		0ACF9A121E37C3B000CA368B /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACF9A111E37C3B000CA368B /* AppState.swift */; };
+		0ACF9A141E37C48E00CA368B /* FavoriteAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACF9A131E37C48E00CA368B /* FavoriteAction.swift */; };
 		577769109DC3FB06E7D1882F /* Pods_Marvel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8D7213E1EA596B7C60C8E59 /* Pods_Marvel.framework */; };
 		991E73E71E1E648B003F3C37 /* CharacterViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991E73E61E1E648B003F3C37 /* CharacterViewControllerSpec.swift */; };
 		991E73E91E1E65EA003F3C37 /* CharactersViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991E73E81E1E65EA003F3C37 /* CharactersViewControllerSpec.swift */; };
@@ -73,6 +76,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0ACF9A0F1E37C37200CA368B /* AppReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
+		0ACF9A111E37C3B000CA368B /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		0ACF9A131E37C48E00CA368B /* FavoriteAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteAction.swift; sourceTree = "<group>"; };
 		46E32511C8C4E886533F9B7E /* Pods-Marvel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvel.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Marvel/Pods-Marvel.debug.xcconfig"; sourceTree = "<group>"; };
 		8289D5AF9F3BDEDBC4EE6E82 /* Pods-Marvel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvel.release.xcconfig"; path = "Pods/Target Support Files/Pods-Marvel/Pods-Marvel.release.xcconfig"; sourceTree = "<group>"; };
 		8C6A61295B862198BB138719 /* Pods_MarvelTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarvelTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -156,6 +162,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0ACF9A0E1E37C36000CA368B /* Reswift */ = {
+			isa = PBXGroup;
+			children = (
+				0ACF9A0F1E37C37200CA368B /* AppReducer.swift */,
+				0ACF9A111E37C3B000CA368B /* AppState.swift */,
+				0ACF9A131E37C48E00CA368B /* FavoriteAction.swift */,
+			);
+			name = Reswift;
+			sourceTree = "<group>";
+		};
 		99201F3E1E1BB4B6008CF525 /* Custom */ = {
 			isa = PBXGroup;
 			children = (
@@ -352,6 +368,7 @@
 		99E1DFE21DDA1F4C006F9D96 /* Marvel */ = {
 			isa = PBXGroup;
 			children = (
+				0ACF9A0E1E37C36000CA368B /* Reswift */,
 				992196CC1E2E349A00EB8CBA /* Realm */,
 				9939CFCC1DDA2716008CE399 /* AppDelegate */,
 				9922F1581DFDBFF400237BFE /* Apperance */,
@@ -689,6 +706,8 @@
 				9922F15A1DFDC00900237BFE /* ApperanceProxyHelper.swift in Sources */,
 				99D0DEBA1DE268D000FE34D7 /* UIImageView+Kingfisher.swift in Sources */,
 				9939CFC91DDA245A008CE399 /* CharacterViewController.swift in Sources */,
+				0ACF9A141E37C48E00CA368B /* FavoriteAction.swift in Sources */,
+				0ACF9A121E37C3B000CA368B /* AppState.swift in Sources */,
 				99D0DEB41DE259F100FE34D7 /* CharacterCollectionCell.swift in Sources */,
 				99B248E31DDB427000027C10 /* CharacterTableCell.swift in Sources */,
 				9939CFC71DDA244A008CE399 /* CharactersViewController.swift in Sources */,
@@ -700,6 +719,7 @@
 				998E15871E0719700057DE2C /* CharactersCollection.swift in Sources */,
 				999D7D051E0AA6B1004139E0 /* AppSearchBar.swift in Sources */,
 				99E1DFE41DDA1F4C006F9D96 /* AppDelegate.swift in Sources */,
+				0ACF9A101E37C37200CA368B /* AppReducer.swift in Sources */,
 				99FC2BCA1DDDB1BF006CB7EE /* CharactersDatasource.swift in Sources */,
 				998E15831E0718880057DE2C /* CharactersTable.swift in Sources */,
 				995FC4701E06C40A003345A2 /* CharacterGridView.swift in Sources */,

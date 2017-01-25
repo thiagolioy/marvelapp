@@ -8,45 +8,56 @@
 
 import UIKit
 import RxSwift
+import ReSwift
 
-class CharacterFavoriteView: FavoriteView {
+class CharacterFavoriteView: FavoriteView, StoreSubscriber {
 
-    var disposeBag: DisposeBag?
-    let realmManager = RealmManager()
     var character: Character?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        store.subscribe(self) { state in
+            state.favoritesState
+        }
     }
     
+    
+    deinit {
+        store.unsubscribe(self)
+    }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func toogleFavoriteState(for favorites: [FavoriteCharacter]) {
+        let isFavorite = favorites.contains { [weak self] favorite in
+            favorite.id == self?.character?.id
+        }
+        
+        if isFavorite {
+            self.viewState = .favourited
+        } else {
+            self.viewState = .notFavourited
+        }
+    }
+    
+    func newState(state: FavoritesState) {
+        toogleFavoriteState(for: state.favorites)
+    }
+    
     func setup(with character: Character) {
-        let disposeBag = DisposeBag()
         
         self.character = character
         
-        self.viewState = .notFavourited
-        realmManager.isFavorite(character: character)
-            .subscribe(onNext: { [weak self] (result) in
-                if result.count > 0 {
-                    self?.viewState = .favourited
-                } else {
-                    self?.viewState = .notFavourited
-                }
-            }).addDisposableTo(disposeBag)
-        
-        self.disposeBag = disposeBag
-        
-        didFavorite = { [weak self] in
-            self?.realmManager.favorite(character: character)
+        toogleFavoriteState(for: store.state.favoritesState.favorites)
+
+        didFavorite = {
+            store.dispatch(FavoriteAction(character: character))
         }
         
-        didUnfavorite = { [weak self] in
-            self?.realmManager.unfavorite(character: character)
+        didUnfavorite = {
+            store.dispatch(UnfavoriteAction(character: character))
         }
     }
 }

@@ -28,7 +28,7 @@ struct RealmManager {
     
     let disposeBag = DisposeBag()
     
-    func isFavorite(character: Character) -> Observable<Results<FavoriteCharacter>>{
+    func isFavorite(character: Character) -> [FavoriteCharacter] {
         return favorites(filter: "id == \(character.id)")
     }
     
@@ -39,22 +39,31 @@ struct RealmManager {
             .addDisposableTo(disposeBag)
     }
     
-    func favorites(filter predicateFormat: String? = nil) -> Observable<Results<FavoriteCharacter>> {
+    private func _favorites(filter predicateFormat: String? = nil) -> Results<FavoriteCharacter>?{
         guard let realm = try? Realm() else {
-            return Observable.empty()
+            return nil
         }
         var results: Results<FavoriteCharacter> = realm.objects(FavoriteCharacter.self)
         if let predicate = predicateFormat {
             results = results.filter(predicate)
         }
-        
-        return Observable.collection(from: results)
+        return results
+    }
+    
+    func favorites(filter predicateFormat: String? = nil) -> [FavoriteCharacter] {
+        if let results = _favorites(filter: predicateFormat) {
+            return Array(results)
+        } else {
+            return []
+        }
     }
     
     func unfavorite(character: Character) {
-        favorites(filter: "id == \(character.id)")
-            .subscribe(Realm.rx.delete())
-            .dispose()
+        if let results = _favorites(filter: "id == \(character.id)") {
+            Observable.collection(from: results)
+                .subscribe(Realm.rx.delete())
+                .dispose()
+        }
     }
     
 }
