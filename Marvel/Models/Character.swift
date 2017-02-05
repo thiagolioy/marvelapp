@@ -8,24 +8,43 @@
 
 import Foundation
 import ObjectMapper
+import IGListKit
 
-struct Character {
+class Character: Mappable {
     var id: Int = 0
     var name: String = ""
     var bio: String = ""
     var thumImage: ThumbImage?
-}
-
-
-extension Character: Mappable {
-    init?(map: Map) {
-        
+    
+    convenience required init?(map: Map) {
+        self.init()
     }
     
-    mutating func mapping(map: Map) {
+    func mapping(map: Map) {
         id    <- map["id"]
         name    <- map["name"]
         bio     <- map["description"]
         thumImage    <- map["thumbnail"]
+    }
+}
+
+extension Character: Equatable {
+    static public func ==(rhs: Character, lhs: Character) -> Bool {
+        return rhs.id == lhs.id
+    }
+}
+
+extension Character: IGListDiffable {
+    
+    public func diffIdentifier() -> NSObjectProtocol {
+        return NSNumber(value: id)
+    }
+    
+    public func isEqual(toDiffableObject object: IGListDiffable?) -> Bool {
+        guard let object = object as? Character else {
+            return false
+        }
+        
+        return self == object
     }
 }

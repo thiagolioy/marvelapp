@@ -9,9 +9,8 @@
 import UIKit
 
 protocol CharactersDelegate {
-    func didSelectCharacter(at index: IndexPath)
+    func didSelectCharacter(at index: Int)
 }
-
 
 final class CharactersViewController: UIViewController {
     var apiManager: MarvelAPICalls = MarvelAPIManager()
@@ -46,7 +45,7 @@ extension CharactersViewController {
         tableView.isHidden = true
         collectionView.isHidden = true
         activityIndicator.startAnimating()
-        apiManager.characters(query: query) { characters in
+        apiManager.characters(query: query, skip: self.characters.count) { characters in
             self.activityIndicator.stopAnimating()
             if let characters = characters {
                 if self.showingAsList {
@@ -92,14 +91,14 @@ extension CharactersViewController {
 }
 
 extension CharactersViewController: CharactersDelegate {
-    func didSelectCharacter(at index: IndexPath) {
+    func didSelectCharacter(at index: Int) {
         searchBar.resignFirstResponder()
         guard let nextController = Storyboard.Main.characterViewControllerScene
             .viewController() as? CharacterViewController else {
             return
         }
         
-        let character = characters[index.row]
+        let character = characters[index]
         nextController.character = character
         self.navigationController?.pushViewController(nextController, animated: true)
     }
