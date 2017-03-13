@@ -22,6 +22,10 @@
   <img src="assets/marvel_screens.png" alt="Marvel Screens" />
 </h3>
 
+## WIP
+
+This is a experimental branch, still under development.
+
 ## Motivation
 
 This repository supports a series of posts that will show how to create an iOS app from scratch, using many different pods and tools that will make your life easier. The project will have Marvel's theme and use its [API](https://developer.marvel.com). You can usually find this information elsewhere but it is usually splitted in different unrelated tutorials, my approach here is to convey all within a single project
