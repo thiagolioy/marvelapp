@@ -1,101 +1,107 @@
 PODS:
-  - Alamofire (4.2.0)
-  - CryptoSwift (0.6.7)
-  - Dollar (6.1.0)
+  - Action (2.2.1):
+    - RxCocoa (~> 3.0)
+    - RxSwift (~> 3.0)
+  - Alamofire (4.4.0)
+  - CryptoSwift (0.6.8)
+  - Dollar (6.2.0)
   - Fakery (2.0.0)
   - Keys (1.0.0)
-  - Kingfisher (3.2.4)
-  - Moya (8.0.0):
-    - Moya/Core (= 8.0.0)
-  - Moya-ObjectMapper/Core (2.3):
-    - Moya (>= 8.0.0)
-    - ObjectMapper (= 2.2.2)
-  - Moya-ObjectMapper/RxSwift (2.3):
+  - Kingfisher (3.6.1)
+  - Moya (8.0.3):
+    - Moya/Core (= 8.0.3)
+  - Moya-ObjectMapper/Core (2.3.1):
+    - Moya (~> 8.0)
+    - ObjectMapper (~> 2.2)
+  - Moya-ObjectMapper/RxSwift (2.3.1):
     - Moya-ObjectMapper/Core
     - Moya/RxSwift
-    - RxSwift (= 3.1.0)
-  - Moya/Core (8.0.0):
-    - Alamofire (~> 4.2.0)
-    - Result (~> 3.1.0)
-  - Moya/RxSwift (8.0.0):
-    - Moya/Core
-    - RxSwift (~> 3.1.0)
-  - Nimble (5.1.1)
-  - ObjectMapper (2.2.2)
-  - Quick (1.0.0)
-  - Realm (2.3.0):
-    - Realm/Headers (= 2.3.0)
-  - Realm/Headers (2.3.0)
-  - RealmSwift (2.3.0):
-    - Realm (= 2.3.0)
-  - Result (3.1.0)
-  - Reusable (3.0.1):
-    - Reusable/Storyboard (= 3.0.1)
-    - Reusable/View (= 3.0.1)
-  - Reusable/Storyboard (3.0.1)
-  - Reusable/View (3.0.1)
-  - RxRealm (0.4.1):
-    - RealmSwift (~> 2.2)
     - RxSwift (~> 3.1)
-  - RxSwift (3.1.0)
-  - SnapKit (3.1.2)
-  - SwiftGen (4.1.0)
+  - Moya/Core (8.0.3):
+    - Alamofire (~> 4.1)
+    - Result (~> 3.0)
+  - Moya/RxSwift (8.0.3):
+    - Moya/Core
+    - RxSwift (~> 3.0)
+  - Nimble (6.1.0)
+  - NSObject+Rx (2.0.0):
+    - RxSwift
+  - ObjectMapper (2.2.5)
+  - Quick (1.1.0)
+  - Realm (2.5.1):
+    - Realm/Headers (= 2.5.1)
+  - Realm/Headers (2.5.1)
+  - RealmSwift (2.5.1):
+    - Realm (= 2.5.1)
+  - Result (3.2.1)
+  - Reusable (4.0.0):
+    - Reusable/Storyboard (= 4.0.0)
+    - Reusable/View (= 4.0.0)
+  - Reusable/Storyboard (4.0.0)
+  - Reusable/View (4.0.0)
+  - RxCocoa (3.3.1):
+    - RxSwift (~> 3.3)
+  - RxDataSources (1.0.3):
+    - RxCocoa (~> 3.0)
+    - RxSwift (~> 3.0)
+  - RxRealm (0.5.2):
+    - RealmSwift (~> 2.4)
+    - RxSwift (~> 3.1)
+  - RxSwift (3.3.1)
+  - SnapKit (3.2.0)
+  - SwiftGen (4.2.0)
 
 DEPENDENCIES:
+  - Action (~> 2.2.1)
   - CryptoSwift
   - Dollar
   - Fakery
   - Keys (from `Pods/CocoaPodsKeys`)
   - Kingfisher
-  - Moya-ObjectMapper/RxSwift (from `https://github.com/ivanbruel/Moya-ObjectMapper`)
+  - Moya-ObjectMapper/RxSwift
   - Moya/RxSwift
   - Nimble
+  - NSObject+Rx (~> 2.0)
   - ObjectMapper
   - Quick
+  - RealmSwift (~> 2.4)
   - Reusable
-  - RxRealm (from `https://github.com/RxSwiftCommunity/RxRealm.git`, branch `master`)
-  - RxSwift
+  - RxCocoa (~> 3.2)
+  - RxDataSources (~> 1.0.2)
+  - RxRealm (~> 0.5.1)
+  - RxSwift (~> 3.2)
   - SnapKit
   - SwiftGen
 
 EXTERNAL SOURCES:
   Keys:
     :path: Pods/CocoaPodsKeys
-  Moya-ObjectMapper:
-    :git: https://github.com/ivanbruel/Moya-ObjectMapper
-  RxRealm:
-    :branch: master
-    :git: https://github.com/RxSwiftCommunity/RxRealm.git
-
-CHECKOUT OPTIONS:
-  Moya-ObjectMapper:
-    :commit: 7e56b363e71d70b3c2c1aff4e909bcf92a05c20d
-    :git: https://github.com/ivanbruel/Moya-ObjectMapper
-  RxRealm:
-    :commit: f43cedce7b3d14bcf5b85735ccacf8f9ce6c1f06
-    :git: https://github.com/RxSwiftCommunity/RxRealm.git
 
 SPEC CHECKSUMS:
-  Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
-  CryptoSwift: 685ae257941e5447474348a2b545583e1a16b573
-  Dollar: 0a9883680f2c1104adf0d19b827c3be71d3e3121
+  Action: 93c6c9eec95eb76428b2d49a6d260466c2f71b7e
+  Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
+  CryptoSwift: f21ea03ed3a94e79d241648ce26652cd4810508a
+  Dollar: da81aacae30cf7dd059bfdfec709e97f2f0ae2f8
   Fakery: 97b99c23937d2e025d9135c75e2b17351ccd5031
   Keys: 9c35bf00f612ee1d48556f4a4b9b4551e224e90f
-  Kingfisher: 8d80f39da403cd9c9ee11984e1655f4d6a566cdb
-  Moya: 850a166ab8241bd1c1cea6dbe012e3a2ad62944a
-  Moya-ObjectMapper: 1d2799d27c1173cb8c95c606a44fbd218526fd06
-  Nimble: 415e3aa3267e7bc2c96b05fa814ddea7bb686a29
-  ObjectMapper: 9e385c2295bcc4e16eabbcfc85db801442bba545
-  Quick: 8024e4a47e6cc03a9d5245ef0948264fc6d27cff
-  Realm: 69d7de9aa569a11eed490aaabc8f2109e3985ecf
-  RealmSwift: dc6f99ea55e59490cec69c860f91932b6bf7efb6
-  Result: 4e3ed5995ed94d0cd6a09be9a431fce3f3624bbf
-  Reusable: 5362d10271ca8316b104698a21e90498f47e8339
-  RxRealm: 13137f8fd638053a3adc908c8ec7d5961df5ce22
-  RxSwift: 83ff553e7593fdfdcb2562933a64c0284dffdadc
-  SnapKit: 12b24f569cb7c143acc9c22b9d91b23e7b1c84a2
-  SwiftGen: d29fd8b7aa52092411d415fb09d0abd3d79ea1a5
+  Kingfisher: 2f31cb75f3e98d3d4c406cbdcd9b263e956cfa67
+  Moya: d3721622e3cc0cc2f038d69a258686f0b66e7252
+  Moya-ObjectMapper: 952be2b261d38cf8d973b7e429708eb03d256e23
+  Nimble: c53e6903fee94041b90ded74f135820437d8bf59
+  NSObject+Rx: 2a9cd801d9c847e6d2486cbad8d7701b67834e70
+  ObjectMapper: fb30f71e08470d1e5a20b199fafe1246281db898
+  Quick: dafc587e21eed9f4cab3249b9f9015b0b7a7f71d
+  Realm: 32f86104d37c8521f864d4274050b38ba6190733
+  RealmSwift: f719e7511c902b8908593e8f143f59e47931bdb6
+  Result: 2453a22e5c5b11c0c3a478736e82cd02f763b781
+  Reusable: 98e5fff1e0e2e00872199699b276dde08ee56c07
+  RxCocoa: 7dcb7a1860fc9cd0e23dae67ab105fc2916670b6
+  RxDataSources: a021a0e944ba5f7991259829d973afdbfa719c0b
+  RxRealm: df024f04e64c3a9723dab63a6ec8621b3db6473f
+  RxSwift: 8fc9f2de6275a9101d518444e00bf32f1a42caac
+  SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
+  SwiftGen: b6bfed151243348e4603b91bf5bc4eb2486c9d5b
 
-PODFILE CHECKSUM: d21b7d28a68e46c0c9d51da9b2a9f2b622819a4b
+PODFILE CHECKSUM: 480f45b331b9537d39a45b82a502e7d9e7027f3b
 
 COCOAPODS: 1.1.1

@@ -15,19 +15,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        ApperanceProxyHelper.customizeNavigationBar()
-        ApperanceProxyHelper.customizeSearchBar()
-        
+        ApperanceProxyHelper.customizeApp()
+        setupWindowForViewCode()
+        setupInitialCoordinator()
+        return true
+    }
+    
+    func setupWindowForViewCode() {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.backgroundColor = UIColor.white
-        
-        let navController = UINavigationController(rootViewController: CharactersViewController(apiManager: MarvelAPIManager()))
-        self.window?.rootViewController = navController
-        
         self.window?.makeKeyAndVisible()
-        
-        return true
+    }
+    
+    func setupInitialCoordinator() {
+        let sceneCoordinator = SceneCoordinator(window: window!)
+        let viewModel = CharactersViewModel(marvelService: MarvelService(),
+                                            coordinator: sceneCoordinator)
+        let firstScene = Scene.characters(viewModel)
+        sceneCoordinator.transition(to: firstScene, type: .root)
     }
 
 

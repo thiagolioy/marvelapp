@@ -10,7 +10,12 @@ import UIKit
 
 class CharactersContainerView: UIView {
         
-    let searchBar = AppSearchBar()
+    let searchBar: UISearchBar = {
+        let sb = UISearchBar(frame: .zero)
+        sb.showsCancelButton = true
+        sb.searchBarStyle = .minimal
+        return sb
+    }()
     
     let activityIndicator: UIActivityIndicatorView = {
         let ai = UIActivityIndicatorView()
@@ -19,9 +24,20 @@ class CharactersContainerView: UIView {
         return ai
     }()
     
-    let charactersTable = CharactersTable()
+    let charactersTable: UITableView = {
+        let tb = UITableView(frame: .zero)
+        tb.rowHeight = 80
+        tb.estimatedRowHeight = 80
+        tb.backgroundColor = ColorPalette.black
+        tb.register(cellType: CharacterTableCell.self)
+        return tb
+    }()
     
-    let charactersCollection = CharactersCollection()
+    let charactersCollection: UICollectionView = {
+        let cv = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+        cv.isHidden = true
+        return cv
+    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)

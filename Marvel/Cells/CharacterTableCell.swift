@@ -15,10 +15,6 @@ import UIKit
 final class CharacterTableCell: UITableViewCell {
     var characterRow = CharacterRowView()
     
-    static func height() -> CGFloat {
-        return 80
-    }
-    
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupViewConfiguration()
@@ -41,10 +37,7 @@ extension CharacterTableCell: Reusable {
 extension CharacterTableCell: ViewConfiguration {
     func setupConstraints() {
         characterRow.snp.makeConstraints { make in
-            make.top.equalTo(self)
-            make.left.equalTo(self)
-            make.right.equalTo(self)
-            make.bottom.equalTo(self)
+            make.edges.equalToSuperview()
         }
     }
     

@@ -10,11 +10,10 @@ import UIKit
 
 final class CharacterViewController: UIViewController {
     let characterView = CharacterView()
-    let character: Character
+    let viewModel: CharacterDetailsViewModel
     
-    
-    init(character: Character) {
-        self.character = character
+    init(viewModel: CharacterDetailsViewModel) {
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -31,11 +30,11 @@ final class CharacterViewController: UIViewController {
 extension CharacterViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        characterView.setup(with: character)
+        characterView.setup(with: viewModel.character)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationItem.title = character.name
+        self.navigationItem.title = viewModel.character.name
     }
 }

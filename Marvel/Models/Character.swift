@@ -8,6 +8,7 @@
 
 import Foundation
 import ObjectMapper
+import RxDataSources
 
 struct Character {
     var id: Int = 0
@@ -27,5 +28,17 @@ extension Character: Mappable {
         name    <- map["name"]
         bio     <- map["description"]
         thumImage    <- map["thumbnail"]
+    }
+}
+
+extension Character: Equatable {
+    static func ==(lhs: Character, rhs: Character) -> Bool {
+        return lhs.id == rhs.id
+    }
+}
+
+extension Character: IdentifiableType {
+    var identity : Int {
+        return id
     }
 }

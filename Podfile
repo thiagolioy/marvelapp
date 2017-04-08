@@ -14,11 +14,19 @@ target 'Marvel' do
     ]}
 
   # Pods for Marvel
-   pod 'SwiftGen'
-   pod 'RxRealm', :git => 'https://github.com/RxSwiftCommunity/RxRealm.git', :branch => 'master'
-   pod 'RxSwift'
+
    pod 'Moya/RxSwift'
-   pod 'Moya-ObjectMapper/RxSwift', :git => 'https://github.com/ivanbruel/Moya-ObjectMapper'
+   pod 'Moya-ObjectMapper/RxSwift'
+   pod 'RxSwift', '~> 3.2'
+   pod 'RxCocoa', '~> 3.2'
+	 pod 'RealmSwift', '~> 2.4'
+	 pod 'RxRealm', '~> 0.5.1'
+	 pod 'RxDataSources', '~> 1.0.2'
+	 pod 'Action', '~> 2.2.1'
+	 pod 'NSObject+Rx', '~> 2.0'
+
+
+   pod 'SwiftGen'
    pod 'CryptoSwift'
    pod 'Dollar'
    pod 'Kingfisher'
