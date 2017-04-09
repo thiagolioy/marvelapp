@@ -8,10 +8,10 @@
 
 import UIKit
 import RxSwift
+import NSObject_Rx
 
 class CharacterFavoriteView: FavoriteView {
 
-    var disposeBag: DisposeBag?
     let realmManager = RealmManager()
     var character: Character?
     
@@ -25,21 +25,15 @@ class CharacterFavoriteView: FavoriteView {
     }
     
     func setup(with character: Character) {
-        let disposeBag = DisposeBag()
-        
         self.character = character
         
-        self.viewState = .notFavourited
         realmManager.isFavorite(character: character)
-            .subscribe(onNext: { [weak self] (result) in
-                if result.count > 0 {
-                    self?.viewState = .favourited
-                } else {
-                    self?.viewState = .notFavourited
-                }
-            }).addDisposableTo(disposeBag)
-        
-        self.disposeBag = disposeBag
+            .map { $0.count > 0}
+            .startWith(false)
+            .subscribe(onNext: { [weak self] result in
+                self?.viewState = result ?
+                    .favourited : .notFavourited
+            }).addDisposableTo(rx_disposeBag)
         
         didFavorite = { [weak self] in
             self?.realmManager.favorite(character: character)

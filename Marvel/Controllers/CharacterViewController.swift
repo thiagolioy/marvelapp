@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RxSwift
 
 final class CharacterViewController: UIViewController {
     let characterView = CharacterView()
@@ -31,10 +32,19 @@ extension CharacterViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         characterView.setup(with: viewModel.character)
+        setupNavigationBackAction()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationItem.title = viewModel.character.name
+    }
+    
+    func setupNavigationBackAction() {
+        self.navigationItem.hidesBackButton = true
+        var customBackButton = UIBarButtonItem(title: "Back", style: .done,
+                                               target: nil, action: nil)
+        customBackButton.rx.action = viewModel.backAction()
+        self.navigationItem.leftBarButtonItem = customBackButton
     }
 }

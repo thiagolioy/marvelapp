@@ -26,6 +26,7 @@ class CharactersContainerView: UIView {
     
     let charactersTable: UITableView = {
         let tb = UITableView(frame: .zero)
+        tb.isHidden = true
         tb.rowHeight = 80
         tb.estimatedRowHeight = 80
         tb.backgroundColor = ColorPalette.black
@@ -33,9 +34,17 @@ class CharactersContainerView: UIView {
         return tb
     }()
     
-    let charactersCollection: UICollectionView = {
-        let cv = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+    lazy var charactersCollection: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        //Find out a better way to do this!!
+        let parentWidth = UIApplication.shared.windows.first!.bounds.width
+        layout.itemSize = CharacterCollectionCell.size(for: parentWidth)
+        layout.minimumLineSpacing = 0
+        layout.minimumInteritemSpacing = 0
+        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.isHidden = true
+        cv.backgroundColor = ColorPalette.black
+        cv.register(cellType: CharacterCollectionCell.self)
         return cv
     }()
     

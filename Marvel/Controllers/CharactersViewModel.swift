@@ -11,11 +11,19 @@ import RxSwift
 import RxDataSources
 import Action
 
+
+enum PresentationState {
+    case table, collection
+}
 typealias CharacterSection = AnimatableSectionModel<String, Character>
 
 struct CharactersViewModel {
+
     let marvelService: MarvelServiceType
     let coordinator: SceneCoordinatorType
+
+    private(set) var presentationState: Variable<PresentationState>
+        = Variable(PresentationState.table)
     
     init(marvelService: MarvelServiceType, coordinator: SceneCoordinatorType) {
         self.marvelService = marvelService
@@ -35,5 +43,21 @@ struct CharactersViewModel {
         )
         let nextScene = Scene.characterDetails(viewModel)
         return coordinator.transition(to: nextScene, type: .push)
+    }
+
+    mutating func switchToGridPresentation() -> CocoaAction {
+        let this = self
+        return CocoaAction {
+           this.presentationState.value = .collection
+           return Observable.empty()
+        }
+    }
+    
+    mutating func switchToListPresentation() -> CocoaAction {
+        let this = self
+        return CocoaAction {
+            this.presentationState.value = .table
+            return Observable.empty()
+        }
     }
 }

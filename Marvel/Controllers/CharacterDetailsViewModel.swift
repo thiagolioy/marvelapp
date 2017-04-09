@@ -21,5 +21,11 @@ struct CharacterDetailsViewModel {
         self.coordinator = coordinator
     }
     
+    func backAction() -> CocoaAction {
+        return CocoaAction {
+            self.coordinator.pop()
+            return Observable.empty()
+        }
+    }
     
 }

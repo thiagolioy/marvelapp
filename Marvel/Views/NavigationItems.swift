@@ -7,17 +7,28 @@
 //
 
 import UIKit
+import Action
+
+extension UIBarButtonItem {
+    convenience init(image: UIImage?, style: UIBarButtonItemStyle) {
+        self.init(image: image, style: style, target: nil, action: nil)
+    }
+}
 
 enum NavigationItems {
-    case list(Any, Selector)
-    case grid(Any, Selector)
+    case list(CocoaAction)
+    case grid(CocoaAction)
     
     func button() -> UIBarButtonItem {
         switch self {
-        case .list(let target, let selector):
-            return UIBarButtonItem(image: UIImage(named: "List Icon"), style: .plain, target: target, action: selector)
-        case .grid(let target, let selector):
-            return UIBarButtonItem(image: UIImage(named: "Grid Icon"), style: .plain, target: target, action: selector)
+        case .list(let action):
+            var buttomItem = UIBarButtonItem(image: ImageAssets.listIcon.image, style: .plain)
+            buttomItem.rx.action = action
+            return buttomItem
+        case .grid(let action):
+            var buttomItem = UIBarButtonItem(image: ImageAssets.gridIcon.image, style: .plain)
+            buttomItem.rx.action = action
+            return buttomItem
         }
     }
 }
