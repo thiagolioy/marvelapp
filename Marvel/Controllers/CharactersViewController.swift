@@ -20,8 +20,8 @@ final class CharactersViewController: UIViewController {
     let containerView = CharactersContainerView()
     var viewModel: CharactersViewModel
     
-    let dataSource = RxTableViewSectionedAnimatedDataSource<CharacterSection>()
-    let collectionDataSource = RxCollectionViewSectionedAnimatedDataSource<CharacterSection>()
+    let dataSource = RxTableViewSectionedReloadDataSource<CharacterSection>()
+    let collectionDataSource = RxCollectionViewSectionedReloadDataSource<CharacterSection>()
     
     init(viewModel: CharactersViewModel) {
         self.viewModel = viewModel
@@ -50,6 +50,7 @@ extension CharactersViewController {
 }
 
 extension CharactersViewController {
+    
     func setupNavigationItem() {
         self.navigationItem.title = "Characters"
         self.navigationItem.rightBarButtonItems = [
@@ -82,9 +83,16 @@ extension CharactersViewController {
         case .collection:
             containerView.charactersTable.isHidden = true
             containerView.charactersCollection.isHidden = false
+            containerView.activityIndicator.stopAnimating()
         case .table:
             containerView.charactersTable.isHidden = false
             containerView.charactersCollection.isHidden = true
+            containerView.activityIndicator.stopAnimating()
+        case .loading:
+            containerView.charactersTable.isHidden = true
+            containerView.charactersCollection.isHidden = true
+            containerView.activityIndicator.isHidden = false
+            containerView.activityIndicator.startAnimating()
         }
     }
     
@@ -132,7 +140,18 @@ extension CharactersViewController {
     }
     
     func fetchCharacters(for query: String? = nil) {
-        viewModel.fetchCharacters(with: query)
+        
+        viewModel.presentationState.value = .loading
+        
+        let fetchObservable = viewModel.fetchCharacters(with: query)
+            .shareReplay(1)
+        
+        fetchObservable
+            .subscribe(onCompleted: { [weak self] in
+                self?.viewModel.presentationState.value = .table
+            }).addDisposableTo(rx_disposeBag)
+        
+        fetchObservable
             .map{[ CharacterSection(model: "", items: $0)]}
             .asDriver(onErrorJustReturn: [])
             .drive(self.viewModel.sectionedItems)

@@ -13,9 +13,9 @@ import Action
 
 
 enum PresentationState {
-    case table, collection
+    case loading, table, collection
 }
-typealias CharacterSection = AnimatableSectionModel<String, Character>
+typealias CharacterSection = SectionModel<String, Character>
 
 struct CharactersViewModel {
 
@@ -31,7 +31,9 @@ struct CharactersViewModel {
     }
     
     func fetchCharacters(with query: String? = nil) -> Observable<[Character]> {
-        return marvelService.characters(query: query)
+        return marvelService
+            .characters(query: query)
+            .debug()
     }
     
     var sectionedItems: Variable<[CharacterSection]> = Variable([])
