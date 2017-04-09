@@ -17,7 +17,7 @@
 -------
 
 ## Disclaimer
-This branch still a work in progress .. 
+This branch is a work in progress .. 
 
 ## Appearance
 
