@@ -175,31 +175,11 @@ extension CharactersViewController {
     }
     
     func setupSearchBar() {
-        
-        let searchInput = containerView.searchBar.rx.searchButtonClicked
-            .asObservable()
-            .map { self.containerView.searchBar.text }
-            .filter { ($0 ?? "").characters.count > 0}
-        
-        searchInput.asObservable()
-            .subscribe(onNext: { [weak self] text in
-                self?.endEditingSearchBar()
-                self?.fetchCharacters(for: text)
-            }).addDisposableTo(self.rx_disposeBag)
-        
-        
-        containerView.searchBar
-            .rx.cancelButtonClicked
-            .asObservable()
-            .subscribe(onNext: { [weak self] _ in
-                  self?.endEditingSearchBar()
-            }).addDisposableTo(rx_disposeBag)
+        containerView.searchBar.searchCallback = { [weak self] query in
+            self?.fetchCharacters(for: query)
+        }
     }
     
-    func endEditingSearchBar() {
-        self.containerView.searchBar.text = ""
-        self.containerView.searchBar.endEditing(true)
-    }
     
 }
 

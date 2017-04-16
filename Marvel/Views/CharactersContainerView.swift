@@ -10,12 +10,7 @@ import UIKit
 
 class CharactersContainerView: UIView {
         
-    let searchBar: UISearchBar = {
-        let sb = UISearchBar(frame: .zero)
-        sb.showsCancelButton = true
-        sb.searchBarStyle = .minimal
-        return sb
-    }()
+    let searchBar = CharactersSearchBar()
     
     let activityIndicator: UIActivityIndicatorView = {
         let ai = UIActivityIndicatorView()
