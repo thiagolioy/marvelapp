@@ -13,7 +13,7 @@ import Action
 
 
 enum PresentationState {
-    case loading, table, collection
+    case table, collection
 }
 typealias CharacterSection = SectionModel<String, Character>
 
@@ -30,7 +30,7 @@ struct CharactersViewModel {
         self.coordinator = coordinator
     }
     
-    func fetchCharacters(with query: String? = nil) -> Observable<[Character]> {
+    func fetchCharacters(with query: String? = nil) -> Observable<Result<[Character]>> {
         return marvelService
             .characters(query: query)
             .debug()

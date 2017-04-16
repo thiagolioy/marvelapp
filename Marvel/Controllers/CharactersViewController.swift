@@ -83,16 +83,18 @@ extension CharactersViewController {
         case .collection:
             containerView.charactersTable.isHidden = true
             containerView.charactersCollection.isHidden = false
-            containerView.activityIndicator.stopAnimating()
         case .table:
             containerView.charactersTable.isHidden = false
             containerView.charactersCollection.isHidden = true
-            containerView.activityIndicator.stopAnimating()
-        case .loading:
-            containerView.charactersTable.isHidden = true
-            containerView.charactersCollection.isHidden = true
+        }
+    }
+    
+    func updateLoadingState(for result: Result<[Character]>) {
+        if case .loading = result {
             containerView.activityIndicator.isHidden = false
             containerView.activityIndicator.startAnimating()
+        } else {
+            containerView.activityIndicator.stopAnimating()
         }
     }
     
@@ -100,6 +102,7 @@ extension CharactersViewController {
         
         viewModel.presentationState
             .asObservable()
+            .skip(1)
             .subscribe(onNext: {[weak self] state in
                 self?.updateUI(for: state)
             }).addDisposableTo(self.rx_disposeBag)
@@ -141,17 +144,30 @@ extension CharactersViewController {
     
     func fetchCharacters(for query: String? = nil) {
         
-        viewModel.presentationState.value = .loading
-        
         let fetchObservable = viewModel.fetchCharacters(with: query)
             .shareReplay(1)
         
         fetchObservable
-            .subscribe(onCompleted: { [weak self] in
-                self?.viewModel.presentationState.value = .table
-            }).addDisposableTo(rx_disposeBag)
+            .subscribe { event in
+                if let element = event.element {
+                    self.updateLoadingState(for: element)
+                }
+        }.addDisposableTo(rx_disposeBag)
         
         fetchObservable
+            .subscribe { event in
+                if case .completed = event{
+                    self.updateUI(for: self.viewModel.presentationState.value)
+                }
+            }.addDisposableTo(rx_disposeBag)
+        
+        fetchObservable
+            .map({
+                if case Result.completed(let characters) = $0 {
+                    return characters
+                }
+                return []
+            })
             .map{[ CharacterSection(model: "", items: $0)]}
             .asDriver(onErrorJustReturn: [])
             .drive(self.viewModel.sectionedItems)
@@ -167,8 +183,7 @@ extension CharactersViewController {
         
         searchInput.asObservable()
             .subscribe(onNext: { [weak self] text in
-                self?.containerView.searchBar.text = ""
-                self?.containerView.searchBar.endEditing(true)
+                self?.endEditingSearchBar()
                 self?.fetchCharacters(for: text)
             }).addDisposableTo(self.rx_disposeBag)
         
@@ -177,9 +192,13 @@ extension CharactersViewController {
             .rx.cancelButtonClicked
             .asObservable()
             .subscribe(onNext: { [weak self] _ in
-                  self?.containerView.searchBar.text = ""
-                  self?.containerView.searchBar.endEditing(true)
+                  self?.endEditingSearchBar()
             }).addDisposableTo(rx_disposeBag)
+    }
+    
+    func endEditingSearchBar() {
+        self.containerView.searchBar.text = ""
+        self.containerView.searchBar.endEditing(true)
     }
     
 }

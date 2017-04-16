@@ -18,10 +18,17 @@ struct MarvelService: MarvelServiceType {
     let provider = RxMoyaProvider<MarvelAPI>()
     let disposeBag = DisposeBag()
     
-    func characters(query: String? = nil) -> Observable<[Character]> {
+    func characters(query: String? = nil) -> Observable<Result<[Character]>> {
         return provider.request(.characters(query))
                 .map{ $0.removeAPIWrappers() }
                 .mapArray(Character.self)
+                .map({ characters in
+                    return Result.completed(characters)
+                })
+                .catchError({ error -> Observable<Result<[Character]>> in
+                    return Observable.just(Result.error(error))
+                })
+                .startWith(Result.loading)
                 .asObservable()
     }
     
