@@ -133,7 +133,7 @@ extension CharactersViewController {
         
         fetchObservable
             .map({
-                if case Result.completed(let characters) = $0 {
+                if case Result.success(let characters) = $0 {
                     return characters
                 }
                 return []

@@ -23,9 +23,9 @@ struct MarvelService: MarvelServiceType {
                 .map{ $0.removeAPIWrappers() }
                 .mapArray(Character.self)
                 .map({ characters in
-                    return Result.completed(characters)
+                    return Result.success(characters)
                 })
-                .catchError({ error -> Observable<Result<[Character]>> in
+                .catchError({ error in
                     return Observable.just(Result.error(error))
                 })
                 .startWith(Result.loading)

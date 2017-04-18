@@ -10,8 +10,8 @@ import Foundation
 import RxSwift
 
 enum Result<T> {
-    case completed(T)
     case loading
+    case success(T)
     case error(Swift.Error)
 }
 
