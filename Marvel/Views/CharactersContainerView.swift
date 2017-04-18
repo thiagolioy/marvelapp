@@ -19,15 +19,7 @@ class CharactersContainerView: UIView {
         return ai
     }()
     
-    let charactersTable: UITableView = {
-        let tb = UITableView(frame: .zero)
-        tb.isHidden = true
-        tb.rowHeight = 80
-        tb.estimatedRowHeight = 80
-        tb.backgroundColor = ColorPalette.black
-        tb.register(cellType: CharacterTableCell.self)
-        return tb
-    }()
+    let charactersTable = CharactersTable()
     
     lazy var charactersCollection: UICollectionView = {
         let layout = UICollectionViewFlowLayout()

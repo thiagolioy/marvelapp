@@ -20,7 +20,6 @@ final class CharactersViewController: UIViewController {
     let containerView = CharactersContainerView()
     var viewModel: CharactersViewModel
     
-    let dataSource = RxTableViewSectionedReloadDataSource<CharacterSection>()
     let collectionDataSource = RxCollectionViewSectionedReloadDataSource<CharacterSection>()
     
     init(viewModel: CharactersViewModel) {
@@ -69,13 +68,6 @@ extension CharactersViewController {
             return cell
         }
         
-        dataSource.configureCell = {
-            dataSource, tableView, indexPath, item in
-            let cell = tableView.dequeueReusableCell(for: indexPath,
-                                                     cellType: CharacterTableCell.self)
-            cell.setup(item: item)
-            return cell
-        }
     }
     
     func updateUI(for state: PresentationState) {
@@ -109,31 +101,32 @@ extension CharactersViewController {
         
         
         
-        let itemsDriver = viewModel.sectionedItems
+        let itemsObs = viewModel.sectionedItems
             .asObservable()
             
-        itemsDriver
-            .bindTo(containerView.charactersTable
-                .rx.items(dataSource: dataSource))
-            .addDisposableTo(self.rx_disposeBag)
+        containerView.charactersTable
+            .bindItems(observable: itemsObs)
         
-        itemsDriver
+        containerView.charactersTable
+            .rowSelectedObservable()
+            .subscribe(onNext:{
+                self.viewModel.presentDetails(of: $0)
+            }).addDisposableTo(rx_disposeBag)
+        
+        
+        //Bind SectionItems on collection
+        itemsObs
             .bindTo(containerView.charactersCollection
                 .rx.items(dataSource: collectionDataSource))
             .addDisposableTo(self.rx_disposeBag)
         
         
-        let collectionItemSelected = containerView.charactersCollection.rx
+        //Handle click on collectionView's item
+        containerView.charactersCollection.rx
             .itemSelected
             .asObservable()
-        
-        let tableItemSelected = containerView.charactersTable.rx
-            .itemSelected
-            .asObservable()
-        
-        Observable.merge([collectionItemSelected, tableItemSelected])
             .map { [unowned self] indexPath in
-                try! self.dataSource.model(at: indexPath) as! Character
+                try! self.collectionDataSource.model(at: indexPath) as! Character
             }
             .subscribe(onNext:{
                 _ = self.viewModel.presentDetails(of: $0)
@@ -141,6 +134,8 @@ extension CharactersViewController {
             .addDisposableTo(rx_disposeBag)
         
     }
+    
+    
     
     func fetchCharacters(for query: String? = nil) {
         

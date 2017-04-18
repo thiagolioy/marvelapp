@@ -7,7 +7,7 @@ PODS:
   - Dollar (6.2.0)
   - Fakery (2.0.0)
   - Keys (1.0.0)
-  - Kingfisher (3.6.1)
+  - Kingfisher (3.6.0)
   - Moya (8.0.3):
     - Moya/Core (= 8.0.3)
   - Moya-ObjectMapper/Core (2.3.1):
@@ -28,11 +28,11 @@ PODS:
     - RxSwift
   - ObjectMapper (2.2.5)
   - Quick (1.1.0)
-  - Realm (2.5.1):
-    - Realm/Headers (= 2.5.1)
-  - Realm/Headers (2.5.1)
-  - RealmSwift (2.5.1):
-    - Realm (= 2.5.1)
+  - Realm (2.4.4):
+    - Realm/Headers (= 2.4.4)
+  - Realm/Headers (2.4.4)
+  - RealmSwift (2.4.4):
+    - Realm (= 2.4.4)
   - Result (3.2.1)
   - Reusable (4.0.0):
     - Reusable/Storyboard (= 4.0.0)
@@ -84,15 +84,15 @@ SPEC CHECKSUMS:
   Dollar: da81aacae30cf7dd059bfdfec709e97f2f0ae2f8
   Fakery: 97b99c23937d2e025d9135c75e2b17351ccd5031
   Keys: 9c35bf00f612ee1d48556f4a4b9b4551e224e90f
-  Kingfisher: 2f31cb75f3e98d3d4c406cbdcd9b263e956cfa67
+  Kingfisher: 300035f9a40634dc9b452d946c9f22250688fecd
   Moya: d3721622e3cc0cc2f038d69a258686f0b66e7252
   Moya-ObjectMapper: 952be2b261d38cf8d973b7e429708eb03d256e23
   Nimble: c53e6903fee94041b90ded74f135820437d8bf59
   NSObject+Rx: 2a9cd801d9c847e6d2486cbad8d7701b67834e70
   ObjectMapper: fb30f71e08470d1e5a20b199fafe1246281db898
   Quick: dafc587e21eed9f4cab3249b9f9015b0b7a7f71d
-  Realm: 32f86104d37c8521f864d4274050b38ba6190733
-  RealmSwift: f719e7511c902b8908593e8f143f59e47931bdb6
+  Realm: 5a280a1f5a9a3c267bebf4f41ee47911137703d7
+  RealmSwift: 0c02b9f2d4be4301c497ed10e53a0580584eb1dd
   Result: 2453a22e5c5b11c0c3a478736e82cd02f763b781
   Reusable: 98e5fff1e0e2e00872199699b276dde08ee56c07
   RxCocoa: 7dcb7a1860fc9cd0e23dae67ab105fc2916670b6

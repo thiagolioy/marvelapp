@@ -25,6 +25,7 @@
 		992196CE1E2E34A800EB8CBA /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992196CD1E2E34A800EB8CBA /* RealmManager.swift */; };
 		9922F1571DFDB69200237BFE /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9922F1561DFDB69200237BFE /* ColorPalette.swift */; };
 		9922F15A1DFDC00900237BFE /* ApperanceProxyHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9922F1591DFDC00900237BFE /* ApperanceProxyHelper.swift */; };
+		993208261EA6269C00693351 /* CharactersTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993208251EA6269C00693351 /* CharactersTable.swift */; };
 		9939CFC71DDA244A008CE399 /* CharactersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9939CFC61DDA244A008CE399 /* CharactersViewController.swift */; };
 		9939CFC91DDA245A008CE399 /* CharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9939CFC81DDA245A008CE399 /* CharacterViewController.swift */; };
 		9939CFCF1DDA2E07008CE399 /* MarvelAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9939CFCE1DDA2E07008CE399 /* MarvelAPI.swift */; };
@@ -97,6 +98,7 @@
 		992196CD1E2E34A800EB8CBA /* RealmManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		9922F1561DFDB69200237BFE /* ColorPalette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
 		9922F1591DFDC00900237BFE /* ApperanceProxyHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApperanceProxyHelper.swift; sourceTree = "<group>"; };
+		993208251EA6269C00693351 /* CharactersTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharactersTable.swift; sourceTree = "<group>"; };
 		9939CFC61DDA244A008CE399 /* CharactersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharactersViewController.swift; sourceTree = "<group>"; };
 		9939CFC81DDA245A008CE399 /* CharacterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterViewController.swift; sourceTree = "<group>"; };
 		9939CFCE1DDA2E07008CE399 /* MarvelAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarvelAPI.swift; sourceTree = "<group>"; };
@@ -279,6 +281,7 @@
 				992196CA1E2E1A7500EB8CBA /* FavoriteView.swift */,
 				999806151E2F6E1900DF4089 /* CharacterFavoriteView.swift */,
 				0AC2D8611EA3B20500800543 /* CharactersSearchBar.swift */,
+				993208251EA6269C00693351 /* CharactersTable.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -694,6 +697,7 @@
 				995FC46C1E06AD52003345A2 /* CharacterRowView.swift in Sources */,
 				99B4FE271E2D904800A1D17A /* ImageAssets.swift in Sources */,
 				992196CE1E2E34A800EB8CBA /* RealmManager.swift in Sources */,
+				993208261EA6269C00693351 /* CharactersTable.swift in Sources */,
 				0A175C5E1E995749001C5158 /* Scene+ViewController.swift in Sources */,
 				999806161E2F6E1900DF4089 /* CharacterFavoriteView.swift in Sources */,
 				0A175C641E9957D0001C5158 /* UINavigationController+Rx.swift in Sources */,

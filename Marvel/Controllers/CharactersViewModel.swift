@@ -38,6 +38,7 @@ struct CharactersViewModel {
     
     var sectionedItems: Variable<[CharacterSection]> = Variable([])
     
+    @discardableResult
     func presentDetails(of character: Character) -> Observable<Void> {
         let viewModel = CharacterDetailsViewModel(
             character: character,
