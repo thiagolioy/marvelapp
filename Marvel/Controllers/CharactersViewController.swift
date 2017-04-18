@@ -20,8 +20,6 @@ final class CharactersViewController: UIViewController {
     let containerView = CharactersContainerView()
     var viewModel: CharactersViewModel
     
-    let collectionDataSource = RxCollectionViewSectionedReloadDataSource<CharacterSection>()
-    
     init(viewModel: CharactersViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -36,10 +34,10 @@ final class CharactersViewController: UIViewController {
 extension CharactersViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureDataSource()
         setupNavigationItem()
         setupSearchBar()
-        bindDatasource()
+        setupSubscriptionToPresentationState()
+        bindItemsToDatasource()
         fetchCharacters()
     }
     
@@ -58,26 +56,15 @@ extension CharactersViewController {
         ]
     }
     
-    fileprivate func configureDataSource() {
-        
-        collectionDataSource.configureCell = {
-            dataSource, collectionView, indexPath, item in
-            let cell = collectionView.dequeueReusableCell(for: indexPath,
-                                               cellType: CharacterCollectionCell.self)
-            cell.setup(item: item)
-            return cell
-        }
-        
-    }
     
     func updateUI(for state: PresentationState) {
         switch state {
         case .collection:
             containerView.charactersTable.isHidden = true
-            containerView.charactersCollection.isHidden = false
+            containerView.charactersGrid.isHidden = false
         case .table:
             containerView.charactersTable.isHidden = false
-            containerView.charactersCollection.isHidden = true
+            containerView.charactersGrid.isHidden = true
         }
     }
     
@@ -90,16 +77,16 @@ extension CharactersViewController {
         }
     }
     
-    func bindDatasource() {
-        
+    func setupSubscriptionToPresentationState() {
         viewModel.presentationState
             .asObservable()
             .skip(1)
             .subscribe(onNext: {[weak self] state in
                 self?.updateUI(for: state)
             }).addDisposableTo(self.rx_disposeBag)
-        
-        
+    }
+    
+    func bindItemsToDatasource() {
         
         let itemsObs = viewModel.sectionedItems
             .asObservable()
@@ -107,31 +94,19 @@ extension CharactersViewController {
         containerView.charactersTable
             .bindItems(observable: itemsObs)
         
-        containerView.charactersTable
-            .rowSelectedObservable()
+        containerView.charactersGrid
+            .bindItems(observable: itemsObs)
+        
+        
+        Observable.merge([
+            containerView.charactersTable
+                .rowSelectedObservable(),
+            containerView.charactersGrid
+                .itemSelectedObservable()
+            ])
             .subscribe(onNext:{
                 self.viewModel.presentDetails(of: $0)
             }).addDisposableTo(rx_disposeBag)
-        
-        
-        //Bind SectionItems on collection
-        itemsObs
-            .bindTo(containerView.charactersCollection
-                .rx.items(dataSource: collectionDataSource))
-            .addDisposableTo(self.rx_disposeBag)
-        
-        
-        //Handle click on collectionView's item
-        containerView.charactersCollection.rx
-            .itemSelected
-            .asObservable()
-            .map { [unowned self] indexPath in
-                try! self.collectionDataSource.model(at: indexPath) as! Character
-            }
-            .subscribe(onNext:{
-                _ = self.viewModel.presentDetails(of: $0)
-            })
-            .addDisposableTo(rx_disposeBag)
         
     }
     

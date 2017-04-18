@@ -21,19 +21,7 @@ class CharactersContainerView: UIView {
     
     let charactersTable = CharactersTable()
     
-    lazy var charactersCollection: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        //Find out a better way to do this!!
-        let parentWidth = UIApplication.shared.windows.first!.bounds.width
-        layout.itemSize = CharacterCollectionCell.size(for: parentWidth)
-        layout.minimumLineSpacing = 0
-        layout.minimumInteritemSpacing = 0
-        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        cv.isHidden = true
-        cv.backgroundColor = ColorPalette.black
-        cv.register(cellType: CharacterCollectionCell.self)
-        return cv
-    }()
+    var charactersGrid = CharactersGrid()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -61,7 +49,7 @@ extension CharactersContainerView: ViewConfiguration {
             make.right.equalTo(self)
             make.bottom.equalTo(self)
         }
-        charactersCollection.snp.makeConstraints { make in
+        charactersGrid.snp.makeConstraints { make in
             make.top.equalTo(searchBar.snp.bottom)
             make.left.equalTo(self)
             make.right.equalTo(self)
@@ -78,7 +66,7 @@ extension CharactersContainerView: ViewConfiguration {
     func buildViewHierarchy() {
         self.addSubview(searchBar)
         self.addSubview(charactersTable)
-        self.addSubview(charactersCollection)
+        self.addSubview(charactersGrid)
         self.addSubview(activityIndicator)
     }
     
