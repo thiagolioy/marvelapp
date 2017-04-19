@@ -13,10 +13,12 @@ enum FavoriteViewState {
     case favourited, notFavourited
 }
 
+typealias Callback = () -> Void
+
 class FavoriteView: UIView {
     
-    var didFavorite: (() -> Void)?
-    var didUnfavorite: (() -> Void)?
+    var didFavorite: Callback?
+    var didUnfavorite: Callback?
     
     var viewState: FavoriteViewState = .notFavourited {
         didSet {

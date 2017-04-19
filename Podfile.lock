@@ -50,6 +50,7 @@ PODS:
   - RxSwift (3.3.1)
   - SnapKit (3.2.0)
   - SwiftGen (4.2.0)
+  - SwiftIconFont (2.6.0)
 
 DEPENDENCIES:
   - Action (~> 2.2.1)
@@ -72,6 +73,7 @@ DEPENDENCIES:
   - RxSwift (~> 3.2)
   - SnapKit
   - SwiftGen
+  - SwiftIconFont
 
 EXTERNAL SOURCES:
   Keys:
@@ -101,7 +103,8 @@ SPEC CHECKSUMS:
   RxSwift: 8fc9f2de6275a9101d518444e00bf32f1a42caac
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
   SwiftGen: b6bfed151243348e4603b91bf5bc4eb2486c9d5b
+  SwiftIconFont: bbe1f32e1e16bac87dad8566afc80132cb8d072c
 
-PODFILE CHECKSUM: 480f45b331b9537d39a45b82a502e7d9e7027f3b
+PODFILE CHECKSUM: bddf5403ad7d3e6bda0e98e7596e82d1cee738bc
 
 COCOAPODS: 1.1.1

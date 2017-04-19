@@ -8,6 +8,7 @@
 
 import UIKit
 import RxSwift
+import SwiftIconFont
 
 final class CharacterViewController: UIViewController {
     let characterView = CharacterView()
@@ -42,9 +43,7 @@ extension CharacterViewController {
     
     func setupNavigationBackAction() {
         self.navigationItem.hidesBackButton = true
-        var customBackButton = UIBarButtonItem(title: "Back", style: .done,
-                                               target: nil, action: nil)
-        customBackButton.rx.action = viewModel.backAction()
-        self.navigationItem.leftBarButtonItem = customBackButton
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem
+            .backButton(action: viewModel.backAction())
     }
 }

@@ -15,8 +15,8 @@ import Alamofire
 
 fileprivate struct MarvelAPIConfig {
     fileprivate static let keys = MarvelKeys()
-    static let privatekey = keys.marvelPrivateKey
-    static let apikey = keys.marvelApiKey
+    static let privatekey = keys.marvelPrivateKey()!
+    static let apikey = keys.marvelApiKey()!
     static let ts = Date().timeIntervalSince1970.description
     static let hash = "\(ts)\(privatekey)\(apikey)".md5()
 }
