@@ -12,12 +12,7 @@ class CharactersContainerView: UIView {
         
     let searchBar = CharactersSearchBar()
     
-    let activityIndicator: UIActivityIndicatorView = {
-        let ai = UIActivityIndicatorView()
-        ai.hidesWhenStopped = true
-        ai.tintColor = ColorPalette.white
-        return ai
-    }()
+    let activityIndicator = CustomActivityIndicator()
     
     let charactersTable = CharactersTable()
     

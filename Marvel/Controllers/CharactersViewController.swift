@@ -49,13 +49,18 @@ extension CharactersViewController {
 extension CharactersViewController: SceneControllerType {}
 
 extension CharactersViewController {
-    
     func setupNavigationItem() {
         self.navigationItem.title = "Characters"
         self.navigationItem.rightBarButtonItems = [
             NavigationItems.grid(viewModel.switchToGridPresentation()).button(),
             NavigationItems.list(viewModel.switchToListPresentation()).button()
         ]
+    }
+    
+    func setupSearchBar() {
+        containerView.searchBar.searchCallback = { [weak self] query in
+            self?.fetchCharacters(for: query)
+        }
     }
     
     
@@ -69,20 +74,13 @@ extension CharactersViewController {
             containerView.charactersGrid.isHidden = true
         }
     }
-    
-    func setupLoadingState() {
-        containerView.activityIndicator.isHidden = false
-        containerView.activityIndicator.startAnimating()
-    }
-    
-    func setupFinishedLoadingState() {
-        containerView.activityIndicator.stopAnimating()
-    }
+}
+
+extension CharactersViewController {
     
     func setupSubscriptionToPresentationState() {
         viewModel.presentationState
             .asObservable()
-            .skip(1)
             .subscribe(onNext: {[weak self] state in
                 self?.updateUI(for: state)
             }).addDisposableTo(self.rx_disposeBag)
@@ -106,31 +104,10 @@ extension CharactersViewController {
             containerView.charactersGrid
                 .itemSelectedObservable()
             ])
-            .subscribe(onNext:{
-                self.viewModel.presentDetails(of: $0)
+            .subscribe(onNext:{ [weak self] item in
+                self?.viewModel.presentDetails(of: item)
             }).addDisposableTo(rx_disposeBag)
         
-    }
-    
-    func bindLoadingState(observable: Observable<Result<[Character]>>) {
-        observable
-            .filter{ $0.isLoading() }
-            .subscribe {[weak self] _ in self?.setupLoadingState() }
-            .addDisposableTo(rx_disposeBag)
-        
-        observable
-            .filter{ !$0.isLoading() }
-            .subscribe {[weak self] _ in self?.setupFinishedLoadingState() }
-            .addDisposableTo(rx_disposeBag)
-    }
-    
-    func bindPresentationState(observable: Observable<Result<[Character]>>) {
-        observable
-            .subscribe(onCompleted: { [weak self] _ in
-                if let currentState = self?.viewModel.presentationState.value {
-                    self?.viewModel.presentationState.value = currentState
-                }
-            }).addDisposableTo(rx_disposeBag)
     }
     
     
@@ -139,22 +116,16 @@ extension CharactersViewController {
         let fetchObservable = viewModel.fetchCharacters(with: query)
             .shareReplay(1)
         
-        bindLoadingState(observable: fetchObservable)
-        bindPresentationState(observable: fetchObservable)
+        containerView.activityIndicator
+            .bindLoadingState(for: fetchObservable)
+    
         
         fetchObservable
-            .filter{ $0.isSuccess() }
-            .map { $0.unwrap() ?? [] }
+            .map{$0.unwrap() ?? [] }
             .map{[ CharacterSection(model: "", items: $0)]}
             .asDriver(onErrorJustReturn: [])
             .drive(self.viewModel.sectionedItems)
-            .addDisposableTo(self.rx_disposeBag)
-    }
-    
-    func setupSearchBar() {
-        containerView.searchBar.searchCallback = { [weak self] query in
-            self?.fetchCharacters(for: query)
-        }
+            .addDisposableTo(rx_disposeBag)
     }
     
     

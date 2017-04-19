@@ -19,18 +19,5 @@ enum Result<T> {
         }
         return nil
     }
-    
-    func isSuccess() -> Bool {
-        if case Result<T>.success(_) = self {
-            return true
-        }
-        return false
-    }
-    
-    func isLoading() -> Bool {
-        if case Result<T>.loading = self {
-            return true
-        }
-        return false
-    }
+
 }
