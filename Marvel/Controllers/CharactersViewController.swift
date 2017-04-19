@@ -46,6 +46,8 @@ extension CharactersViewController {
     }
 }
 
+extension CharactersViewController: SceneControllerType {}
+
 extension CharactersViewController {
     
     func setupNavigationItem() {
@@ -109,8 +111,6 @@ extension CharactersViewController {
             }).addDisposableTo(rx_disposeBag)
         
     }
-    
-    
     
     func fetchCharacters(for query: String? = nil) {
         

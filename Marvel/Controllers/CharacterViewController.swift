@@ -29,21 +29,17 @@ final class CharacterViewController: UIViewController {
     }
 }
 
+extension CharacterViewController: SceneControllerType {}
+
 extension CharacterViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         characterView.setup(with: viewModel.character)
-        setupNavigationBackAction()
+        setupBackNavigation()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationItem.title = viewModel.character.name
-    }
-    
-    func setupNavigationBackAction() {
-        self.navigationItem.hidesBackButton = true
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem
-            .backButton(action: viewModel.backAction())
     }
 }

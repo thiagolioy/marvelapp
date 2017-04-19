@@ -11,7 +11,7 @@ import RxSwift
 import RxDataSources
 import Action
 
-struct CharacterDetailsViewModel {
+struct CharacterDetailsViewModel: ViewModelType {
     
     let character: Character
     let coordinator: SceneCoordinatorType
@@ -19,13 +19,6 @@ struct CharacterDetailsViewModel {
     init(character: Character, coordinator: SceneCoordinatorType) {
         self.character = character
         self.coordinator = coordinator
-    }
-    
-    func backAction() -> CocoaAction {
-        return CocoaAction {
-            self.coordinator.pop()
-            return Observable.empty()
-        }
     }
     
 }

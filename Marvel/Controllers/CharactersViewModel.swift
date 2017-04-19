@@ -17,7 +17,7 @@ enum PresentationState {
 }
 typealias CharacterSection = SectionModel<String, Character>
 
-struct CharactersViewModel {
+struct CharactersViewModel: ViewModelType {
 
     let marvelService: MarvelServiceType
     let coordinator: SceneCoordinatorType
@@ -33,7 +33,6 @@ struct CharactersViewModel {
     func fetchCharacters(with query: String? = nil) -> Observable<Result<[Character]>> {
         return marvelService
             .characters(query: query)
-            .debug()
     }
     
     var sectionedItems: Variable<[CharacterSection]> = Variable([])
