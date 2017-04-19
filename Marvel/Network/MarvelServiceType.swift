@@ -9,12 +9,6 @@
 import Foundation
 import RxSwift
 
-enum Result<T> {
-    case loading
-    case success(T)
-    case error(Swift.Error)
-}
-
 protocol MarvelServiceType {
     @discardableResult
     func characters(query: String?) -> Observable<Result<[Character]>>

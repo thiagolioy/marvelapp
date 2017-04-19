@@ -70,13 +70,13 @@ extension CharactersViewController {
         }
     }
     
-    func updateLoadingState(for result: Result<[Character]>) {
-        if case .loading = result {
-            containerView.activityIndicator.isHidden = false
-            containerView.activityIndicator.startAnimating()
-        } else {
-            containerView.activityIndicator.stopAnimating()
-        }
+    func setupLoadingState() {
+        containerView.activityIndicator.isHidden = false
+        containerView.activityIndicator.startAnimating()
+    }
+    
+    func setupFinishedLoadingState() {
+        containerView.activityIndicator.stopAnimating()
     }
     
     func setupSubscriptionToPresentationState() {
@@ -112,32 +112,39 @@ extension CharactersViewController {
         
     }
     
+    func bindLoadingState(observable: Observable<Result<[Character]>>) {
+        observable
+            .filter{ $0.isLoading() }
+            .subscribe {[weak self] _ in self?.setupLoadingState() }
+            .addDisposableTo(rx_disposeBag)
+        
+        observable
+            .filter{ !$0.isLoading() }
+            .subscribe {[weak self] _ in self?.setupFinishedLoadingState() }
+            .addDisposableTo(rx_disposeBag)
+    }
+    
+    func bindPresentationState(observable: Observable<Result<[Character]>>) {
+        observable
+            .subscribe(onCompleted: { [weak self] _ in
+                if let currentState = self?.viewModel.presentationState.value {
+                    self?.viewModel.presentationState.value = currentState
+                }
+            }).addDisposableTo(rx_disposeBag)
+    }
+    
+    
     func fetchCharacters(for query: String? = nil) {
         
         let fetchObservable = viewModel.fetchCharacters(with: query)
             .shareReplay(1)
         
-        fetchObservable
-            .subscribe { event in
-                if let element = event.element {
-                    self.updateLoadingState(for: element)
-                }
-        }.addDisposableTo(rx_disposeBag)
+        bindLoadingState(observable: fetchObservable)
+        bindPresentationState(observable: fetchObservable)
         
         fetchObservable
-            .subscribe { event in
-                if case .completed = event{
-                    self.updateUI(for: self.viewModel.presentationState.value)
-                }
-            }.addDisposableTo(rx_disposeBag)
-        
-        fetchObservable
-            .map({
-                if case Result.success(let characters) = $0 {
-                    return characters
-                }
-                return []
-            })
+            .filter{ $0.isSuccess() }
+            .map { $0.unwrap() ?? [] }
             .map{[ CharacterSection(model: "", items: $0)]}
             .asDriver(onErrorJustReturn: [])
             .drive(self.viewModel.sectionedItems)
