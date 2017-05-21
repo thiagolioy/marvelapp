@@ -1,59 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0810"
+   LastUpgradeVersion = "0700"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
       <BuildActionEntries>
          <BuildActionEntry
-            buildForTesting = "YES"
+            buildForAnalyzing = "YES"
+            buildForTesting = "NO"
             buildForRunning = "YES"
             buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
+            buildForArchiving = "YES">
             <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "99E1DFDF1DDA1F4C006F9D96"
-               BuildableName = "Marvel.app"
-               BlueprintName = "Marvel"
-               ReferencedContainer = "container:Marvel.xcodeproj">
+               BuildableIdentifier = 'primary'
+               BlueprintIdentifier = '6DDB1BA75D1DA1BC74B371A7'
+               BlueprintName = 'Marvel'
+               ReferencedContainer = 'container:Marvel.xcodeproj'
+               BuildableName = 'Marvel.app'>
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForAnalyzing = "YES"
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO">
+            <BuildableReference
+               BuildableIdentifier = 'primary'
+               BlueprintIdentifier = 'C62563CB568259AD5FD9CFD5'
+               BlueprintName = 'MarvelTests'
+               ReferencedContainer = 'container:Marvel.xcodeproj'
+               BuildableName = 'MarvelTests.xctest'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
-      buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES"
-      codeCoverageEnabled = "YES">
+      buildConfiguration = "debug">
+      <AdditionalOptions>
+      </AdditionalOptions>
       <Testables>
          <TestableReference
             skipped = "NO">
             <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "999665351DEA236300E9A5BF"
-               BuildableName = "MarvelTests.xctest"
-               BlueprintName = "MarvelTests"
-               ReferencedContainer = "container:Marvel.xcodeproj">
+               BuildableIdentifier = 'primary'
+               BlueprintIdentifier = 'C62563CB568259AD5FD9CFD5'
+               BlueprintName = 'MarvelTests'
+               ReferencedContainer = 'container:Marvel.xcodeproj'
+               BuildableName = 'MarvelTests.xctest'>
             </BuildableReference>
          </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "99E1DFDF1DDA1F4C006F9D96"
-            BuildableName = "Marvel.app"
-            BlueprintName = "Marvel"
-            ReferencedContainer = "container:Marvel.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </TestAction>
    <LaunchAction
-      buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
@@ -61,34 +64,34 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
+      buildConfiguration = "debug"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "99E1DFDF1DDA1F4C006F9D96"
-            BuildableName = "Marvel.app"
-            BlueprintName = "Marvel"
-            ReferencedContainer = "container:Marvel.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
-   </LaunchAction>
-   <ProfileAction
-      buildConfiguration = "Release"
-      shouldUseLaunchSchemeArgsEnv = "YES"
-      savedToolIdentifier = ""
-      useCustomWorkingDirectory = "NO"
-      debugDocumentVersioning = "YES">
       <BuildableProductRunnable
          runnableDebuggingMode = "0">
          <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "99E1DFDF1DDA1F4C006F9D96"
-            BuildableName = "Marvel.app"
-            BlueprintName = "Marvel"
-            ReferencedContainer = "container:Marvel.xcodeproj">
+            BuildableIdentifier = 'primary'
+            BlueprintIdentifier = '6DDB1BA75D1DA1BC74B371A7'
+            BlueprintName = 'Marvel'
+            ReferencedContainer = 'container:Marvel.xcodeproj'
+            BuildableName = 'Marvel.app'>
+         </BuildableReference>
+      </BuildableProductRunnable>
+   </LaunchAction>
+   <ProfileAction
+      savedToolIdentifier = ""
+      useCustomWorkingDirectory = "NO"
+      debugDocumentVersioning = "YES"
+      buildConfiguration = "Debug"
+      shouldUseLaunchSchemeArgsEnv = "YES">
+      <BuildableProductRunnable>
+         <BuildableReference
+            BuildableIdentifier = 'primary'
+            BlueprintIdentifier = '6DDB1BA75D1DA1BC74B371A7'
+            BlueprintName = 'Marvel'
+            ReferencedContainer = 'container:Marvel.xcodeproj'
+            BuildableName = 'Marvel.app'>
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
@@ -96,7 +99,7 @@
       buildConfiguration = "Debug">
    </AnalyzeAction>
    <ArchiveAction
-      buildConfiguration = "Release"
+      buildConfiguration = "release"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>
