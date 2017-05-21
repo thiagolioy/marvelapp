@@ -62,9 +62,10 @@ application_for :ios, 10.0 do |target|
 
     #Configure schemes
     target.scheme(target.name) do |scheme|
-      scheme.test_configuration = :debug
-      scheme.launch_configuration = :debug
-      scheme.archive_configuration = :release
+      # Defaults Values
+      # scheme.test_configuration = :debug
+      # scheme.launch_configuration = :debug
+      # scheme.archive_configuration = :release
     end
 
     # Configure Build phases
