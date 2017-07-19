@@ -36,12 +36,8 @@ class CharacterViewControllerSpec: QuickSpec {
                 it("should setup properties with character information") {
                     controller.viewDidLoad()
                     let description = controller.characterDescription.text
-                    
-                    if character.bio.isEmpty {
-                        expect(description).to(equal("No description"))
-                    } else {
-                        expect(description).to(equal(character.bio))
-                    }
+                    let expectedDescription = character.bio.isEmpty ? "No description" : character.bio
+                    expect(description).to(equal(expectedDescription))
                 }
             }
             
