@@ -9,3 +9,4 @@ gem "fastlane", "1.110.0"
 gem 'danger'
 gem "danger-slather"
 gem 'credentials_manager', '0.16.2', :git => 'https://github.com/fastlane/fastlane.git', :tag => 'credentials_manager/0.16.2'
+gem 'scan', '0.14.1'
