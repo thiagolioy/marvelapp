@@ -7,7 +7,7 @@ before_install:
 - bundle install
 - bundle exec pod keys set MarvelApiKey $MARVEL_API_SECRET Marvel
 - bundle exec pod keys set MarvelPrivateKey $MARVEL_API_PUBLIC Marvel
-- pod repo update
+- pod repo update --silent
 script:
 - fastlane test
 - bundle exec danger
