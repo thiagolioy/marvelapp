@@ -9,7 +9,7 @@ before_install:
 - bundle exec pod keys set MarvelPrivateKey $MARVEL_API_PUBLIC Marvel
 - pod repo update --silent
 script:
-- fastlane test
+- bundle exec fastlane test
 - bundle exec danger
 after_success:
   - bash <(curl -s https://codecov.io/bash)
